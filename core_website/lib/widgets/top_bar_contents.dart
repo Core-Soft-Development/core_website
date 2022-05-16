@@ -26,7 +26,7 @@ class _TopBarContentsState extends State<TopBarContents> {
     return Container(
         color: Colors.white.withOpacity(0.5),
         child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(15),
             child: Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -35,7 +35,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       width: screenSize.width / 4,
                       child: Image.asset(
                           'assets/images/logos/core_soft_development.png')),
-                  SizedBox(width: screenSize.width / 20),
+                  SizedBox(width: screenSize.width / 15),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -49,10 +49,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         Text(
                           'Home',
                           style: TextStyle(
-                              color: _isHovering[0]
-                                  ? Colors.deepOrange
-                                  : Colors.deepOrangeAccent,
-                              fontWeight: FontWeight.bold,
+                              color:
+                                  _isHovering[0] ? Colors.grey : Colors.black,
+                              fontWeight: FontWeight.w500,
                               fontSize: 16),
                         ),
                         const SizedBox(height: 5),
@@ -70,7 +69,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 20),
+                  SizedBox(width: screenSize.width / 15),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -84,10 +83,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         Text(
                           'About Us',
                           style: TextStyle(
-                              color: _isHovering[1]
-                                  ? Colors.deepOrange
-                                  : Colors.deepOrangeAccent,
-                              fontWeight: FontWeight.bold,
+                              color:
+                                  _isHovering[1] ? Colors.grey : Colors.black,
+                              fontWeight: FontWeight.w500,
                               fontSize: 16),
                         ),
                         const SizedBox(height: 5),
@@ -105,7 +103,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 20),
+                  SizedBox(width: screenSize.width / 15),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -119,10 +117,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         Text(
                           'Portfolio',
                           style: TextStyle(
-                              color: _isHovering[2]
-                                  ? Colors.deepOrange
-                                  : Colors.deepOrangeAccent,
-                              fontWeight: FontWeight.bold,
+                              color:
+                                  _isHovering[2] ? Colors.grey : Colors.black,
+                              fontWeight: FontWeight.w500,
                               fontSize: 16),
                         ),
                         const SizedBox(height: 5),
@@ -140,7 +137,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 20),
+                  SizedBox(width: screenSize.width / 15),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -154,10 +151,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         Text(
                           'Client',
                           style: TextStyle(
-                              color: _isHovering[3]
-                                  ? Colors.deepOrange
-                                  : Colors.deepOrangeAccent,
-                              fontWeight: FontWeight.bold,
+                              color:
+                                  _isHovering[3] ? Colors.grey : Colors.black,
+                              fontWeight: FontWeight.w500,
                               fontSize: 16),
                         ),
                         const SizedBox(height: 5),
@@ -175,7 +171,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 20),
+                  SizedBox(width: screenSize.width / 15),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -189,10 +185,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         Text(
                           'Blog',
                           style: TextStyle(
-                              color: _isHovering[4]
-                                  ? Colors.deepOrange
-                                  : Colors.deepOrangeAccent,
-                              fontWeight: FontWeight.bold,
+                              color:
+                                  _isHovering[4] ? Colors.grey : Colors.black,
+                              fontWeight: FontWeight.w500,
                               fontSize: 16),
                         ),
                         const SizedBox(height: 5),
@@ -210,7 +205,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 20),
+                  SizedBox(width: screenSize.width / 15),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -221,14 +216,25 @@ class _TopBarContentsState extends State<TopBarContents> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Contact Us',
-                          style: TextStyle(
-                              color: _isHovering[5]
-                                  ? Colors.deepOrange
-                                  : Colors.deepOrangeAccent,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
+                        Container(
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(colors: [
+                            Color.fromARGB(150, 255, 137, 101),
+                            Color.fromARGB(50, 255, 111, 67),
+                          ]
+                          ),
+                          border: Border.all(color: Colors.transparent, width: 2.0),
+                          borderRadius: const BorderRadius.all(Radius.circular(5)),
+                          ),
+                          child: Text(
+                            'Contact Us',
+                            style: TextStyle(
+                              color:
+                                  _isHovering[5] ? Colors.grey : Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
                         const SizedBox(height: 5),
                         Visibility(
