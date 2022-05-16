@@ -15,7 +15,6 @@ class _TopBarContentsState extends State<TopBarContents> {
     false,
     false,
     false,
-    false,
     false
   ];
 
@@ -23,8 +22,12 @@ class _TopBarContentsState extends State<TopBarContents> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
 
+/**
+ * implementation of the menu bar
+ */
+
     return Container(
-        color: Colors.white.withOpacity(0.5),
+        color: Colors.deepOrangeAccent.withOpacity(0.5),
         child: Padding(
             padding: const EdgeInsets.all(15),
             child: Expanded(
@@ -35,7 +38,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       width: screenSize.width / 4,
                       child: Image.asset(
                           'assets/images/logos/core_soft_development.png')),
-                  SizedBox(width: screenSize.width / 15),
+                  SizedBox(width: screenSize.width / 4),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -69,7 +72,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 15),
+                  SizedBox(width: screenSize.width / 45),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -81,7 +84,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'About Us',
+                          'Services',
                           style: TextStyle(
                               color:
                                   _isHovering[1] ? Colors.grey : Colors.black,
@@ -103,7 +106,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 15),
+                  SizedBox(width: screenSize.width / 45),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -115,7 +118,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Portfolio',
+                          'About Us',
                           style: TextStyle(
                               color:
                                   _isHovering[2] ? Colors.grey : Colors.black,
@@ -137,7 +140,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 15),
+                  SizedBox(width: screenSize.width / 45),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -149,7 +152,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Client',
+                          'Portfolio',
                           style: TextStyle(
                               color:
                                   _isHovering[3] ? Colors.grey : Colors.black,
@@ -171,7 +174,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 15),
+                  SizedBox(width: screenSize.width / 45),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -183,7 +186,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Blog',
+                          'Client',
                           style: TextStyle(
                               color:
                                   _isHovering[4] ? Colors.grey : Colors.black,
@@ -205,11 +208,45 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 15),
+                  SizedBox(width: screenSize.width / 45),
                   InkWell(
                     onHover: (value) {
                       setState(() {
                         value ? _isHovering[5] = true : _isHovering[5] = false;
+                      });
+                    },
+                    onTap: () {},
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Blog',
+                          style: TextStyle(
+                              color:
+                                  _isHovering[5] ? Colors.grey : Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16),
+                        ),
+                        const SizedBox(height: 5),
+                        Visibility(
+                          maintainAnimation: true,
+                          maintainState: true,
+                          maintainSize: true,
+                          visible: _isHovering[5],
+                          child: Container(
+                            height: 2,
+                            width: 20,
+                            color: Colors.orangeAccent,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: screenSize.width / 45),
+                  InkWell(
+                    onHover: (value) {
+                      setState(() {
+                        value ? _isHovering[6] = true : _isHovering[6] = false;
                       });
                     },
                     onTap: () {},
@@ -230,7 +267,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                             'Contact Us',
                             style: TextStyle(
                               color:
-                                  _isHovering[5] ? Colors.grey : Colors.white,
+                                  _isHovering[6] ? Colors.grey : Colors.white,
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                             ),
@@ -241,7 +278,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                           maintainAnimation: true,
                           maintainState: true,
                           maintainSize: true,
-                          visible: _isHovering[5],
+                          visible: _isHovering[6],
                           child: Container(
                             height: 2,
                             width: 20,
