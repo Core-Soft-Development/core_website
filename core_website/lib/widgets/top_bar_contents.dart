@@ -1,3 +1,5 @@
+import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/service.dart';
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
@@ -8,24 +10,14 @@ class TopBarContents extends StatefulWidget {
 }
 
 class _TopBarContentsState extends State<TopBarContents> {
-  final List _isHovering = [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-  ];
+  final List _isHovering = [false, false, false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-
 /**
  * implementation of the menu bar
  */
-
     return Container(
         color: Colors.deepOrangeAccent.withOpacity(0.5),
         child: Padding(
@@ -45,7 +37,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[0] = true : _isHovering[0] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      const Home();
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -79,7 +73,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[1] = true : _isHovering[1] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      const Services();
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -255,13 +251,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              gradient: const LinearGradient(colors: [
-                            Color.fromARGB(150, 255, 137, 101),
-                            Color.fromARGB(50, 255, 111, 67),
-                          ]
-                          ),
-                          border: Border.all(color: Colors.transparent, width: 2.0),
-                          borderRadius: const BorderRadius.all(Radius.circular(5)),
+                            gradient: const LinearGradient(colors: [
+                              Color.fromARGB(150, 255, 137, 101),
+                              Color.fromARGB(50, 255, 111, 67),
+                            ]),
+                            border: Border.all(
+                                color: Colors.transparent, width: 2.0),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5)),
                           ),
                           child: Text(
                             'Contact Us',
