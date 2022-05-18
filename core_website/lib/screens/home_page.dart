@@ -1,4 +1,8 @@
+import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
+import 'package:core_website/widgets/body.dart';
 import 'package:core_website/widgets/menu_drawer.dart';
 import 'package:core_website/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
@@ -19,18 +23,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
 
-    return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color.fromARGB(150, 255, 137, 101),
-        Color.fromARGB(50, 255, 111, 67),
-      ])),
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.transparent,
         appBar: ResponsiveLayout.isSmallScreen(context)
             ? AppBar(
                 iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-                backgroundColor: const Color(0xFFFFAB91),
+                backgroundColor: ColorsTheme.app_color,
                 elevation: 0,
                 centerTitle: true,
                 title: Image.asset('assets/images/logos/csd.png'),
@@ -39,27 +37,27 @@ class _HomePageState extends State<HomePage> {
                 preferredSize: Size(screenSize.width, 70),
                 child: const TopBarContents(),
               ),
-              drawer: const MenuDrawer(),
+        drawer: const MenuDrawer(),
         body: SingleChildScrollView(
           controller: _scrollController,
           physics: const ClampingScrollPhysics(),
-          child: Column(
-            children: [
-              //Navbar(), const Body()
-              Stack(
-                children: [
-                  Container(
-                    child: SizedBox(
-                        height: screenSize.height * .9,
-                        width: screenSize.width,
-                        child: Image.asset('assets/images/background.png')),
-                  )
-                ],
-              )
-            ],
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxHeight: double.infinity,
+            ),
+            child: IntrinsicHeight(
+              child: Column(children: [
+                Container(
+                  alignment: Alignment.center,
+                  child: const Home(),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  child: const Services(),
+                )
+              ]),
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
