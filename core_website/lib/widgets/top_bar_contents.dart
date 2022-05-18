@@ -1,4 +1,9 @@
+import 'package:core_website/screens/about_us.dart';
+import 'package:core_website/screens/blog.dart';
+import 'package:core_website/screens/client.dart';
+import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +15,25 @@ class TopBarContents extends StatefulWidget {
 }
 
 class _TopBarContentsState extends State<TopBarContents> {
+  
   final List _isHovering = [false, false, false, false, false, false, false];
+  
+  /* int _pageView = 0;
+  final List<Widget> _pagesOption = [
+    const Home(),
+    const Services(),
+    const AboutUs(),
+    const Portfolio(),
+    const Client(),
+    const Blog(),
+    const Contact()
+  ];
+
+  void onTappedBar(int index) {
+    setState(() {
+      _pageView = index;
+    });
+  } */
 
   @override
   Widget build(BuildContext context) {
