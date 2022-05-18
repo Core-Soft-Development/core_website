@@ -8,7 +8,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   /**
    * setting up the homepage
    */
@@ -40,14 +39,13 @@ class _HomeState extends State<Home> {
                         fontFamily: "Montserrat-Regular",
                         color: Colors.black,
                         wordSpacing: 1,
-                        height: 1.5
-                        ),
+                        height: 1.5),
                     children: [
                       TextSpan(
                           text:
                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque',
                           style: TextStyle(
-                              fontWeight: FontWeight.normal, 
+                              fontWeight: FontWeight.normal,
                               fontSize: 16,
                               wordSpacing: 1,
                               height: 1.5))
