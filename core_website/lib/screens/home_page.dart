@@ -1,4 +1,5 @@
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
@@ -58,8 +59,13 @@ class _HomePageState extends State<HomePage> {
                     )
                   ]
                 ),
-              ),
-        ),
-    ));
+                Container(
+                  alignment: Alignment.center,
+                  child: const Contact(),
+                )
+              ]),
+            ),
+          ),
+        ));
   }
 }
