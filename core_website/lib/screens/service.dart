@@ -26,11 +26,12 @@ class _ServicesState extends State<Services> {
               text: const TextSpan(
                   text: "SERVICES \n",
                   style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: "Montserrat-Regular",
-                      color: Color.fromRGBO(217, 39, 39, 1),
-                      wordSpacing: 1,
-                      height: 1.5,),
+                    fontSize: 18,
+                    fontFamily: "Montserrat-Regular",
+                    color: Color.fromRGBO(217, 39, 39, 1),
+                    wordSpacing: 1,
+                    height: 1.5,
+                  ),
                   children: [
                     TextSpan(
                         text: 'A set of digital solution',
