@@ -43,6 +43,9 @@ class _ServicesState extends State<Services> {
                             height: 1.5))
                   ]),
             ),
+            SizedBox(
+                  height: screenSize.height / 6,
+                  width: screenSize.width,)
           ]),
           /**
            * Container of services
@@ -63,7 +66,9 @@ class _ServicesState extends State<Services> {
                               color: Color(0xFFEEEEEE), offset: Offset(1, -4))
                         ],
                         shape: BoxShape.rectangle),
-                    child: Column(children: [
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
                       /**
                        * first block container
                        */
@@ -121,6 +126,7 @@ class _ServicesState extends State<Services> {
                           ],
                           shape: BoxShape.rectangle),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           /**
                            * second block container
@@ -185,7 +191,9 @@ class _ServicesState extends State<Services> {
                                 color: Color(0xFFEEEEEE), offset: Offset(1, -4))
                           ],
                           shape: BoxShape.rectangle),
-                      child: Column(children: [
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
                         /**
                          * third block container
                          */
@@ -239,6 +247,7 @@ class _ServicesState extends State<Services> {
                           ],
                           shape: BoxShape.rectangle),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           /**
                            * fourth block container
@@ -287,6 +296,6 @@ class _ServicesState extends State<Services> {
               ))
         ],
       ),
-    );
+    ) ;
   }
 }

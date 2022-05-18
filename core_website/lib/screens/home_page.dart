@@ -25,36 +25,39 @@ class _HomePageState extends State<HomePage> {
     var screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: ResponsiveLayout.isSmallScreen(context)
-            ? AppBar(
-                iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-                backgroundColor: ColorsTheme.app_color,
-                elevation: 0,
-                centerTitle: true,
-                title: Image.asset('assets/images/logos/csd.png'),
-              )
-            : PreferredSize(
-                preferredSize: Size(screenSize.width, 70),
-                child: const TopBarContents(),
-              ),
-        drawer: const MenuDrawer(),
-        body: SingleChildScrollView(
-          controller: _scrollController,
-          physics: const ClampingScrollPhysics(),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxHeight: double.infinity,
+      backgroundColor: Colors.transparent,
+      appBar: ResponsiveLayout.isSmallScreen(context)
+          ? AppBar(
+              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+              backgroundColor: ColorsTheme.app_color,
+              elevation: 0,
+              centerTitle: true,
+              title: Image.asset('assets/images/logos/csd.png'),
+            )
+          : PreferredSize(
+              preferredSize: Size(screenSize.width, 70),
+              child: const TopBarContents(),
             ),
-            child: IntrinsicHeight(
-              child: Column(children: [
-                Container(
-                  alignment: Alignment.center,
-                  child: const Home(),
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: const Services(),
+            drawer: const MenuDrawer(),
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        physics: const ClampingScrollPhysics(),
+        child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxHeight: double.infinity,
+              ),
+              child: IntrinsicHeight(
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      child: const Home(),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      child: const Services(),
+                    )
+                  ]
                 ),
                 Container(
                   alignment: Alignment.center,
