@@ -1,3 +1,4 @@
+import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class Services extends StatefulWidget {
@@ -28,7 +29,7 @@ class _ServicesState extends State<Services> {
                   style: TextStyle(
                     fontSize: 18,
                     fontFamily: "Montserrat-Regular",
-                    color: Color.fromRGBO(217, 39, 39, 1),
+                    color: ColorsTheme.title_text,
                     wordSpacing: 1,
                     height: 1.5,
                   ),

@@ -20,9 +20,7 @@ class MenuDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   InkWell(
-                    onTap: () {
-                      const Home();
-                    },
+                    onTap: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Home())),
                     child: const Text(
                       'Home',
                       style: TextStyle(
