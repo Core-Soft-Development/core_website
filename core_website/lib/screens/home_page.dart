@@ -1,4 +1,6 @@
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/screens/about_us.dart';
+import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/service.dart';
@@ -38,34 +40,36 @@ class _HomePageState extends State<HomePage> {
               preferredSize: Size(screenSize.width, 70),
               child: const TopBarContents(),
             ),
-            drawer: const MenuDrawer(),
+      drawer: const MenuDrawer(),
       body: SingleChildScrollView(
         controller: _scrollController,
         physics: const ClampingScrollPhysics(),
         child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                maxHeight: double.infinity,
-              ),
-              child: IntrinsicHeight(
-                child: Column(
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      child: const Home(),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: const Services(),
-                    )
-                  ]
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: const Contact(),
-                )
-              ]),
-            ),
+          constraints: const BoxConstraints(
+            maxHeight: double.infinity,
           ),
-        ));
+          child: IntrinsicHeight(
+            child: Column(children: [
+              Container(
+                alignment: Alignment.center,
+                child: const Home(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const Services(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const AboutUs(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const Client(),
+              )
+            ]),
+          ),
+        ),
+      ),
+    );
   }
 }
