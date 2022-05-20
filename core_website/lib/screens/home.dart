@@ -8,9 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  /**
-   * setting up the homepage
-   */
+  /// setting up the homepage
 
   @override
   Widget build(BuildContext context) {

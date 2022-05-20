@@ -1,9 +1,4 @@
-import 'package:core_website/screens/about_us.dart';
-import 'package:core_website/screens/blog.dart';
-import 'package:core_website/screens/client.dart';
-import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
-import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +46,7 @@ class _TopBarContentsState extends State<TopBarContents> {
               SizedBox(
                   width: screenSize.width / 4,
                   child: Image.asset(
-                      'assets/images/logos/core_soft_development.png')),
+                      'logos/core_soft_development.png')),
               SizedBox(width: screenSize.width / 4),
               InkWell(
                 onHover: (value) {

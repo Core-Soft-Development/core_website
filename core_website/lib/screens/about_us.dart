@@ -1,4 +1,3 @@
-import 'package:core_website/config/themes/circle_gradient.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -12,13 +11,17 @@ class AboutUs extends StatefulWidget {
 class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      color: Colors.grey.shade100,
+      color: ColorsTheme.backgroundFirst,
       padding: const EdgeInsets.all(50),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
-          height: 465,
+          /**
+           * Image and background circle
+           */
+          height: screenSize.height / 2,
           width: 491,
           decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -35,6 +38,9 @@ class _AboutUsState extends State<AboutUs> {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            /**
+             * Text right
+             */
             Stack(alignment: Alignment.centerRight, children: [
               RichText(
                 overflow: TextOverflow.ellipsis,
@@ -45,7 +51,7 @@ class _AboutUsState extends State<AboutUs> {
                     style: TextStyle(
                         fontSize: 18,
                         fontFamily: "Montserrat-Regular",
-                        color: ColorsTheme.title_text,
+                        color: ColorsTheme.primaryColor,
                         wordSpacing: 1,
                         height: 1.5),
                     children: [

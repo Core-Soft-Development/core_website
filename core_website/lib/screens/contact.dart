@@ -1,4 +1,3 @@
-import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class Contact extends StatefulWidget {
@@ -11,7 +10,7 @@ class Contact extends StatefulWidget {
 class _ContactState extends State<Contact> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    //var screenSize = MediaQuery.of(context).size;
 
     return Container(
       

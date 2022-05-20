@@ -1,4 +1,3 @@
-import 'package:core_website/config/themes/circle_gradient.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,7 @@ class _ClientState extends State<Client> {
         var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      color: ColorsTheme.background_first,
+      color: ColorsTheme.backgroundSecond,
       padding: const EdgeInsets.all(50),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Expanded(
@@ -23,6 +22,9 @@ class _ClientState extends State<Client> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            /**
+             * Text Left
+             */
             Stack(
               alignment: Alignment.centerLeft,
               children: [
@@ -35,7 +37,7 @@ class _ClientState extends State<Client> {
                         style: TextStyle(
                             fontSize: 18,
                             fontFamily: "Montserrat-Regular",
-                            color: ColorsTheme.title_text,
+                            color: ColorsTheme.primaryColor,
                             wordSpacing: 1,
                             height: 1.5),
                         children: [
@@ -49,7 +51,7 @@ class _ClientState extends State<Client> {
                               )),
                           TextSpan(
                             text:
-                                "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \n This allows me to exploit all my talent and progress quickly in my career \" \n ",
+                                "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
                             style: TextStyle(
                                 fontStyle: FontStyle.italic,
                                 color: Colors.black,
@@ -76,9 +78,12 @@ class _ClientState extends State<Client> {
                         ]))
               ],
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 20),
           ],
         )),
+        /**
+         * Image and background circle
+         */
         Container(
           height: screenSize.height / 2,
           width: 491,

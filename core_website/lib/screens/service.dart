@@ -16,7 +16,7 @@ class _ServicesState extends State<Services> {
      * Title
      */
     return Container(
-      color: Colors.grey.shade100,
+      color: ColorsTheme.backgroundFirst,
       padding: const EdgeInsets.all(50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +29,7 @@ class _ServicesState extends State<Services> {
                   style: TextStyle(
                     fontSize: 18,
                     fontFamily: "Montserrat-Regular",
-                    color: ColorsTheme.title_text,
+                    color: ColorsTheme.primaryColor,
                     wordSpacing: 1,
                     height: 1.5,
                   ),
@@ -95,7 +95,7 @@ class _ServicesState extends State<Services> {
                               style: TextStyle(
                                   decoration: TextDecoration.underline,
                                   decorationColor:
-                                      Color.fromRGBO(217, 39, 39, 1),
+                                      ColorsTheme.primaryColor,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
                                   fontSize: 20,
@@ -154,7 +154,7 @@ class _ServicesState extends State<Services> {
                                     style: TextStyle(
                                         decoration: TextDecoration.underline,
                                         decorationColor:
-                                            Color.fromRGBO(217, 39, 39, 1),
+                                            ColorsTheme.primaryColor,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 20,
@@ -219,7 +219,7 @@ class _ServicesState extends State<Services> {
                                     style: TextStyle(
                                         decoration: TextDecoration.underline,
                                         decorationColor:
-                                            Color.fromRGBO(217, 39, 39, 1),
+                                            ColorsTheme.primaryColor,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black,
                                         fontSize: 20,
@@ -274,7 +274,7 @@ class _ServicesState extends State<Services> {
                                       style: TextStyle(
                                           decoration: TextDecoration.underline,
                                           decorationColor:
-                                              Color.fromRGBO(217, 39, 39, 1),
+                                              ColorsTheme.primaryColor,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black,
                                           fontSize: 20,
