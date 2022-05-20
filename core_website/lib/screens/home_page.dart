@@ -1,6 +1,7 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/about_us.dart';
 import 'package:core_website/screens/client.dart';
+import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
@@ -68,6 +69,10 @@ class _HomePageState extends State<HomePage> {
               Container(
                 alignment: Alignment.center,
                 child: const Portfolio(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const Contact(),
               ),
             ]),
           ),
