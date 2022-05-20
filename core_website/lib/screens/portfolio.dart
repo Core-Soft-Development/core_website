@@ -1,6 +1,5 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/widgets/project.dart';
-import 'package:core_website/widgets/project_image_left.dart';
 import 'package:flutter/material.dart';
 
 class Portfolio extends StatefulWidget {
