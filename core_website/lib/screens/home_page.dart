@@ -1,11 +1,10 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/about_us.dart';
 import 'package:core_website/screens/client.dart';
-import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
-import 'package:core_website/widgets/body.dart';
 import 'package:core_website/widgets/menu_drawer.dart';
 import 'package:core_website/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +18,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
-  double _scrollPosition = 0;
-  double _opacity = 0;
+  //double _scrollPosition = 0;
+  //double _opacity = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +30,10 @@ class _HomePageState extends State<HomePage> {
       appBar: ResponsiveLayout.isSmallScreen(context)
           ? AppBar(
               iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-              backgroundColor: ColorsTheme.app_color,
+              backgroundColor: ColorsTheme.appColor,
               elevation: 0,
               centerTitle: true,
-              title: Image.asset('assets/images/logos/csd.png'),
+              title: Image.asset('logos/csd.png'),
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
@@ -65,7 +64,11 @@ class _HomePageState extends State<HomePage> {
               Container(
                 alignment: Alignment.center,
                 child: const Client(),
-              )
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const Portfolio(),
+              ),
             ]),
           ),
         ),

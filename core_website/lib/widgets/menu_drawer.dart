@@ -12,7 +12,7 @@ class MenuDrawer extends StatelessWidget {
  */
     return Drawer(
       child: Container(
-          color: ColorsTheme.menu_drawer,
+          color: ColorsTheme.menuDrawer,
           child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -24,7 +24,7 @@ class MenuDrawer extends StatelessWidget {
                     child: const Text(
                       'Home',
                       style: TextStyle(
-                          color: ColorsTheme.text_menu_drawer, fontSize: 16),
+                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
                     ),
                   ),
                   const Padding(
@@ -39,7 +39,7 @@ class MenuDrawer extends StatelessWidget {
                     child: const Text(
                       'Services',
                       style: TextStyle(
-                          color: ColorsTheme.text_menu_drawer, fontSize: 16),
+                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
                     ),
                   ),
                   const Padding(
@@ -54,7 +54,7 @@ class MenuDrawer extends StatelessWidget {
                     child: const Text(
                       'About Us',
                       style: TextStyle(
-                          color: ColorsTheme.text_menu_drawer, fontSize: 16),
+                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
                     ),
                   ),
                   const Padding(
@@ -69,7 +69,7 @@ class MenuDrawer extends StatelessWidget {
                     child: const Text(
                       'Porfolio',
                       style: TextStyle(
-                          color: ColorsTheme.text_menu_drawer, fontSize: 16),
+                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
                     ),
                   ),
                   const Padding(
@@ -84,7 +84,7 @@ class MenuDrawer extends StatelessWidget {
                     child: const Text(
                       'Client',
                       style: TextStyle(
-                          color: ColorsTheme.text_menu_drawer, fontSize: 16),
+                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
                     ),
                   ),
                   const Padding(
@@ -99,7 +99,7 @@ class MenuDrawer extends StatelessWidget {
                     child: const Text(
                       'Blog',
                       style: TextStyle(
-                          color: ColorsTheme.text_menu_drawer, fontSize: 16),
+                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
                     ),
                   ),
                   const Padding(
@@ -114,7 +114,7 @@ class MenuDrawer extends StatelessWidget {
                     child: const Text(
                       'Contact Us',
                       style: TextStyle(
-                          color: ColorsTheme.text_menu_drawer, fontSize: 16),
+                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
                     ),
                   ),
                   const Padding(
@@ -129,7 +129,7 @@ class MenuDrawer extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     child: Text('Copyright © 2022',
                         style: TextStyle(
-                            color: ColorsTheme.text_menu_drawer, fontSize: 14)),
+                            color: ColorsTheme.textMenuDrawer, fontSize: 14)),
                   ))
                 ],
               ))),
