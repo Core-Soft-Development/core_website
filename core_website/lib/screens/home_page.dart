@@ -6,6 +6,8 @@ import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
+import 'package:core_website/widgets/copyright.dart';
+import 'package:core_website/widgets/footer.dart';
 import 'package:core_website/widgets/menu_drawer.dart';
 import 'package:core_website/widgets/top_bar_contents.dart';
 import 'package:flutter/material.dart';
@@ -73,6 +75,14 @@ class _HomePageState extends State<HomePage> {
               Container(
                 alignment: Alignment.center,
                 child: const Contact(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const Footer(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const Copyright(),
               ),
             ]),
           ),
