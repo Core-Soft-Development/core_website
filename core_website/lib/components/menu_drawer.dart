@@ -1,9 +1,26 @@
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/screens/home.dart';
 import 'package:flutter/material.dart';
 
-class MenuDrawer extends StatelessWidget {
+class MenuDrawer extends StatefulWidget {
   const MenuDrawer({Key? key}) : super(key: key);
+
+  @override
+  State<MenuDrawer> createState() => _MenuDrawerState();
+}
+
+class _MenuDrawerState extends State<MenuDrawer> {
+
+   int selectedIndex = 0;
+   int hoverIndex = 0;
+   List<String> drawItems = [
+    "Home",
+    "Service",
+    "About Us",
+    "Portfolio",
+    "Client",
+    "Blog",
+    "Contact Us"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +33,51 @@ class MenuDrawer extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: List.generate(
+                      drawItems.length, (index) => buildDrawitem(index))))),
+    );
+  }
+
+  Widget buildDrawitem(int index) => InkWell(
+    onTap: () {
+      setState(() {
+        selectedIndex = index;
+      });
+    },
+    onHover: (value) {
+      setState(() {
+        value ? hoverIndex = index : hoverIndex = selectedIndex;
+      });
+    },
+    child: Container(
+      constraints: const BoxConstraints(maxHeight: 60),
+      alignment: Alignment.center,
+      child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Text(drawItems[index],
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                                        fontFamily: "Montserrat",
+                      color: ColorsTheme.textMenuDrawer, fontSize: 16)
+                      ),
+               const Padding(
+                 padding:  EdgeInsets.only(top: 50.0),
+                 child: Divider(color: Colors.deepOrangeAccent,
+                        thickness: 2),
+               ),
+            ],
+          ),
+    ),
+  );
+}
+
+/**
+ * Drawer initial
+ */
+/* [
                   InkWell(
                     onTap: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Home())),
                     child: const Text(
@@ -131,8 +190,4 @@ class MenuDrawer extends StatelessWidget {
                         style: TextStyle(
                             color: ColorsTheme.textMenuDrawer, fontSize: 14)),
                   ))
-                ],
-              ))),
-    );
-  }
-}
+                ], */
