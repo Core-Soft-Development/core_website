@@ -8,7 +8,6 @@ class TopBarContents extends StatefulWidget {
 }
 
 class _TopBarContentsState extends State<TopBarContents> {
-  //final List _isHovering = [false, false, false, false, false, false, false];
 
   int selectedIndex = 0;
   int hoverIndex = 0;
@@ -20,35 +19,38 @@ class _TopBarContentsState extends State<TopBarContents> {
     "Client",
     "Blog",
     "Contact Us"
-  ];
+  ]; 
+
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
+
+  
 /**
  * implementation of the menu bar
  */
     return Container(
-        //padding: const EdgeInsets.symmetric(horizontal: 20 * 2.5),
+        padding: const EdgeInsets.all(20),
         constraints: const BoxConstraints(maxWidth: 1110),
         height: 100,
         color: Colors.deepOrangeAccent.withOpacity(0.5),
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Row(
-            children: [
-              SizedBox(
-                  width: screenSize.width / 4,
-                  child: Image.asset('logos/core_soft_development.png')),
-              SizedBox(width: screenSize.width /  10),
-              Row(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            SizedBox(
+                width: screenSize.width / 4,
+                child: Image.asset('logos/core_soft_development.png')),
+            //SizedBox(width: screenSize.width /  10),
+            Center(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: List.generate(
+                children:  List.generate(
                     menuItems.length, (index) => buildMenuItem(index)),
               ),
-            ],
-          ),
+            ),
+          ],
         ));
   }
 
@@ -64,11 +66,12 @@ class _TopBarContentsState extends State<TopBarContents> {
           });
         },
         child: Container(
+          alignment: Alignment.center,
             constraints: const BoxConstraints(maxWidth: 122),
             height: 100,
             child: Stack(
               fit: StackFit.expand,
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               children: [
                 Text(
                   menuItems[index],
@@ -85,7 +88,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                     left: 0,
                     right: 0,
                     bottom: selectedIndex != index && hoverIndex == index
-                        ? -20
+                        ? -30
                         : -35,
                     child: Image.asset(
                       "assets/images/Hover.png",
@@ -96,20 +99,27 @@ class _TopBarContentsState extends State<TopBarContents> {
                     duration: const Duration(milliseconds: 200),
                     left: 0,
                     right: 0,
-                    bottom: selectedIndex == index ? -8 : -35,
+                    bottom: selectedIndex == index ? -20 : -35,
                     child: Image.asset(
                       "assets/images/Hover.png",
                       color: Colors.red[100],
                     ))
               ],
-            )),
-      );
+            )
+            ),
+      ); 
+
 }
+
+ 
 
 /**
  * Menu initial
  */
-/* [
+/* 
+final List _isHovering = [false, false, false, false, false, false, false];
+
+[
                   SizedBox(
                       width: screenSize.width / 4,
                       child: Image.asset(

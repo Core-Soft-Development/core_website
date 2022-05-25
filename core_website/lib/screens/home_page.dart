@@ -21,6 +21,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
+
+//int _currentIndex = 0;
+  /* final PageController _pageController = PageController(initialPage: 0);
+  int _currentIndex = 0; */
   //double _scrollPosition = 0;
   //double _opacity = 0;
 
@@ -42,9 +46,9 @@ class _HomePageState extends State<HomePage> {
               preferredSize: Size(screenSize.width, 70),
               child: const TopBarContents(),
             ),
-      drawer: MenuDrawer(),
+      drawer: const MenuDrawer(),
       body: SingleChildScrollView(
-        controller: _scrollController,
+        controller: _scrollController ,
         physics: const ClampingScrollPhysics(),
         child: ConstrainedBox(
           constraints: const BoxConstraints(
@@ -90,4 +94,22 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  /* Widget getBody() {
+    List<Widget> pages = [
+      Home(),
+      Services(),
+      AboutUs(),
+      Client(),
+      Portfolio(),
+      Contact(),
+      Footer(),
+      Copyright()
+    ];
+    return IndexedStack(
+      index: _currentIndex,
+      children: pages,
+    );
+  } */
+
 }
