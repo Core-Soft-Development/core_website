@@ -1,3 +1,4 @@
+import 'package:core_website/widgets/navbar_item.dart';
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
@@ -24,7 +25,7 @@ class _TopBarContentsState extends State<TopBarContents> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    //var screenSize = MediaQuery.of(context).size;
 
   
 /**
@@ -39,16 +40,12 @@ class _TopBarContentsState extends State<TopBarContents> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
-                width: screenSize.width / 4,
                 child: Image.asset('logos/core_soft_development.png')),
-            //SizedBox(width: screenSize.width /  10),
-            Center(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children:  List.generate(
-                    menuItems.length, (index) => buildMenuItem(index)),
-              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: List.generate(
+                  menuItems.length, (index) => buildMenuItem(index)),
             ),
           ],
         ));

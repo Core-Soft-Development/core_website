@@ -138,13 +138,7 @@ class _ContactState extends State<Contact> {
                                             primary: ColorsTheme.primaryColor,
                                             elevation: 10
                                             ),
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const HomePage()));
-                                        },
+                                        onPressed: () {},
                                         child: const Text(
                                           "Send",
                                           style: TextStyle(color: Colors.white),

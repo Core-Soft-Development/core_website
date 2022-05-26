@@ -21,12 +21,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
+  /* double _scrollPosition = 0;
+  double _opacity = 0;
 
-//int _currentIndex = 0;
-  /* final PageController _pageController = PageController(initialPage: 0);
-  int _currentIndex = 0; */
-  //double _scrollPosition = 0;
-  //double _opacity = 0;
+  _scrollListener() {
+    setState(() {
+      _scrollPosition = _scrollController.position.pixels;
+    });
+  }
+
+  @override
+  void iniState() {
+    _scrollController.addListener(_scrollListener);
+    super.initState();
+  } */
 
   @override
   Widget build(BuildContext context) {
