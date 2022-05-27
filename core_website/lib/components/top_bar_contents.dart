@@ -9,7 +9,9 @@ import 'package:core_website/screens/service.dart';
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
-  const TopBarContents({Key? key}) : super(key: key);
+  final void Function(int) scrollCallback;
+
+  const TopBarContents(this.scrollCallback, {Key? key}) : super(key: key);
 
   @override
   State<TopBarContents> createState() => _TopBarContentsState();
@@ -29,21 +31,10 @@ class _TopBarContentsState extends State<TopBarContents> {
     "Contact Us"
   ]; 
 
-final List<Widget> _pagesOption = [
-    const Home(),
-    const Services(),
-    const AboutUs(),
-    const Portfolio(),
-    const Client(),
-    const Blog(),
-    const Contact()
-  ];
-
   @override
   Widget build(BuildContext context) {
     //var screenSize = MediaQuery.of(context).size;
 
-  
 /**
  * implementation of the menu bar
  */
@@ -69,6 +60,7 @@ final List<Widget> _pagesOption = [
 
   Widget buildMenuItem(int index) => InkWell(
         onTap: () {
+          widget.scrollCallback(index);
           setState(() {
             selectedIndex = index;
           });

@@ -1,5 +1,6 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/about_us.dart';
+import 'package:core_website/screens/blog.dart';
 import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
@@ -21,20 +22,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
-  /* double _scrollPosition = 0;
-  double _opacity = 0;
-
-  _scrollListener() {
-    setState(() {
-      _scrollPosition = _scrollController.position.pixels;
-    });
+  
+  void scrollIndex(int index) {
+    _scrollController.animateTo(index*1000, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
   }
-
-  @override
-  void iniState() {
-    _scrollController.addListener(_scrollListener);
-    super.initState();
-  } */
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +43,11 @@ class _HomePageState extends State<HomePage> {
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
-              child: const TopBarContents(),
+              child:  TopBarContents(scrollIndex),
             ),
       drawer: const MenuDrawer(),
       body: SingleChildScrollView(
-        controller: _scrollController ,
+        controller: _scrollController,
         physics: const ClampingScrollPhysics(),
         child: ConstrainedBox(
           constraints: const BoxConstraints(
@@ -83,6 +74,10 @@ class _HomePageState extends State<HomePage> {
               Container(
                 alignment: Alignment.center,
                 child: const Portfolio(),
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: const Blog(),
               ),
               Container(
                 alignment: Alignment.center,
