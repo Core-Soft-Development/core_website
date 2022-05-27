@@ -1,4 +1,11 @@
-import 'package:core_website/widgets/navbar_item.dart';
+import 'package:core_website/screens/about_us.dart';
+import 'package:core_website/screens/blog.dart';
+import 'package:core_website/screens/client.dart';
+import 'package:core_website/screens/contact.dart';
+import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/portfolio.dart';
+import 'package:core_website/screens/service.dart';
+//import 'package:core_website/widgets/navbar_item.dart';
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
@@ -22,6 +29,15 @@ class _TopBarContentsState extends State<TopBarContents> {
     "Contact Us"
   ]; 
 
+final List<Widget> _pagesOption = [
+    const Home(),
+    const Services(),
+    const AboutUs(),
+    const Portfolio(),
+    const Client(),
+    const Blog(),
+    const Contact()
+  ];
 
   @override
   Widget build(BuildContext context) {
