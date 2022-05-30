@@ -13,6 +13,7 @@ import 'package:core_website/components/footer.dart';
 import 'package:core_website/components/menu_drawer.dart';
 import 'package:core_website/components/top_bar_contents.dart';
 import 'package:flutter/material.dart';
+import 'package:measured_size/measured_size.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,12 +24,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
+  Size? sizeBox;
+  late Widget child;
   /* Size _widgetSize = Size.zero;
 
-  void _handleWidgetSized(Size value) => setState(() => _widgetSize = value); */
-  
+  void _handleWidgetSized(Size value) => setState(() => _widgetSize = value);
+   */
   void scrollIndex(int index) {
-    _scrollController.animateTo(MeasurableWidget as double, duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+    _scrollController.animateTo(/* index * 1500 || MeasurableWidget as double */MeasuredSize(onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                }, child: child) as double , duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
   }
   
   
@@ -61,43 +68,61 @@ class _HomePageState extends State<HomePage> {
             maxHeight: double.infinity,
           ),
           child: IntrinsicHeight(
-            child: Column(children: [
-              Container(
-                alignment: Alignment.center,
-                child: const Home(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Services(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const AboutUs(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Client(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Portfolio(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Blog(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Contact(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Footer(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Copyright(),
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+              MeasuredSize(
+                onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                },
+                child: Home()),
+               MeasuredSize(
+                onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                },
+                child: Services()),
+               MeasuredSize(
+                onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                },
+                child: AboutUs()),
+               MeasuredSize(
+                onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                },
+                child: Client()),
+               MeasuredSize(
+                onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                },
+                child: Portfolio()),
+               MeasuredSize(
+                onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                },
+                child: Blog()),
+               MeasuredSize(
+                onChange: (Size size) {
+                  setState(() {
+                    sizeBox = size;
+                  });
+                },
+                child: Contact()),
+              Footer(),
+              Copyright(),
             ]),
           ),
         ),

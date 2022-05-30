@@ -17,9 +17,9 @@ class _MeasurableWidgetState extends State<MeasurableWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = (context.findRenderObject() as RenderBox).size;
-    if(size != Size.zero) {
-      widget.onSized?.call(size);
+    Size _size = (context.findRenderObject() as RenderBox).size;
+    if(_size != Size.zero) {
+      widget.onSized?.call(_size);
     } else if(!_hasMeasured) {
       scheduleMicrotask(() => setState(() => _hasMeasured = true));
     }

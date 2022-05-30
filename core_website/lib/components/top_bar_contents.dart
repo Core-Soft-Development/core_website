@@ -42,7 +42,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                 child: Image.asset('logos/core_soft_development.png')),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(
                   menuItems.length, (index) => buildMenuItem(index)),
             ),
