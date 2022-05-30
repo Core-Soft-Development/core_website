@@ -31,14 +31,9 @@ class _HomePageState extends State<HomePage> {
   void _handleWidgetSized(Size value) => setState(() => _widgetSize = value);
    */
   void scrollIndex(int index) {
-    _scrollController.animateTo(/* index * 1500 || MeasurableWidget as double */MeasuredSize(onChange: (Size size) {
-                  setState(() {
-                    sizeBox = size;
-                  });
-                }, child: child) as double , duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+    _scrollController.position.animateTo(/* index * 1500 || MeasurableWidget as double  */ sizeBox!.height.toDouble() , duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
   }
-  
-  
+
 /// Page scren principal of siteweb
 
   @override
