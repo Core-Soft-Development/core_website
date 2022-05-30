@@ -1,17 +1,9 @@
-import 'package:core_website/screens/about_us.dart';
-import 'package:core_website/screens/blog.dart';
-import 'package:core_website/screens/client.dart';
-import 'package:core_website/screens/contact.dart';
-import 'package:core_website/screens/home.dart';
-import 'package:core_website/screens/portfolio.dart';
-import 'package:core_website/screens/service.dart';
-//import 'package:core_website/widgets/navbar_item.dart';
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
-  final void Function(int) scrollCallback;
+  final void Function(int) scrollback;
 
-  const TopBarContents(this.scrollCallback, {Key? key}) : super(key: key);
+  const TopBarContents(this.scrollback, {Key? key}) : super(key: key);
 
   @override
   State<TopBarContents> createState() => _TopBarContentsState();
@@ -25,8 +17,8 @@ class _TopBarContentsState extends State<TopBarContents> {
     "Home",
     "Service",
     "About Us",
-    "Portfolio",
     "Client",
+    "Portfolio",
     "Blog",
     "Contact Us"
   ]; 
@@ -60,7 +52,7 @@ class _TopBarContentsState extends State<TopBarContents> {
 
   Widget buildMenuItem(int index) => InkWell(
         onTap: () {
-          widget.scrollCallback(index);
+          widget.scrollback(index);
           setState(() {
             selectedIndex = index;
           });

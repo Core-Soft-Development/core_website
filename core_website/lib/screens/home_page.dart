@@ -1,3 +1,4 @@
+import 'package:core_website/config/measurable_widget.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/about_us.dart';
 import 'package:core_website/screens/blog.dart';
@@ -22,10 +23,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
+  /* Size _widgetSize = Size.zero;
+
+  void _handleWidgetSized(Size value) => setState(() => _widgetSize = value); */
   
   void scrollIndex(int index) {
-    _scrollController.animateTo(index*1000, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+    _scrollController.animateTo(MeasurableWidget as double, duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
   }
+  
+  
+/// Page scren principal of siteweb
 
   @override
   Widget build(BuildContext context) {
@@ -97,22 +104,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  /* Widget getBody() {
-    List<Widget> pages = [
-      Home(),
-      Services(),
-      AboutUs(),
-      Client(),
-      Portfolio(),
-      Contact(),
-      Footer(),
-      Copyright()
-    ];
-    return IndexedStack(
-      index: _currentIndex,
-      children: pages,
-    );
-  } */
-
 }
