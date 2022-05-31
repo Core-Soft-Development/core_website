@@ -15,9 +15,31 @@ class _ContactState extends State<Contact> {
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(48.866667, 2.333333);
+  final LatLng _office = const LatLng(49.0323168, 2.4733628);
+  
+  List<Marker> allMarkers = [];
 
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
+  void _onMapCreated(controller) {
+    setState(() {
+       mapController = controller;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    allMarkers.add(Marker(
+      markerId: const MarkerId('firstMarker'),
+      draggable: false,
+      position: _office,
+      infoWindow: const InfoWindow(title: 'Core Soft Development', snippet: 'Goussainville'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue)
+      ));
+    allMarkers.add(Marker(
+      markerId: const MarkerId('secondMarker'),
+      draggable: false,
+      position: _center,
+      ));
   }
 
   @override
@@ -71,24 +93,18 @@ class _ContactState extends State<Contact> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 465,
+                          SizedBox(
+                            width: screenSize.width / 3.5,
                             height: screenSize.height / 2,
                             child: GoogleMap(
-                              padding: EdgeInsets.all(2),
-                                    onMapCreated: _onMapCreated,
-                                    initialCameraPosition: CameraPosition(
-                                      target: _center,
-                                      zoom: 11.0,)),
+                                padding: const EdgeInsets.all(2),
+                                onMapCreated: _onMapCreated,
+                                initialCameraPosition: CameraPosition(
+                                  target: _center,
+                                  zoom: 10),
+                                markers: Set.from(allMarkers),
+                                ),
                           ),
-                          /* Container(
-                            width: 465,
-                            height: screenSize.height / 2,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('images/plan.png'),
-                                    alignment: Alignment.centerRight)),
-                          ), */
                           const SizedBox(width: 30),
                           Expanded(
                             child: Column(
