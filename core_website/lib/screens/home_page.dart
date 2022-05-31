@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
               child: const TopBarContents(),
             ),
       drawer: const MenuDrawer(),
+      extendBody: true,
       body: SingleChildScrollView(
         controller: _scrollController,
         physics: const ClampingScrollPhysics(),

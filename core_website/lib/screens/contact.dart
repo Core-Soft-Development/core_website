@@ -1,6 +1,7 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Contact extends StatefulWidget {
   const Contact({Key? key}) : super(key: key);
@@ -10,6 +11,15 @@ class Contact extends StatefulWidget {
 }
 
 class _ContactState extends State<Contact> {
+
+  late GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(48.866667, 2.333333);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -64,11 +74,21 @@ class _ContactState extends State<Contact> {
                           Container(
                             width: 465,
                             height: screenSize.height / 2,
+                            child: GoogleMap(
+                              padding: EdgeInsets.all(2),
+                                    onMapCreated: _onMapCreated,
+                                    initialCameraPosition: CameraPosition(
+                                      target: _center,
+                                      zoom: 11.0,)),
+                          ),
+                          /* Container(
+                            width: 465,
+                            height: screenSize.height / 2,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
                                     image: AssetImage('images/plan.png'),
                                     alignment: Alignment.centerRight)),
-                          ),
+                          ), */
                           const SizedBox(width: 30),
                           Expanded(
                             child: Column(
@@ -136,8 +156,7 @@ class _ContactState extends State<Contact> {
                                       child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
                                             primary: ColorsTheme.primaryColor,
-                                            elevation: 10
-                                            ),
+                                            elevation: 10),
                                         onPressed: () {
                                           Navigator.push(
                                               context,
