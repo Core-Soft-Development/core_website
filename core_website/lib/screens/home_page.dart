@@ -1,4 +1,3 @@
-import 'package:core_website/config/measurable_widget.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/about_us.dart';
 import 'package:core_website/screens/blog.dart';
@@ -7,13 +6,14 @@ import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
 import 'package:core_website/components/copyright.dart';
 import 'package:core_website/components/footer.dart';
 import 'package:core_website/components/menu_drawer.dart';
 import 'package:core_website/components/top_bar_contents.dart';
 import 'package:flutter/material.dart';
-import 'package:measured_size/measured_size.dart';
+import 'package:measure_size/measure_size.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,22 +23,101 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   final ScrollController _scrollController = ScrollController();
+
   Size? sizeBox;
+  Offset? position;
+
   late Widget child;
+
+  @override
+  void initState() {
+    super.initState();
+    //calculateSizeAndPosition();
+  }
+
+  /* void calculateSizeAndPosition() { 
+    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxHome = KeyWidgets.keyHome.currentContext!.findRenderObject() as RenderBox;
+    setState(() {
+      position = boxHome.localToGlobal(Offset.zero);
+      sizeBox = boxHome.size;
+    });
+   });
+   
+    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxService = KeyWidgets.keyService.currentContext!.findRenderObject() as RenderBox;
+    setState(() {
+      position = boxService.localToGlobal(Offset.zero);
+      sizeBox = boxService.size;
+    });
+   });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxAbout = KeyWidgets.keyAbout.currentContext!.findRenderObject() as RenderBox;
+    setState(() {
+      position = boxAbout.localToGlobal(Offset.zero);
+      sizeBox = boxAbout.size;
+    });
+   });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxClient = KeyWidgets.keyClient.currentContext!.findRenderObject() as RenderBox;
+    setState(() {
+      position = boxClient.localToGlobal(Offset.zero);
+      sizeBox = boxClient.size;
+    });
+   });
+
+   WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxPortfolio = KeyWidgets.keyPortfolio.currentContext!.findRenderObject() as RenderBox;
+    setState(() {
+      position = boxPortfolio.localToGlobal(Offset.zero);
+      sizeBox = boxPortfolio.size;
+    });
+   });
+
+   WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxBlog = KeyWidgets.keyBlog.currentContext!.findRenderObject() as RenderBox;
+    setState(() {
+      position = boxBlog.localToGlobal(Offset.zero);
+      sizeBox = boxBlog.size;
+    });
+   });
+
+   WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxContact = KeyWidgets.keyContact.currentContext!.findRenderObject() as RenderBox;
+    setState(() {
+      position = boxContact.localToGlobal(Offset.zero);
+      sizeBox = boxContact.size;
+    });
+   });
+
+   } */
+
   /* Size _widgetSize = Size.zero;
 
   void _handleWidgetSized(Size value) => setState(() => _widgetSize = value);
    */
+  /*
+  _afterLayout(_) {
+    _positions();
+  }  */
+
   void scrollIndex(int index) {
-    _scrollController.position.animateTo(/* index * 1500 || MeasurableWidget as double  */ sizeBox!.height.toDouble() , duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+    _scrollController.animateTo(
+        /*MeasurableWidget as double _positions() as double*/index *900 ,
+        duration: const Duration(milliseconds: 100),
+        curve: Curves.easeIn);
   }
 
-/// Page scren principal of siteweb
+  /* Future<void> animateTo(
+    {offset = 900, duration = const Duration(milliseconds: 100), curve = Curves.easeIn}) async {
+      assert(_positions.Empty, await Future.wait<void>(<Future<void>>[
+        for ( int i = 0; i < _positions.length; i += 1) _positions[i].animateTo(900, duration: const Duration(milliseconds: 100), curve: Curves.easeIn),
+      ]));
+    } */
+
+  /// Page screen principal of siteweb
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
+    //if (sizeBox == null || position == null) return Container();
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -52,7 +131,7 @@ class _HomePageState extends State<HomePage> {
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
-              child:  TopBarContents(scrollIndex),
+              child: TopBarContents(scrollIndex),
             ),
       drawer: const MenuDrawer(),
       body: SingleChildScrollView(
@@ -63,62 +142,55 @@ class _HomePageState extends State<HomePage> {
             maxHeight: double.infinity,
           ),
           child: IntrinsicHeight(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-              MeasuredSize(
-                onChange: (Size size) {
-                  setState(() {
+            child: Column(//controller: _scrollController,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  MeasureSize(onChange: (Size size) {setState(() {
                     sizeBox = size;
                   });
-                },
-                child: Home()),
-               MeasuredSize(
-                onChange: (Size size) {
-                  setState(() {
+                  },
+                  key: KeyWidgets.keyHome,
+                  child: const Home()),
+                  MeasureSize(onChange: (Size size) {setState(() {
                     sizeBox = size;
                   });
-                },
-                child: Services()),
-               MeasuredSize(
-                onChange: (Size size) {
-                  setState(() {
+                  },
+                  key: KeyWidgets.keyService,
+                  child: const Services()),
+                  MeasureSize(onChange: (Size size) {setState(() {
                     sizeBox = size;
                   });
-                },
-                child: AboutUs()),
-               MeasuredSize(
-                onChange: (Size size) {
-                  setState(() {
+                  },
+                  key: KeyWidgets.keyAbout,
+                  child: const AboutUs()),
+                  MeasureSize(onChange: (Size size) {setState(() {
                     sizeBox = size;
                   });
-                },
-                child: Client()),
-               MeasuredSize(
-                onChange: (Size size) {
-                  setState(() {
+                  },
+                  key: KeyWidgets.keyClient,
+                  child: const Client()),
+                  MeasureSize(onChange: (Size size) {setState(() {
                     sizeBox = size;
                   });
-                },
-                child: Portfolio()),
-               MeasuredSize(
-                onChange: (Size size) {
-                  setState(() {
+                  },
+                  key: KeyWidgets.keyPortfolio,
+                  child: const Portfolio()),
+                  MeasureSize(onChange: (Size size) {setState(() {
                     sizeBox = size;
                   });
-                },
-                child: Blog()),
-               MeasuredSize(
-                onChange: (Size size) {
-                  setState(() {
+                  },
+                  key: KeyWidgets.keyBlog,
+                  child: const Blog()),
+                  MeasureSize(onChange: (Size size) {setState(() {
                     sizeBox = size;
                   });
-                },
-                child: Contact()),
-              Footer(),
-              Copyright(),
-            ]),
+                  },
+                  key: KeyWidgets.keyContact,
+                  child: const Contact()),
+                  const Footer(),
+                  const Copyright(),
+                ]),
           ),
         ),
       ),
