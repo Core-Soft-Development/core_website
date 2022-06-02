@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
-
   final void Function(int) scrollback;
 
   const TopBarContents(this.scrollback, {Key? key}) : super(key: key);
@@ -11,7 +10,6 @@ class TopBarContents extends StatefulWidget {
 }
 
 class _TopBarContentsState extends State<TopBarContents> {
-
   int selectedIndex = 0;
   int hoverIndex = 0;
 
@@ -23,7 +21,7 @@ class _TopBarContentsState extends State<TopBarContents> {
     "Portfolio",
     "Blog",
     "Contact Us"
-  ]; 
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +36,7 @@ class _TopBarContentsState extends State<TopBarContents> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            SizedBox(
-                child: Image.asset('logos/core_soft_development.png')),
+            SizedBox(child: Image.asset('logos/core_soft_development.png')),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -63,7 +60,7 @@ class _TopBarContentsState extends State<TopBarContents> {
           });
         },
         child: Container(
-          alignment: Alignment.center,
+            alignment: Alignment.center,
             constraints: const BoxConstraints(maxWidth: 122),
             height: 100,
             child: Stack(
@@ -74,7 +71,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                   menuItems[index],
                   textAlign: TextAlign.justify,
                   style: const TextStyle(
-                    fontFamily: "Montserrat",
+                      fontFamily: "Montserrat",
                       color: Colors.black,
                       fontWeight: FontWeight.w500,
                       fontSize: 16),
@@ -102,10 +99,8 @@ class _TopBarContentsState extends State<TopBarContents> {
                       color: Colors.red[100],
                     ))
               ],
-            )
-            ),
-      ); 
-
+            )),
+      );
 }
 
 /**

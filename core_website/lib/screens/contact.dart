@@ -14,8 +14,9 @@ class _ContactState extends State<Contact> {
 
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(48.866667, 2.333333);
+  final LatLng _center = const LatLng(48.936181, 2.357443);
   final LatLng _office = const LatLng(49.0323168, 2.4733628);
+  final LatLng _capital = const LatLng(48.866667, 2.333333);
   
   List<Marker> allMarkers = [];
 
@@ -38,7 +39,7 @@ class _ContactState extends State<Contact> {
     allMarkers.add(Marker(
       markerId: const MarkerId('secondMarker'),
       draggable: false,
-      position: _center,
+      position: _capital,
       ));
   }
 
