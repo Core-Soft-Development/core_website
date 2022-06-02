@@ -134,55 +134,72 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  calculateSizeAndPosition(index) { 
-    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxHome = KeyWidgets.keyHome.currentState!.widget as RenderBox;
-    setState(() {
-      position = boxHome.localToGlobal(Offset.zero);
-      sizeBox = boxHome.size;
-    });
-   });
-   
-    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxService = KeyWidgets.keyService.currentContext!.findRenderObject() as RenderBox;
-    setState(() {
-      position = boxService.localToGlobal(Offset.zero);
-      sizeBox = boxService.size;
-    });
-   });
+  double calculateSizeAndPosition(int index) { 
+    double height = 0;
 
-    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxAbout = KeyWidgets.keyAbout.currentContext!.findRenderObject() as RenderBox;
-    setState(() {
-      position = boxAbout.localToGlobal(Offset.zero);
-      sizeBox = boxAbout.size;
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final RenderBox boxHome = KeyWidgets.keyHome.currentContext!.findRenderObject as RenderBox;
+      setState(() {
+        position = boxHome.localToGlobal(Offset.zero);
+        sizeBox = boxHome.size;
+        height = sizeBox?.height ?? 0;
+      });
     });
-   });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxClient = KeyWidgets.keyClient.currentContext!.findRenderObject() as RenderBox;
-    setState(() {
-      position = boxClient.localToGlobal(Offset.zero);
-      sizeBox = boxClient.size;
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final RenderBox boxService = KeyWidgets.keyService.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxService.localToGlobal(Offset.zero);
+        sizeBox = boxService.size;
+        height = sizeBox?.height ?? 0;
+      });
     });
-   });
 
-   WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxPortfolio = KeyWidgets.keyPortfolio.currentContext!.findRenderObject() as RenderBox;
-    setState(() {
-      position = boxPortfolio.localToGlobal(Offset.zero);
-      sizeBox = boxPortfolio.size;
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final RenderBox boxAbout = KeyWidgets.keyAbout.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxAbout.localToGlobal(Offset.zero);
+        sizeBox = boxAbout.size;
+        height = sizeBox?.height ?? 0;
+      });
     });
-   });
 
-   WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxBlog = KeyWidgets.keyBlog.currentContext!.findRenderObject() as RenderBox;
-    setState(() {
-      position = boxBlog.localToGlobal(Offset.zero);
-      sizeBox = boxBlog.size;
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final RenderBox boxClient = KeyWidgets.keyClient.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxClient.localToGlobal(Offset.zero);
+        sizeBox = boxClient.size;
+        height = sizeBox?.height ?? 0;
+      });
     });
-   });
 
-   WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxContact = KeyWidgets.keyContact.currentContext!.findRenderObject() as RenderBox;
-    setState(() {
-      position = boxContact.localToGlobal(Offset.zero);
-      sizeBox = boxContact.size;
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final RenderBox boxPortfolio = KeyWidgets.keyPortfolio.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxPortfolio.localToGlobal(Offset.zero);
+        sizeBox = boxPortfolio.size;
+        height = sizeBox?.height ?? 0;
+      });
     });
-   });
+
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final RenderBox boxBlog = KeyWidgets.keyBlog.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxBlog.localToGlobal(Offset.zero);
+        sizeBox = boxBlog.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final RenderBox boxContact = KeyWidgets.keyContact.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxContact.localToGlobal(Offset.zero);
+        sizeBox = boxContact.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+
+    return height;
   }
-
 }
