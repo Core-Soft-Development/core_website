@@ -13,7 +13,6 @@ import 'package:core_website/components/footer.dart';
 import 'package:core_website/components/menu_drawer.dart';
 import 'package:core_website/components/top_bar_contents.dart';
 import 'package:flutter/material.dart';
-import 'package:measure_size/measure_size.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
