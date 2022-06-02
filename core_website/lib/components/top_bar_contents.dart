@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TopBarContents extends StatefulWidget {
+
   final void Function(int) scrollback;
 
   const TopBarContents(this.scrollback, {Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class _TopBarContentsState extends State<TopBarContents> {
 
   int selectedIndex = 0;
   int hoverIndex = 0;
+
   List<String> menuItems = [
     "Home",
     "Service",
@@ -25,8 +27,6 @@ class _TopBarContentsState extends State<TopBarContents> {
 
   @override
   Widget build(BuildContext context) {
-    //var screenSize = MediaQuery.of(context).size;
-
 /**
  * implementation of the menu bar
  */
@@ -108,15 +108,12 @@ class _TopBarContentsState extends State<TopBarContents> {
 
 }
 
- 
-
 /**
  * Menu initial
  */
 /* 
 final List _isHovering = [false, false, false, false, false, false, false];
 
-[
                   SizedBox(
                       width: screenSize.width / 4,
                       child: Image.asset(
@@ -368,7 +365,6 @@ final List _isHovering = [false, false, false, false, false, false, false];
                     ),
                   ), 
                 ], */
-
 
 /**
  * Test for ancre

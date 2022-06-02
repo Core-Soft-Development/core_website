@@ -26,19 +26,116 @@ class _HomePageState extends State<HomePage> {
 
   final ScrollController _scrollController = ScrollController();
 
+  late Widget child;
+
   Size? sizeBox;
   Offset? position;
 
-  late Widget child;
+  /* final List _positions = [
+    const Home(),
+    const Services(),
+    const AboutUs(),
+    const Portfolio(),
+    const Client(),
+    const Blog(),
+    const Contact()
+  ]; */
+
+  /* Size _widgetSize = Size.zero;
+  void _handleWidgetSized(Size value) => setState(() => _widgetSize = value);
+   */
+
+  /*
+  _afterLayout(_) {
+    _positions();
+  }  */
+
+   void scrollIndex(int index) {
+    _scrollController.animateTo(
+        calculateSizeAndPosition(index),
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.bounceIn);
+  } 
 
   @override
   void initState() {
     super.initState();
-    //calculateSizeAndPosition();
+    //calculateSizeAndPosition(Container);
   }
 
-  /* void calculateSizeAndPosition() { 
-    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxHome = KeyWidgets.keyHome.currentContext!.findRenderObject() as RenderBox;
+   /* Future<void> scrollIndex(int index,
+    {offset = 900, duration = const Duration(milliseconds: 100), curve = Curves.easeIn}) async {
+      assert(_positions.isNotEmpty, await Future.wait<void>(<Future<void>>[
+        for ( int i = 0; i < _positions.length; i += 1) _positions[i].animateTo(900, duration: const Duration(milliseconds: 100), curve: Curves.easeIn),
+      ]));
+    } */
+
+  /// Page screen principal of siteweb
+
+  @override
+  Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    //if (sizeBox == null || position == null) return Container();
+
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: ResponsiveLayout.isSmallScreen(context)
+          ? AppBar(
+              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+              backgroundColor: ColorsTheme.appColor,
+              elevation: 0,
+              centerTitle: true,
+              title: Image.asset('logos/csd.png'),
+            )
+          : PreferredSize(
+              preferredSize: Size(screenSize.width, 70),
+              child: TopBarContents(scrollIndex),
+            ),
+      drawer: const MenuDrawer(),
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        physics: const ClampingScrollPhysics(),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxHeight: double.infinity,
+          ),
+          child: IntrinsicHeight(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                  key: KeyWidgets.keyHome,
+                  child: const Home()),
+                  Container(
+                  key: KeyWidgets.keyService,
+                  child: const Services()),
+                  Container(
+                  key: KeyWidgets.keyAbout,
+                  child: const AboutUs()),
+                  Container(
+                  key: KeyWidgets.keyClient,
+                  child: const Client()),
+                  Container(
+                  key: KeyWidgets.keyPortfolio,
+                  child: const Portfolio()),
+                  Container(
+                  key: KeyWidgets.keyBlog,
+                  child: const Blog()),
+                  Container(
+                  key: KeyWidgets.keyContact,
+                  child: const Contact()),
+                  const Footer(),
+                  const Copyright(),
+                ]),
+          ),
+        ),
+      ),
+    );
+  }
+
+  calculateSizeAndPosition(index) { 
+    WidgetsBinding.instance.addPostFrameCallback((_) { final RenderBox boxHome = KeyWidgets.keyHome.currentState!.widget as RenderBox;
     setState(() {
       position = boxHome.localToGlobal(Offset.zero);
       sizeBox = boxHome.size;
@@ -86,114 +183,6 @@ class _HomePageState extends State<HomePage> {
       sizeBox = boxContact.size;
     });
    });
-
-   } */
-
-  /* Size _widgetSize = Size.zero;
-
-  void _handleWidgetSized(Size value) => setState(() => _widgetSize = value);
-   */
-  /*
-  _afterLayout(_) {
-    _positions();
-  }  */
-
-  void scrollIndex(int index) {
-    _scrollController.animateTo(
-        /*MeasurableWidget as double _positions() as double*/index *900 ,
-        duration: const Duration(milliseconds: 100),
-        curve: Curves.easeIn);
   }
 
-  /* Future<void> animateTo(
-    {offset = 900, duration = const Duration(milliseconds: 100), curve = Curves.easeIn}) async {
-      assert(_positions.Empty, await Future.wait<void>(<Future<void>>[
-        for ( int i = 0; i < _positions.length; i += 1) _positions[i].animateTo(900, duration: const Duration(milliseconds: 100), curve: Curves.easeIn),
-      ]));
-    } */
-
-  /// Page screen principal of siteweb
-
-  @override
-  Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    //if (sizeBox == null || position == null) return Container();
-
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      appBar: ResponsiveLayout.isSmallScreen(context)
-          ? AppBar(
-              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-              backgroundColor: ColorsTheme.appColor,
-              elevation: 0,
-              centerTitle: true,
-              title: Image.asset('logos/csd.png'),
-            )
-          : PreferredSize(
-              preferredSize: Size(screenSize.width, 70),
-              child: TopBarContents(scrollIndex),
-            ),
-      drawer: const MenuDrawer(),
-      body: SingleChildScrollView(
-        controller: _scrollController,
-        physics: const ClampingScrollPhysics(),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxHeight: double.infinity,
-          ),
-          child: IntrinsicHeight(
-            child: Column(//controller: _scrollController,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  MeasureSize(onChange: (Size size) {setState(() {
-                    sizeBox = size;
-                  });
-                  },
-                  key: KeyWidgets.keyHome,
-                  child: const Home()),
-                  MeasureSize(onChange: (Size size) {setState(() {
-                    sizeBox = size;
-                  });
-                  },
-                  key: KeyWidgets.keyService,
-                  child: const Services()),
-                  MeasureSize(onChange: (Size size) {setState(() {
-                    sizeBox = size;
-                  });
-                  },
-                  key: KeyWidgets.keyAbout,
-                  child: const AboutUs()),
-                  MeasureSize(onChange: (Size size) {setState(() {
-                    sizeBox = size;
-                  });
-                  },
-                  key: KeyWidgets.keyClient,
-                  child: const Client()),
-                  MeasureSize(onChange: (Size size) {setState(() {
-                    sizeBox = size;
-                  });
-                  },
-                  key: KeyWidgets.keyPortfolio,
-                  child: const Portfolio()),
-                  MeasureSize(onChange: (Size size) {setState(() {
-                    sizeBox = size;
-                  });
-                  },
-                  key: KeyWidgets.keyBlog,
-                  child: const Blog()),
-                  MeasureSize(onChange: (Size size) {setState(() {
-                    sizeBox = size;
-                  });
-                  },
-                  key: KeyWidgets.keyContact,
-                  child: const Contact()),
-                  const Footer(),
-                  const Copyright(),
-                ]),
-          ),
-        ),
-      ),
-    );
-  }
 }
