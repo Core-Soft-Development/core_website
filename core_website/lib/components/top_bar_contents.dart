@@ -24,6 +24,11 @@ class _TopBarContentsState extends State<TopBarContents> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
 /**
  * implementation of the menu bar
@@ -106,7 +111,7 @@ class _TopBarContentsState extends State<TopBarContents> {
 /**
  * Menu initial
  */
-/* 
+/*
 final List _isHovering = [false, false, false, false, false, false, false];
 
                   SizedBox(
@@ -114,7 +119,7 @@ final List _isHovering = [false, false, false, false, false, false, false];
                       child: Image.asset(
                           'logos/core_soft_development.png')),
                   SizedBox(width: screenSize.width / 4),
-                   InkWell(
+                  InkWell(
                     onHover: (value) {
                       setState(() {
                         value ? _isHovering[0] = true : _isHovering[0] = false;
@@ -358,7 +363,7 @@ final List _isHovering = [false, false, false, false, false, false, false];
                         )
                       ],
                     ),
-                  ), 
+                  ),
                 ], */
 
 /**

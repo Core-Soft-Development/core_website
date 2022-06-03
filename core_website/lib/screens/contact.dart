@@ -1,5 +1,6 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/home_page.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -88,6 +89,7 @@ class _ContactState extends State<Contact> {
             children: [
               Expanded(
                   child: Container(
+                    key: KeyWidgets.keyContact,
                       margin: const EdgeInsets.symmetric(horizontal: 5),
                       constraints: BoxConstraints(maxWidth: screenSize.width),
                       child: Row(

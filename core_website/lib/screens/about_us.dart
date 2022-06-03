@@ -1,4 +1,5 @@
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
 class AboutUs extends StatefulWidget {
@@ -14,6 +15,7 @@ class _AboutUsState extends State<AboutUs> {
     var screenSize = MediaQuery.of(context).size;
 
     return Container(
+      key: KeyWidgets.keyAbout,
       color: ColorsTheme.backgroundFirst,
       padding: const EdgeInsets.all(50),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [

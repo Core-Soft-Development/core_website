@@ -27,14 +27,22 @@ class _HomePageState extends State<HomePage> {
 
   Size? sizeBox;
   Offset? position;
+  double? height;
 
-   void scrollIndex(int index) {
-     calculateSizeAndPosition(index);
+  void scrollIndex(int index) {
+    calculateSizeAndPosition();
     _scrollController.animateTo(
-        calculateSizeAndPosition as double,
+        position?.dy as double,
         duration: const Duration(milliseconds: 200),
         curve: Curves.bounceIn);
   } 
+
+  @override
+  void initState() {
+    _scrollController;
+    calculateSizeAndPosition();
+    super.initState();
+  }
 
   /// Page screen principal of siteweb
 
@@ -69,30 +77,16 @@ class _HomePageState extends State<HomePage> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                  key: KeyWidgets.keyHome,
-                  child: const Home()),
-                  Container(
-                  key: KeyWidgets.keyService,
-                  child: const Services()),
-                  Container(
-                  key: KeyWidgets.keyAbout,
-                  child: const AboutUs()),
-                  Container(
-                  key: KeyWidgets.keyClient,
-                  child: const Client()),
-                  Container(
-                  key: KeyWidgets.keyPortfolio,
-                  child: const Portfolio()),
-                  Container(
-                  key: KeyWidgets.keyBlog,
-                  child: const Blog()),
-                  Container(
-                  key: KeyWidgets.keyContact,
-                  child: const Contact()),
-                  const Footer(),
-                  const Copyright(),
+                children: const [
+                  Home(),
+                  Services(),
+                  AboutUs(),
+                  Client(),
+                  Portfolio(),
+                  Blog(),
+                  Contact(),
+                  Footer(),
+                  Copyright(),
                 ]),
           ),
         ),
@@ -100,8 +94,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  double calculateSizeAndPosition(int index) { 
-    double height = 0;
+  void calculateSizeAndPosition() { 
+    //double height = 0;
 
     /* WidgetsBinding.instance.addPostFrameCallback((_) {
       final RenderBox boxHome = KeyWidgets.keyHome.currentContext!.findRenderObject as RenderBox;
@@ -155,17 +149,17 @@ class _HomePageState extends State<HomePage> {
         sizeBox = boxBlog.size;
         height = sizeBox?.height ?? 0;
       });
-    });
+    }); */
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final RenderBox boxContact = KeyWidgets.keyContact.currentContext!.findRenderObject() as RenderBox;
+    WidgetsBinding.instance.addPostFrameCallback((index) {
+      final RenderBox boxContact = KeyWidgets.keyContact.currentContext?.findRenderObject() as RenderBox;
       setState(() {
         position = boxContact.localToGlobal(Offset.zero);
         sizeBox = boxContact.size;
         height = sizeBox?.height ?? 0;
       });
-    }); */
+    });
 
-    return height;
+    //return height;
   }
 }

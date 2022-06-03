@@ -1,3 +1,4 @@
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -15,6 +16,7 @@ class _HomeState extends State<Home> {
     var screenSize = MediaQuery.of(context).size;
 
     return Container(
+      key: KeyWidgets.keyHome,
       padding: const EdgeInsets.all(50),
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
