@@ -1,41 +1,40 @@
 import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
-  final Widget largeScreen;
-  final Widget? mediumScreen;
-  final Widget? smallScreen;
+  final Widget desktop;
+  final Widget tablet;
+  final Widget mobile;
 
   const ResponsiveLayout(
       {Key? key,
-      required this.largeScreen,
-      this.mediumScreen,
-      this.smallScreen})
+      required this.desktop,
+      required this.tablet,
+      required this.mobile})
       : super(key: key);
 
-  static bool isSmallScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width < 800;
+  static bool isMobile(BuildContext context) {
+    return MediaQuery.of(context).size.width < 768;
   }
 
-  static bool isMediumScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width >= 800 &&
-        MediaQuery.of(context).size.width <= 1200;
+  static bool isTablet(BuildContext context) {
+    return MediaQuery.of(context).size.width >= 768 &&
+        MediaQuery.of(context).size.width <= 1366;
   }
 
-  static bool isLargeScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width > 1200;
+  static bool isDesktop(BuildContext context) {
+    return MediaQuery.of(context).size.width > 1366;
   }
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 1200) {
-          return largeScreen;
-        } else if (constraints.maxWidth <= 1200 &&
-            constraints.maxWidth >= 800) {
-          return mediumScreen ?? largeScreen;
+        if (constraints.maxWidth >= 1200) {
+          return desktop;
+        } else if (constraints.maxWidth >= 800) {
+          return tablet ;
         } else {
-          return smallScreen ?? largeScreen;
+          return mobile;
         }
       },
     );

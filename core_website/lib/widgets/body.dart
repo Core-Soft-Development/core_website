@@ -9,9 +9,9 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const ResponsiveLayout(
-      largeScreen: LargeChild(),
-      smallScreen: SmallChild(),
-      mediumScreen: SmallChild(),
+      desktop: LargeChild(),
+      mobile: SmallChild(),
+      tablet: SmallChild(),
     );
   }
 }

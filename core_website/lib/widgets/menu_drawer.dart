@@ -1,5 +1,4 @@
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatelessWidget {
@@ -16,11 +15,11 @@ class MenuDrawer extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   InkWell(
-                    onTap: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Home())),
+                    onTap: () {},
                     child: const Text(
                       'Home',
                       style: TextStyle(
@@ -127,7 +126,7 @@ class MenuDrawer extends StatelessWidget {
                   const Expanded(
                       child: Align(
                     alignment: Alignment.bottomCenter,
-                    child: Text('Copyright © 2022',
+                    child: Text('Copyright © 2018',
                         style: TextStyle(
                             color: ColorsTheme.textMenuDrawer, fontSize: 14)),
                   ))
