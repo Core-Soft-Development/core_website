@@ -6,7 +6,7 @@ import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
-import 'package:core_website/utils/ui/small_child.dart';
+import 'package:core_website/utils/ui/mobile_responsive.dart';
 import 'package:core_website/widgets/copyright.dart';
 import 'package:core_website/widgets/footer.dart';
 import 'package:core_website/widgets/menu_drawer.dart';
@@ -45,51 +45,50 @@ class _HomePageState extends State<HomePage> {
         : 0.2;
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      extendBodyBehindAppBar: true,
-      appBar: ResponsiveLayout.isMobile(context) ||
-              ResponsiveLayout.isTablet(context)
-          ? AppBar(
-              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-              backgroundColor: ColorsTheme.appColor,
-              elevation: 0,
-              centerTitle: true,
-              title: Image.asset(
-                'logos/csd_core_soft_development.png',
-                height: 50,
-                color: const Color(0xFFFF8A65),
+        backgroundColor: Colors.transparent,
+        extendBodyBehindAppBar: true,
+        appBar: ResponsiveLayout.isMobile(context) ||
+                ResponsiveLayout.isTablet(context)
+            ? AppBar(
+                iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+                backgroundColor: ColorsTheme.appColor,
+                elevation: 0,
+                centerTitle: true,
+                title: Image.asset(
+                  'logos/csd_core_soft_development.png',
+                  height: 50,
+                  color: const Color(0xFFFF8A65),
+                ),
+              )
+            : PreferredSize(
+                preferredSize: Size(screenSize.width, 70),
+                child: TopBarContents(_opacity),
               ),
-            )
-          : PreferredSize(
-              preferredSize: Size(screenSize.width, 70),
-              child: TopBarContents(_opacity),
-            ),
-      drawer: const MenuDrawer(),
-      body: ResponsiveLayout(
-        mobile: const SmallChild(),
-        tablet: Container(),
-        desktop:
-      SingleChildScrollView(
-        controller: _scrollController,
-        physics: const ClampingScrollPhysics(),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxHeight: double.infinity,
-          ),
-          child: IntrinsicHeight(
-            child: Column(children: const [
-                Home(),
-                Services(),
-                AboutUs(),
-                Client(),
-                Portfolio(),
-                Contact(),
-                Footer(),
-                Copyright(),
-              ]),
+        drawer: const MenuDrawer(),
+        body: ResponsiveLayout(
+          mobile: const MobileResponsive(),
+          tablet: Container(),
+          desktop: SingleChildScrollView(
+            controller: _scrollController,
+            physics: const ClampingScrollPhysics(),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxHeight: double.infinity,
+              ),
+              child: IntrinsicHeight(
+                child: Column(children: const [
+                  Home(),
+                  Services(),
+                  AboutUs(),
+                  Client(),
+                  Portfolio(),
+                  Contact(),
+                  Footer(),
+                  Copyright(),
+                ]),
+              ),
             ),
           ),
-        ),
-    ));
+        ));
   }
 }

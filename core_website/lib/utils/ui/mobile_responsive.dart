@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SmallChild extends StatelessWidget {
-  const SmallChild({Key? key}) : super(key: key);
+class MobileResponsive extends StatelessWidget {
+  const MobileResponsive({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,8 @@ class SmallChild extends StatelessWidget {
             ),
             const SizedBox(
               height: 30,
-            )
+            ),
+            
           ],
         ),
       ),
