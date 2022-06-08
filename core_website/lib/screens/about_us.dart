@@ -39,7 +39,7 @@ class _AboutUsState extends State<AboutUs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /**
-             * Text right
+             * Title and Text right
              */
             Stack(alignment: Alignment.centerRight, children: [
               RichText(
