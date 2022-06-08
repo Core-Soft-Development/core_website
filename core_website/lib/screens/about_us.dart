@@ -1,4 +1,5 @@
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/models/circle_picture.dart';
 import 'package:core_website/models/right_title_section.dart';
 import 'package:flutter/material.dart';
 
@@ -18,21 +19,10 @@ class _AboutUsState extends State<AboutUs> {
       color: ColorsTheme.backgroundFirst,
       padding: const EdgeInsets.all(50),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Container(
-            /**
+        /**
            * Image and background circle
            */
-            height: screenSize.height / 2,
-            width: 491,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Color.fromARGB(150, 255, 137, 101),
-                  Color.fromARGB(50, 255, 111, 67),
-                ]),
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                    image: AssetImage('images/working.png'),
-                    alignment: Alignment.center))),
+          const CirclePicture(image: 'images/working.png'),
         const SizedBox(width: 10),
         Expanded(
             child:
