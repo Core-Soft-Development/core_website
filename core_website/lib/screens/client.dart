@@ -1,5 +1,7 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/picture_testamonial.dart';
+import 'package:core_website/models/right_title_section.dart';
+import 'package:core_website/models/testomanial_client.dart';
 import 'package:flutter/material.dart';
 
 class Client extends StatefulWidget {
@@ -12,86 +14,65 @@ class Client extends StatefulWidget {
 class _ClientState extends State<Client> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    //var screenSize = MediaQuery.of(context).size;
 
     return Container(
       color: ColorsTheme.backgroundSecond,
-      padding: const EdgeInsets.all(40),
-      alignment: Alignment.center,
-      height: screenSize.height / 1,
-      child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Expanded(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
+      padding: const EdgeInsets.only(right:40, left: 40),
+      child: Column(
+        children: [
+          Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /**
-             * Text Left
-             */
-                Stack(
-                  alignment: Alignment.centerLeft,
+                Expanded(
+                    child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RichText(
-                        //overflow: TextOverflow.visible,
-                        maxLines: 20,
-                        textAlign: TextAlign.justify,
-                        text: const TextSpan(
-                            text: "TESTIMONIAL \n",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontFamily: "Montserrat-Regular",
-                                color: ColorsTheme.primaryColor,
-                                wordSpacing: 1,
-                                height: 1.5),
-                            children: [
-                              TextSpan(
-                                  text: 'What Our Clients Say \n \n',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                    fontSize: 40,
-                                    letterSpacing: 1,
-                                  )),
-                              TextSpan(
-                                text:
-                                    "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
-                                style: TextStyle(
-                                    fontStyle: FontStyle.italic,
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    letterSpacing: 1,
-                                    wordSpacing: 1),
-                              ),
-                              TextSpan(
-                                  text: "\n Oussema Missaoui",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                    fontSize: 24,
-                                    letterSpacing: 1,
-                                  )),
-                              TextSpan(
-                                  text: '\n BI Consultant',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    letterSpacing: 1,
-                                  ))
-                            ]))
+                    /**
+                 * Title
+                 */
+                const SizedBox(height: 100,),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: const [
+                        RightTitleSection(title: "TESTIMONIAL \n", description: 'What Our Clients Say \n'),
+                      ],
+                      /**
+                       * Text
+                       */
+                    ),
+                    const TestamonialClient(
+                      content: "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                      name: "\n Oussema Missaoui",
+                      compagny: '\n BI Consultant'),
                   ],
+                )
                 ),
-                const SizedBox(width: 50),
-              ],
-            )),
-            /**
-         * Image and background circle
-         */
-            const PictureTestamonial(),
-          ]),
+                /**
+                * Image and background circle
+                */
+                const PictureTestamonial(picture: 'images/profil.png'),
+              ]),
+          Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const PictureTestamonial(picture: 'images/profil.png'),
+                    Expanded(
+                      child: Column(
+                        children: const [
+                          SizedBox(height: 200,),
+                          TestamonialClient(
+                        content: "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                        name: "\n Oussema Missaoui",
+                        compagny: '\n BI Consultant'),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+        ],
+      ),
     );
   }
 }

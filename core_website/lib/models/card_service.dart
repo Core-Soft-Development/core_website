@@ -48,7 +48,7 @@ class CardService extends StatelessWidget {
                                       decorationColor: ColorsTheme.primaryColor,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black,
-                                      fontFamily: 'Monserrat',
+                                      fontFamily: 'Montserrat',
                                       fontSize: 20,
                                       wordSpacing: 1,
                                       height: 1.5),
