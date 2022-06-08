@@ -13,7 +13,6 @@ class AboutUs extends StatefulWidget {
 class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
       color: ColorsTheme.backgroundFirst,
@@ -43,6 +42,7 @@ class _AboutUsState extends State<AboutUs> {
                     style: TextStyle(
                       decoration: TextDecoration.none,
                       color: Colors.black,
+                      fontFamily: 'Montserrat',
                       fontSize: 18,
                       fontWeight: FontWeight.normal,
                       letterSpacing: 1,
