@@ -13,7 +13,6 @@ class Services extends StatefulWidget {
 class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     /**
      * Title
      */
@@ -29,20 +28,26 @@ class _ServicesState extends State<Services> {
            * Container of services
            * and first block container
            */
-          Container(
-              padding: const EdgeInsets.all(10),
-              width: screenSize.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  CardService(icon: 'assets/icons/code.png', titleService: 'Website Design \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque'),
-                  /**
-                   * second block container
-                   */
-                  CardService(icon: 'assets/icons/phonelink.png', titleService: 'Mobile App Design \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque')])),
+          Row(
+            children: const [
+              Expanded(
+                child: CardService(icon: 'assets/icons/code.png', titleService: 'Website Design \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque')),
+              /**
+               * second block container
+               */
+              SizedBox(width: 32),
+              Expanded(
+                child: CardService(
+                  icon: 'assets/icons/phonelink.png', 
+                  titleService: 'Mobile App Design \n', 
+                  contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque')
+                  )
+                  ]
+          ),
           /**
            * third block container
            */
+          const SizedBox(height: 24),
           Row(
             children: const <Widget>[
               Expanded(
