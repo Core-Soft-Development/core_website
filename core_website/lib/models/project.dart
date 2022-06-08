@@ -20,7 +20,7 @@ class Project extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-                fontFamily: "Monserrat-Regular",
+                fontFamily: "Monserrat",
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 fontSize: 40,
@@ -30,7 +30,7 @@ class Project extends StatelessWidget {
           Text(
             description,
             style: const TextStyle(
-                fontFamily: "Monserrat-Regular",
+                fontFamily: "Monserrat",
                 fontWeight: FontWeight.normal,
                 fontSize: 18,
                 wordSpacing: 1,
@@ -41,6 +41,7 @@ class Project extends StatelessWidget {
                 decoration: TextDecoration.underline,
                 decorationColor: ColorsTheme.primaryColor,
                 color: ColorsTheme.primaryColor,
+                fontFamily: "Monserrat",
                 fontSize: 20,
               ))
         ]);
