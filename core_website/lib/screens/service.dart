@@ -1,6 +1,6 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/card_service.dart';
-import 'package:core_website/models/title_section.dart';
+import 'package:core_website/models/center_title_section.dart';
 import 'package:flutter/material.dart';
 
 class Services extends StatefulWidget {
@@ -24,7 +24,7 @@ class _ServicesState extends State<Services> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Stack(alignment: Alignment.topCenter, children: [
-          const TitleSection(title: "SERVICES \n", description: 'A set of digital solution'),
+          const CenterTitleSection(title: "SERVICES \n", description: 'A set of digital solution'),
             SizedBox(
               height: screenSize.height / 6,
               width: screenSize.width,
