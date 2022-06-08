@@ -7,7 +7,6 @@ import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
-import 'package:core_website/utils/key_widgets.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
 import 'package:core_website/components/copyright.dart';
 import 'package:core_website/components/footer.dart';
@@ -29,9 +28,8 @@ class _HomePageState extends State<HomePage> {
   Offset? position;
   double? height;
 
-  void scrollIndex(int index) async {
-    calculateSizeAndPosition();
-    _scrollController.animateTo(_scrollController.position.viewportDimension,
+  void scrollIndex(int index) {
+    _scrollController.animateTo(calculateSizeAndPosition as double,
         duration: const Duration(milliseconds: 200), curve: Curves.bounceIn);
   }
 
