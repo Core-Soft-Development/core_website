@@ -1,5 +1,9 @@
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/models/center_title_section.dart';
+import 'package:core_website/models/form_send.dart';
+import 'package:core_website/screens/home.dart';
 import 'package:core_website/screens/home_page.dart';
+import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -21,7 +25,7 @@ class _ContactState extends State<Contact> {
 
   void _onMapCreated(controller) {
     setState(() {
-       mapController = controller;
+      mapController = controller;
     });
   }
 
@@ -32,8 +36,10 @@ class _ContactState extends State<Contact> {
       markerId: const MarkerId('firstMarker'),
       draggable: false,
       position: _office,
-      infoWindow: const InfoWindow(title: 'Core Soft Development', snippet: 'Goussainville'),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue)
+      infoWindow: const InfoWindow(
+        title: 'Core Soft Development', 
+        snippet: 'Goussainville'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen)
       ));
     allMarkers.add(Marker(
       markerId: const MarkerId('secondMarker'),
@@ -52,146 +58,62 @@ class _ContactState extends State<Contact> {
        */
         color: ColorsTheme.backgroundSecond,
         padding: const EdgeInsets.all(50),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        child: Column(
+          children: [
           Stack(alignment: Alignment.topCenter, children: [
-            RichText(
-              textAlign: TextAlign.center,
-              text: const TextSpan(
-                  text: "CONTACT \n",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontFamily: "Montserrat-Regular",
-                    color: ColorsTheme.primaryColor,
-                    wordSpacing: 1,
-                    height: 1.5,
-                  ),
-                  children: [
-                    TextSpan(
-                        text: 'Contact Us',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 40,
-                            wordSpacing: 1,
-                            height: 1.5))
-                  ]),
-            ),
+            const CenterTitleSection(
+              title: "CONTACT \n", 
+              description: 'Contact Us'),
             SizedBox(
               height: screenSize.height / 6,
               width: screenSize.width,
             )
           ]),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                  child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 5),
-                      constraints: BoxConstraints(maxWidth: screenSize.width),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: screenSize.width / 3.5,
-                            height: screenSize.height / 2,
-                            child: GoogleMap(
-                                padding: const EdgeInsets.all(2),
-                                onMapCreated: _onMapCreated,
-                                initialCameraPosition: CameraPosition(
-                                  target: _center,
-                                  zoom: 10),
-                                markers: Set.from(allMarkers),
-                                ),
-                          ),
-                          const SizedBox(width: 30),
-                          Expanded(
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  const Text(
-                                    'Get in Touch with us',
-                                    style: TextStyle(
-                                        fontFamily: "Monserrat-Regular",
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 28,
-                                        wordSpacing: 1,
-                                        letterSpacing: 1),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  const TextField(
-                                    maxLength: 80,
-                                    style: TextStyle(
-                                        fontFamily: "Monserrat-Regular",
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 16,
-                                        wordSpacing: 1,
-                                        letterSpacing: 1),
-                                    decoration: InputDecoration(
-                                      labelText: 'Full name',
-                                      border: OutlineInputBorder(),
-                                    ),
-                                  ),
-                                  const TextField(
-                                    maxLength: 80,
-                                    style: TextStyle(
-                                        fontFamily: "Monserrat-Regular",
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 16,
-                                        wordSpacing: 1,
-                                        letterSpacing: 1),
-                                    decoration: InputDecoration(
-                                        labelText: 'Email Address',
-                                        border: OutlineInputBorder()),
-                                  ),
-                                  const TextField(
-                                    maxLines: null,
-                                    style: TextStyle(
-                                        fontFamily: "Monserrat-Regular",
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 16,
-                                        wordSpacing: 1,
-                                        letterSpacing: 1),
-                                    decoration: InputDecoration(
-                                      contentPadding:
-                                          EdgeInsets.symmetric(vertical: 50),
-                                      border: OutlineInputBorder(),
-                                      labelText: 'Your message',
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  SizedBox(
-                                      width: 120,
-                                      child: ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                            primary: ColorsTheme.primaryColor,
-                                            elevation: 10),
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const HomePage()));
-                                        },
-                                        child: const Text(
-                                          "Send",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ))
-                                ]),
-                          )
-                        ],
-                      ))),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: screenSize.width / 3.5,
+                        height: screenSize.height / 2,
+                        child: GoogleMap(
+                            padding: const EdgeInsets.all(2),
+                            onMapCreated: _onMapCreated,
+                            initialCameraPosition: CameraPosition(
+                              target: _center,
+                              zoom: 10),
+                            markers: Set.from(allMarkers),
+                            ),
+                      ),
+                      const SizedBox(width: 30),
+                      Expanded(
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Get in Touch with us',
+                                style: TextStyle(
+                                    fontFamily: "Monserrat",
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 28,
+                                    wordSpacing: 1,
+                                    letterSpacing: 1),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              FormSend(),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              buttonSend(context, "Send", () => const Home())
+                            ]),
+                      )
+                    ],
+                  )),
             ],
           ),
-          const SizedBox(height: 50),
         ]));
   }
 }

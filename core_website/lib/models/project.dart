@@ -1,4 +1,4 @@
-import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class Project extends StatelessWidget {
@@ -6,16 +6,14 @@ class Project extends StatelessWidget {
     Key? key,
     required this.title,
     required this.description,
-    required this.subtext,
   }) : super(key: key);
 
-  final String title, description, subtext;
+  final String title, description;
 
   @override
   Widget build(BuildContext context) {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
@@ -36,18 +34,9 @@ class Project extends StatelessWidget {
                 wordSpacing: 1,
                 letterSpacing: 1),
           ),
-          TextButton(
-            child: Text(subtext),
-            onPressed: () {},
-              style: ButtonStyle(
-                textStyle: MaterialStateProperty.all(const TextStyle(
-                  decoration: TextDecoration.underline,
-                decorationColor: ColorsTheme.primaryColor,
-                color: ColorsTheme.primaryColor,
-                fontFamily: "Monserrat",
-                fontSize: 20,
-                )),
-              ))
+          buttonProject("Check Case Study")
         ]);
   }
+
+  
 }

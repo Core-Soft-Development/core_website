@@ -40,13 +40,11 @@ class _PortfolioState extends State<Portfolio> {
               Expanded(
                 child: ImageProject(
                   image: 'assets/images/project/project1.png')),
-              SizedBox(width: 30),
               Expanded(
                   child: Project(
                 title: "Project name \n",
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-                subtext: "Check Case Study",
               ))
             ],
           ),
@@ -60,9 +58,7 @@ class _PortfolioState extends State<Portfolio> {
                 title: "Project name \n",
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-                subtext: "Check Case Study",
               )),
-              SizedBox(width: 30),
               Expanded(
                 child: ImageProject(
                   image: 'assets/images/project/project2.png'))
@@ -76,13 +72,11 @@ class _PortfolioState extends State<Portfolio> {
               Expanded(
                 child: ImageProject(
                   image: 'assets/images/project/project3.png')),
-              SizedBox(width: 30),
               Expanded(
                   child: Project(
                 title: "Project name \n",
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-                subtext: "Check Case Study",
               ))
             ],
           ),
@@ -96,9 +90,7 @@ class _PortfolioState extends State<Portfolio> {
                 title: "Project name \n",
                 description:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-                subtext: "Check Case Study",
               )),
-              SizedBox(width: 30),
               Expanded(
                 child: ImageProject(
                   image: 'assets/images/project/project4.png'))
