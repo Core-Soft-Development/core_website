@@ -1,5 +1,5 @@
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/welcome.dart';
 import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatelessWidget {

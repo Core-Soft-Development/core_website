@@ -9,4 +9,5 @@ class ColorsTheme {
   static const Color backgroundSecond = Color.fromARGB(255, 245, 221, 214);
   static const Color primaryColor = Color.fromRGBO(217, 39, 39, 1);
   static const Color buttonSend = Color(0xFFf15D4F);
+
 }
