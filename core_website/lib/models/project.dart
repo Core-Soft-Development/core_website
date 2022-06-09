@@ -36,13 +36,17 @@ class Project extends StatelessWidget {
                 wordSpacing: 1,
                 letterSpacing: 1),
           ),
-          Text(subtext,
-              style: const TextStyle(
-                decoration: TextDecoration.underline,
+          TextButton(
+            child: Text(subtext),
+            onPressed: () {},
+              style: ButtonStyle(
+                textStyle: MaterialStateProperty.all(const TextStyle(
+                  decoration: TextDecoration.underline,
                 decorationColor: ColorsTheme.primaryColor,
                 color: ColorsTheme.primaryColor,
                 fontFamily: "Monserrat",
                 fontSize: 20,
+                )),
               ))
         ]);
   }
