@@ -5,13 +5,12 @@ TextButton buttonSend(
     BuildContext context, String text, Widget Function() createPage) {
   return TextButton(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(ColorsTheme.buttonSend),
-      elevation: MaterialStateProperty.all(2),
-      padding: MaterialStateProperty.all(const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20)),
-      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5)
-      ))
-      ),
+        backgroundColor: MaterialStateProperty.all(ColorsTheme.buttonSend),
+        elevation: MaterialStateProperty.all(2),
+        padding: MaterialStateProperty.all(
+            const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20)),
+        shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
     onPressed: () {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => createPage()));
@@ -36,4 +35,39 @@ TextButton buttonProject(String text) {
           fontSize: 20,
         )),
       ));
+}
+
+DecoratedBox buttonContact(BuildContext context, String text,
+    Widget Function() createPage, List _isHovering, int index) {
+  return DecoratedBox(
+    decoration: const BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Color.fromARGB(150, 255, 137, 101),
+        Color.fromARGB(50, 255, 111, 67)],
+        /* begin: Alignment.topCenter,
+        end: Alignment.bottomCenter */
+        ),
+    ),
+    child: TextButton(
+      style: ButtonStyle(
+          //backgroundColor: MaterialStateProperty.all(ColorsTheme.buttonSend),
+          elevation: MaterialStateProperty.all(2),
+          padding: MaterialStateProperty.all(
+              const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20)),
+          shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
+      onPressed: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => createPage()));
+      },
+      child: Text(
+        text,
+        style: TextStyle(
+          color: _isHovering[index] ? Colors.black54 : Colors.white,
+          fontWeight: FontWeight.w500,
+          fontSize: 16,
+        ),
+      ),
+    ),
+  );
 }

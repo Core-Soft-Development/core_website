@@ -1,4 +1,4 @@
-import 'package:core_website/config/fond_decoration.dart';
+import 'package:core_website/config/themes/fond_decoration.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
