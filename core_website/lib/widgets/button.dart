@@ -40,22 +40,21 @@ TextButton buttonProject(String text) {
 DecoratedBox buttonContact(BuildContext context, String text,
     Widget Function() createPage, List _isHovering, int index) {
   return DecoratedBox(
-    decoration: const BoxDecoration(
-      gradient: LinearGradient(
-        colors: [Color.fromARGB(150, 255, 137, 101),
-        Color.fromARGB(50, 255, 111, 67)],
-        /* begin: Alignment.topCenter,
-        end: Alignment.bottomCenter */
+    decoration: BoxDecoration(
+      gradient: const LinearGradient(
+        colors: ColorsTheme.gradientColor,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter
         ),
+        borderRadius: BorderRadius.circular(8),
     ),
     child: TextButton(
       style: ButtonStyle(
-          //backgroundColor: MaterialStateProperty.all(ColorsTheme.buttonSend),
+          shadowColor: MaterialStateProperty.all(Colors.transparent),
           elevation: MaterialStateProperty.all(2),
           padding: MaterialStateProperty.all(
               const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20)),
-          shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
+              ),
       onPressed: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => createPage()));
