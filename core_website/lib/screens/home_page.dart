@@ -36,7 +36,9 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: ColorsTheme.appColor,
               elevation: 0,
               centerTitle: true,
-              title: Image.asset('logos/csd.png'),
+              title: Image.asset('logos/csd_core_soft_development.png',
+              color: ColorsTheme.textMenuDrawer,
+              height: 50,),
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
