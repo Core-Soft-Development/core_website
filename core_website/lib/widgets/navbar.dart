@@ -1,7 +1,7 @@
 import 'package:core_website/config/themes/fond_decoration.dart';
-import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/widgets/button.dart';
+import 'package:core_website/widgets/menu_items.dart';
 import 'package:flutter/material.dart';
 
 class Navbar extends StatefulWidget {
@@ -36,17 +36,17 @@ class _NavbarState extends State<Navbar> {
                       child: Image.asset(
                           'logos/core_soft_development.png')),
                   SizedBox(width: screenSize.width / 4),
-                  menuItem(0, 'Home'),
+                  const MenuItems(title: 'Home', index: 0),
                   SizedBox(width: screenSize.width / 60),
-                  menuItem(1, 'Service'),
+                  const MenuItems(title: 'Service', index: 1,),
                   SizedBox(width: screenSize.width / 60),
-                  menuItem(2, 'About Us'),
+                  const MenuItems(title: 'About Us', index: 2),
                   SizedBox(width: screenSize.width / 60),
-                  menuItem(3, 'Portfolio'),
+                  const MenuItems(title: 'Portfolio', index: 3),
                   SizedBox(width: screenSize.width / 60),
-                  menuItem(4, 'Client'),
+                  const MenuItems(title: 'Client', index: 4,),
                   SizedBox(width: screenSize.width / 60),
-                  menuItem(5, 'Blog'),
+                  const MenuItems(title: 'Blog', index: 5),
                   SizedBox(width: screenSize.width / 60),
                   InkWell(
                     onHover: (value) {
@@ -62,27 +62,7 @@ class _NavbarState extends State<Navbar> {
                           context, 
                           'Contact Us', 
                           () => const Contact(), 
-                          _isHovering, 6)
-                        /* Container(
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(colors: [
-                              Color.fromARGB(150, 255, 137, 101),
-                              Color.fromARGB(50, 255, 111, 67),
-                            ]),
-                            border:
-                                Border.all(color: Colors.transparent, width: 2.0),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(5)),
-                          ),
-                          child: Text(
-                            'Contact Us',
-                            style: TextStyle(
-                              color: _isHovering[6] ? Colors.grey : Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ) */,
+                          _isHovering, 6),
                       ],
                     ),
                   ),
@@ -92,63 +72,4 @@ class _NavbarState extends State<Navbar> {
           )),
     );
   }
-
-  InkWell menuItem(index, String title) {
-    return InkWell(
-                onHover: (value) {
-                  setState(() {
-                    value ? _isHovering[index] = true : _isHovering[index] = false;
-                  });
-                },
-                onTap: () {},
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                  title,
-                  style: TextStyle(
-                      color: _isHovering[index] ? Colors.black : Colors.black54,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      fontFamily: 'Montserrat'),
-                ),
-                    Visibility(
-                  maintainAnimation: true,
-                  maintainState: true,
-                  maintainSize: true,
-                  visible: _isHovering[index],
-                  child: Container(
-                    height: 2,
-                    width: 20,
-                    color: ColorsTheme.textMenuDrawer,
-                  ),
-                )
-                  ],
-                ),
-              );
-  }
-
-  /* Text itemMenu(String titleMenu, index) {
-    return Text(
-                    titleMenu,
-                    style: TextStyle(
-                        color: _isHovering[index] ? Colors.black : Colors.black54,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16),
-                  );
-  } */
-
-/* Visibility visibilityHover(index) {
-    return Visibility(
-                    maintainAnimation: true,
-                    maintainState: true,
-                    maintainSize: true,
-                    visible: _isHovering[index],
-                    child: Container(
-                      height: 2,
-                      width: 20,
-                      color: Colors.transparent,
-                    ),
-                  );
-  } */
 }

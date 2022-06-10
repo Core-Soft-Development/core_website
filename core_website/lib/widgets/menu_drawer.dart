@@ -1,5 +1,6 @@
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/screens/welcome.dart';
+import 'package:core_website/widgets/drawer_items.dart';
+import 'package:core_website/widgets/line_spacer.dart';
 import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatelessWidget {
@@ -12,124 +13,34 @@ class MenuDrawer extends StatelessWidget {
  */
     return Drawer(
       child: Container(
-          color: ColorsTheme.menuDrawer,
+          //color: ColorsTheme.menuDrawer,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: ColorsTheme.gradientColor)),
           child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  InkWell(
-                    onTap: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Home())),
-                    child: const Text(
-                      'Home',
-                      style: TextStyle(
-                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5, bottom: 5),
-                    child: Divider(
-                      color: Colors.deepOrange,
-                      thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const Text(
-                      'Services',
-                      style: TextStyle(
-                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5, bottom: 5),
-                    child: Divider(
-                      color: Colors.deepOrange,
-                      thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const Text(
-                      'About Us',
-                      style: TextStyle(
-                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5, bottom: 5),
-                    child: Divider(
-                      color: Colors.deepOrange,
-                      thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const Text(
-                      'Porfolio',
-                      style: TextStyle(
-                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5, bottom: 5),
-                    child: Divider(
-                      color: Colors.deepOrange,
-                      thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const Text(
-                      'Client',
-                      style: TextStyle(
-                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5, bottom: 5),
-                    child: Divider(
-                      color: Colors.deepOrange,
-                      thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const Text(
-                      'Blog',
-                      style: TextStyle(
-                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5, bottom: 5),
-                    child: Divider(
-                      color: Colors.deepOrange,
-                      thickness: 2,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const Text(
-                      'Contact Us',
-                      style: TextStyle(
-                          color: ColorsTheme.textMenuDrawer, fontSize: 16),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5, bottom: 5),
-                    child: Divider(
-                      color: Colors.deepOrange,
-                      thickness: 2,
-                    ),
-                  ),
+                  const DrawerItems(title: 'Home'),
+                  lineSpacer(),
+                  const DrawerItems(title: 'Service'),
+                  lineSpacer(),
+                  const DrawerItems(title: 'About Us'),
+                  lineSpacer(),
+                  const DrawerItems(title: 'Portfolio'),
+                  lineSpacer(),
+                  const DrawerItems(title: 'Client'),
+                  lineSpacer(),
+                  const DrawerItems(title: 'Blog'),
+                  lineSpacer(),
+                  const DrawerItems(title: 'Contact Us'),
+                  lineSpacer(),
                   const Expanded(
                       child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Text('Copyright © 2022',
                         style: TextStyle(
-                            color: ColorsTheme.textMenuDrawer, fontSize: 14)),
+                            color: Colors.white, fontSize: 14)),
                   ))
                 ],
               ))),
