@@ -2,14 +2,14 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/about_us.dart';
 import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
-import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/welcome.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
 import 'package:core_website/widgets/copyright.dart';
 import 'package:core_website/widgets/footer.dart';
 import 'package:core_website/widgets/menu_drawer.dart';
-import 'package:core_website/widgets/top_bar_contents.dart';
+import 'package:core_website/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
-              child: const TopBarContents(),
+              child: const Navbar(),
             ),
       drawer: const MenuDrawer(),
       extendBody: true,

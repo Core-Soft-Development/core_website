@@ -1,3 +1,4 @@
+import 'package:core_website/config/themes/fond_decoration.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -16,11 +17,7 @@ class _HomeState extends State<Home> {
 
     return Container(
       padding: const EdgeInsets.all(50),
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color.fromARGB(150, 255, 137, 101),
-        Color.fromARGB(50, 255, 111, 67),
-      ])),
+      decoration: boxGradient(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

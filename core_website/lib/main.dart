@@ -21,9 +21,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Core Soft Development',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        //primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: 'Montserrat'
+        fontFamily: 'Montserrat',
       ),
       home: const HomePage(),
     );
