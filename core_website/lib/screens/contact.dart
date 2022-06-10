@@ -2,7 +2,6 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/models/form_send.dart';
 import 'package:core_website/screens/welcome.dart';
-import 'package:core_website/screens/home_page.dart';
 import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
