@@ -29,8 +29,8 @@ TextButton buttonProject(String text) {
       style: ButtonStyle(
         textStyle: MaterialStateProperty.all(const TextStyle(
           decoration: TextDecoration.underline,
-          decorationColor: ColorsTheme.primaryColor,
-          color: ColorsTheme.primaryColor,
+          decorationColor: ColorsTheme.titleColor,
+          color: ColorsTheme.titleColor,
           fontFamily: "Monserrat",
           fontSize: 20,
         )),

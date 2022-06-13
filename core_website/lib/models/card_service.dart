@@ -12,31 +12,30 @@ class CardService extends StatelessWidget {
         var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(30),
       width: screenSize.width * 0.45,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.white,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Color(0x199E9E9E),
             spreadRadius: 10,
             blurRadius: 80,
             offset: Offset(2, 3),
           )
-        ]
+        ],
+        borderRadius: BorderRadius.circular(5)
       ),
       child: Column(
                       children: [
                         Container(
+                          margin: EdgeInsets.all(20),
                           alignment: Alignment.center,
                           height: 50,
                           width: 50,
                           constraints: BoxConstraints.loose(screenSize),
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(icon),
-                                  fit: BoxFit.fill),
-                              shape: BoxShape.rectangle),
+                          child: Image.asset(icon,
+                          color: ColorsTheme.iconColor),
                         ),
                         Container(
                           padding: const EdgeInsets.all(5),
@@ -48,20 +47,22 @@ class CardService extends StatelessWidget {
                                 text: titleService,
                                 style: const TextStyle(
                                     decoration: TextDecoration.underline,
-                                    decorationColor: ColorsTheme.primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
+                                    decorationColor: ColorsTheme.hoverColor,
+                                    fontWeight: FontWeight.w600,
+                                    color: ColorsTheme.titleCard,
                                     fontFamily: 'Montserrat',
                                     fontSize: 20,
                                     wordSpacing: 1,
-                                    height: 1.5),
+                                    height: 2.5),
                                 children: [
                                   TextSpan(
                                       text: contentService,
                                       style: const TextStyle(
                                         decoration: TextDecoration.none,
                                         fontSize: 16,
-                                        fontWeight: FontWeight.normal,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsTheme.subText,
+                                        height: 1.5,
                                       ))
                                 ],)))
       ]),

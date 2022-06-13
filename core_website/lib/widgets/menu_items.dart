@@ -42,7 +42,7 @@ class _MenuItemsState extends State<MenuItems> {
                       ? FontWeight.w700
                       : FontWeight.w600,
                   fontSize: 16,
-                  height: 20,
+                  height: 2,
                   fontFamily: 'Montserrat'),
             ),
             Visibility(

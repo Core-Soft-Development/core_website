@@ -25,25 +25,19 @@ class _NavbarState extends State<Navbar> {
       constraints: BoxConstraints(maxHeight: screenSize.height),
       height: screenSize.height,
       width: screenSize.width,
-      padding: const EdgeInsets.only(top: 20, right: 135, left: 135),
+      padding: const EdgeInsets.only(top: 15, right: 135, left: 135, bottom: 15),
       decoration: boxGradient(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('logos/core_soft_development.png'),
-            SizedBox(width: screenSize.width / 4),
+            SizedBox(width: screenSize.width / 5),
             const Expanded(child: MenuItems(title: 'Home', index: 0)),
-            //SizedBox(width: screenSize.width / 60),
             const Expanded(child: MenuItems(title: 'Service', index: 1)),
-            //SizedBox(width: screenSize.width / 60),
             const Expanded(child: MenuItems(title: 'About Us', index: 2)),
-            //SizedBox(width: screenSize.width / 60),
             const Expanded(child: MenuItems(title: 'Portfolio', index: 3)),
-            //SizedBox(width: screenSize.width / 60),
             const Expanded(child: MenuItems(title: 'Client', index: 4)),
-            //SizedBox(width: screenSize.width / 60),
             const Expanded(child: MenuItems(title: 'Blog', index: 5)),
-            SizedBox(width: screenSize.width / 60),
             InkWell(
               onHover: (value) {
                 setState(() {

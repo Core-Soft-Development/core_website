@@ -16,7 +16,7 @@ class RightTitleSection extends StatelessWidget {
             style: const TextStyle(
                 fontSize: 18,
                 fontFamily: "Montserrat",
-                color: ColorsTheme.primaryColor,
+                color: ColorsTheme.titleColor,
                 wordSpacing: 1,
                 height: 1.5),
             children: [
