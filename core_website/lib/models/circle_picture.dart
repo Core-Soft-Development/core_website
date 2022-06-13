@@ -1,3 +1,4 @@
+import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class CirclePicture extends StatelessWidget {
@@ -11,10 +12,7 @@ class CirclePicture extends StatelessWidget {
        height: screenSize.height / 2,
             width: 491,
             decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: [
-                  Color.fromARGB(150, 255, 137, 101),
-                  Color.fromARGB(50, 255, 111, 67),
-                ]),
+                gradient: const LinearGradient(colors: ColorsTheme.gradientBackground),
                 shape: BoxShape.circle,
                 image: DecorationImage(
                     image: AssetImage(image),
