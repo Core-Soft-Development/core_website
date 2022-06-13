@@ -21,14 +21,11 @@ class _PortfolioState extends State<Portfolio> {
        * Title
        */
         color: ColorsTheme.backgroundFirst,
-        padding: const EdgeInsets.all(30),
-        child: Column(
-        children: [
-          Stack(alignment: Alignment.topCenter, 
-          children: [
+        padding: const EdgeInsets.all(40),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Stack(alignment: Alignment.topCenter, children: [
             const CenterTitleSection(
-              title: "PORTFOLIO \n", 
-              description: 'Our Clients Projects'),
+                title: "PORTFOLIO \n", description: 'Our Clients Projects'),
             SizedBox(
               height: screenSize.height / 6,
               width: screenSize.width,
@@ -37,8 +34,8 @@ class _PortfolioState extends State<Portfolio> {
           Row(
             children: const [
               Expanded(
-                child: ImageProject(
-                  image: 'assets/images/project/project1.png')),
+                  child: ImageProject(
+                      image: 'assets/images/project/project1.png')),
               Expanded(
                   child: Project(
                 title: "Project name \n",
@@ -47,10 +44,8 @@ class _PortfolioState extends State<Portfolio> {
               ))
             ],
           ),
-          const SizedBox(height: 80,),
+          SizedBox(height: screenSize.height * 0.05),
           Row(
-            /* crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween, */
             children: const [
               Expanded(
                   child: Project(
@@ -59,18 +54,16 @@ class _PortfolioState extends State<Portfolio> {
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
               )),
               Expanded(
-                child: ImageProject(
-                  image: 'assets/images/project/project2.png'))
+                  child:
+                      ImageProject(image: 'assets/images/project/project2.png'))
             ],
           ),
-          const SizedBox(height: 80),
+          SizedBox(height: screenSize.height * 0.05),
           Row(
-            /* mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center, */
             children: const [
               Expanded(
-                child: ImageProject(
-                  image: 'assets/images/project/project3.png')),
+                  child: ImageProject(
+                      image: 'assets/images/project/project3.png')),
               Expanded(
                   child: Project(
                 title: "Project name \n",
@@ -79,10 +72,8 @@ class _PortfolioState extends State<Portfolio> {
               ))
             ],
           ),
-          const SizedBox(height: 80),
+          SizedBox(height: screenSize.height * 0.05),
           Row(
-            /* crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween, */
             children: const [
               Expanded(
                   child: Project(
@@ -91,8 +82,8 @@ class _PortfolioState extends State<Portfolio> {
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
               )),
               Expanded(
-                child: ImageProject(
-                  image: 'assets/images/project/project4.png'))
+                  child:
+                      ImageProject(image: 'assets/images/project/project4.png'))
             ],
           ),
         ]));

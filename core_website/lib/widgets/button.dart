@@ -33,6 +33,8 @@ TextButton buttonProject(String text) {
           color: ColorsTheme.titleColor,
           fontFamily: "Monserrat",
           fontSize: 20,
+          fontWeight: FontWeight.w700,
+          height: 1
         )),
       ));
 }

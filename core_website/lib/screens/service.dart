@@ -18,7 +18,7 @@ class _ServicesState extends State<Services> {
      */
     return Container(
       color: ColorsTheme.backgroundFirst,
-      padding: const EdgeInsets.all(50),
+      padding: const EdgeInsets.all(40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
