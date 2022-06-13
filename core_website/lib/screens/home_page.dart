@@ -9,7 +9,7 @@ import 'package:core_website/utils/ui/responsive_layout.dart';
 import 'package:core_website/widgets/copyright.dart';
 import 'package:core_website/widgets/footer.dart';
 import 'package:core_website/widgets/menu_drawer.dart';
-import 'package:core_website/widgets/navbar.dart';
+import 'package:core_website/screens/navbar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: ResponsiveLayout.isSmallScreen(context)
+      appBar: ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
           ? AppBar(
               iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
               backgroundColor: ColorsTheme.appColor,
@@ -46,51 +46,54 @@ class _HomePageState extends State<HomePage> {
             ),
       drawer: const MenuDrawer(),
       extendBody: true,
-      body: SingleChildScrollView(
-        controller: _scrollController,
-        physics: const ClampingScrollPhysics(),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxHeight: double.infinity,
-          ),
-          child: IntrinsicHeight(
-            child: Column(children: [
-              Container(
-                alignment: Alignment.center,
-                child: const Home(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Services(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const AboutUs(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Client(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Portfolio(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Contact(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Footer(),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: const Copyright(),
-              ),
-            ]),
+      body: Center(
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          physics: const ClampingScrollPhysics(),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: double.infinity,
+              maxHeight: double.infinity,
+            ),
+            child: IntrinsicHeight(
+              child: Column(children: const [
+                Home(),
+                Services(),
+                AboutUs(),
+                Client(),
+                Portfolio(),
+                Contact(),
+                Footer(),
+                Copyright(),
+              ]),
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+/* drawer: const MenuDrawer(),
+      extendBody: true,
+      body: NestedScrollView(
+        controller: _scrollController,
+        headerSliverBuilder: (context, bool innerBoxIsScrolled) {
+          return [ ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
+            ? SliverAppBar(
+              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+              backgroundColor: ColorsTheme.appColor,
+              elevation: 0,
+              centerTitle: true,
+              title: Image.asset('logos/csd_core_soft_development.png',
+              color: ColorsTheme.textMenuDrawer,
+              height: 50,),
+            )
+          : PreferredSize(
+              preferredSize: Size(screenSize.width, 70),
+              child: const Navbar(),
+            ),
+          ];
+        },
+        body: ),
+      ); */

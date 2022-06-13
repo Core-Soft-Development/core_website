@@ -26,10 +26,9 @@ class _PortfolioState extends State<Portfolio> {
         children: [
           Stack(alignment: Alignment.topCenter, 
           children: [
-            const Expanded(
-              child: CenterTitleSection(
-                title: "PORTFOLIO \n", 
-                description: 'Our Clients Projects')),
+            const CenterTitleSection(
+              title: "PORTFOLIO \n", 
+              description: 'Our Clients Projects'),
             SizedBox(
               height: screenSize.height / 6,
               width: screenSize.width,
