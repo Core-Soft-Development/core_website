@@ -35,8 +35,8 @@ class _NavbarState extends State<Navbar> {
             const Expanded(child: MenuItems(title: 'Home', index: 0)),
             const Expanded(child: MenuItems(title: 'Service', index: 1)),
             const Expanded(child: MenuItems(title: 'About Us', index: 2)),
-            const Expanded(child: MenuItems(title: 'Portfolio', index: 3)),
-            const Expanded(child: MenuItems(title: 'Client', index: 4)),
+            const Expanded(child: MenuItems(title: 'Client', index: 3)),
+            const Expanded(child: MenuItems(title: 'Portfolio', index: 4)),
             const Expanded(child: MenuItems(title: 'Blog', index: 5)),
             InkWell(
               onHover: (value) {

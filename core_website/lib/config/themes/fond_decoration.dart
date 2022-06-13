@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 BoxDecoration boxGradient() {
     return const BoxDecoration(
       gradient: LinearGradient(
-        colors: ColorsTheme.gradientBackground)
+        colors: ColorsTheme.gradientBackground,
+        begin: Alignment.bottomLeft,
+        end: Alignment.topRight)
     );
   }

@@ -15,19 +15,23 @@ class _AboutUsState extends State<AboutUs> {
   Widget build(BuildContext context) {
     return Container(
       color: ColorsTheme.backgroundFirst,
-      padding: const EdgeInsets.all(50),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      padding: const EdgeInsets.all(40),
+      child: Row(children: [
         /**
            * Image and background circle
            */
-        const Expanded(child: CirclePicture(image: 'images/working.png')),
+        const Expanded(
+          child: CirclePicture(
+            image: 'images/working.png')),
         Expanded(
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Column(children: [
           /**
              * Title and Text right
              */
-          Stack(alignment: Alignment.centerRight, children: const [
+          Stack(
+            //alignment: Alignment.centerRight, 
+            children: const [
             RightTitleSection(
                 title: "ABOUT US \n",
                 description:

@@ -46,27 +46,25 @@ class _HomePageState extends State<HomePage> {
             ),
       drawer: const MenuDrawer(),
       extendBody: true,
-      body: Center(
-        child: SingleChildScrollView(
-          controller: _scrollController,
-          physics: const ClampingScrollPhysics(),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: double.infinity,
-              maxHeight: double.infinity,
-            ),
-            child: IntrinsicHeight(
-              child: Column(children: const [
-                Home(),
-                Services(),
-                AboutUs(),
-                Client(),
-                Portfolio(),
-                Contact(),
-                Footer(),
-                Copyright(),
-              ]),
-            ),
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        physics: const ClampingScrollPhysics(),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: double.infinity,
+            maxHeight: double.infinity,
+          ),
+          child: IntrinsicHeight(
+            child: Column(children: const [
+              Home(),
+              Services(),
+              AboutUs(),
+              Client(),
+              Portfolio(),
+              Contact(),
+              Footer(),
+              Copyright(),
+            ]),
           ),
         ),
       ),
