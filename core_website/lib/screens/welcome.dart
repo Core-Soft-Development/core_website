@@ -1,3 +1,4 @@
+import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/config/themes/fond_decoration.dart';
 import 'package:flutter/material.dart';
 
@@ -30,20 +31,21 @@ class _HomeState extends State<Home> {
                     text: "Building Your Idea & Vision Into Reality \n",
                     style: TextStyle(
                         fontSize: 40,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         fontFamily: "Montserrat-Regular",
-                        color: Colors.black,
+                        color: ColorsTheme.text,
                         wordSpacing: 1,
-                        height: 1.5),
+                        height: 5),
                     children: [
                       TextSpan(
                           text:
                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque',
                           style: TextStyle(
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w400,
                               fontSize: 16,
+                              color: ColorsTheme.subText,
                               wordSpacing: 1,
-                              height: 1.5))
+                              height: 2))
                     ]),
               ),
               SizedBox(

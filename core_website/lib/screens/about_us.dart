@@ -13,40 +13,44 @@ class AboutUs extends StatefulWidget {
 class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
-
     return Container(
       color: ColorsTheme.backgroundFirst,
-      padding: const EdgeInsets.all(50),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      padding: const EdgeInsets.all(40),
+      child: Row(children: [
         /**
            * Image and background circle
            */
-          const CirclePicture(image: 'images/working.png'),
-        const SizedBox(width: 10),
+        const Expanded(
+          child: CirclePicture(
+            image: 'images/working.png')),
         Expanded(
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Column(children: [
           /**
              * Title and Text right
              */
-          Stack(alignment: Alignment.centerRight, children: const [
-            RightTitleSection(title: "ABOUT US \n", description: 'Share your idea, we will help you with our service \n'),
+          Stack(
+            //alignment: Alignment.centerRight, 
+            children: const [
+            RightTitleSection(
+                title: "ABOUT US \n",
+                description:
+                    'Share your idea, we will help you with our service \n'),
           ]),
           RichText(
-                overflow: TextOverflow.ellipsis,
-                maxLines: 10,
-                textAlign: TextAlign.justify,
-                text: const TextSpan(
-                    text:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. ',
-                    style: TextStyle(
-                      decoration: TextDecoration.none,
-                      color: Colors.black,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 10,
+              textAlign: TextAlign.justify,
+              text: const TextSpan(
+                  text:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. ',
+                  style: TextStyle(
+                      color: ColorsTheme.subText,
                       fontFamily: 'Montserrat',
                       fontSize: 18,
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.w400,
                       letterSpacing: 1,
-                    )))
+                      height: 2)))
         ]))
       ]),
     );

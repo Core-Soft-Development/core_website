@@ -15,17 +15,19 @@ class RightTitleSection extends StatelessWidget {
             text: title,
             style: const TextStyle(
                 fontSize: 18,
+                fontWeight: FontWeight.w600,
                 fontFamily: "Montserrat",
-                color: ColorsTheme.primaryColor,
+                color: ColorsTheme.titleColor,
                 wordSpacing: 1,
-                height: 1.5),
+                height: 2),
             children: [
               TextSpan(
                 text: description,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: ColorsTheme.text,
                   fontSize: 40,
+                  height: 1.5
                 ),
               ),
             ]));

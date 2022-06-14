@@ -22,7 +22,6 @@ class _ClientState extends State<Client> {
       child: Column(
         children: [
           Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                     child: Column(
@@ -31,7 +30,7 @@ class _ClientState extends State<Client> {
                     /**
                  * Title
                  */
-                const SizedBox(height: 100,),
+                const SizedBox(height: 100), // for top marge
                     Stack(
                       alignment: Alignment.center,
                       children: const [
@@ -55,7 +54,6 @@ class _ClientState extends State<Client> {
               ]),
           Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     const PictureTestamonial(picture: 'images/profil.png'),
                     Expanded(

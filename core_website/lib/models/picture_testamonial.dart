@@ -1,3 +1,4 @@
+import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class PictureTestamonial extends StatelessWidget {
@@ -13,10 +14,9 @@ class PictureTestamonial extends StatelessWidget {
         width: 400,
         clipBehavior: Clip.none,
         decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color.fromARGB(50, 255, 111, 67),
-              Color.fromARGB(150, 255, 137, 101),
-            ]),
+            gradient: LinearGradient(colors: ColorsTheme.gradientBackground,
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft),
             shape: BoxShape.circle),
         constraints: const BoxConstraints.expand(width: 500, height: 700),
         child: Container(
@@ -35,7 +35,7 @@ class PictureTestamonial extends StatelessWidget {
                     child: Image.asset(
                       picture,
                       matchTextDirection: true,
-                      height: 600,
+                      height: screenSize.height / 6,
                       fit: BoxFit.none,
                     )),
               ),

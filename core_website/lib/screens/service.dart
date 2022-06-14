@@ -13,54 +13,52 @@ class Services extends StatefulWidget {
 class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     /**
      * Title
      */
     return Container(
       color: ColorsTheme.backgroundFirst,
-      padding: const EdgeInsets.all(50),
+      padding: const EdgeInsets.all(40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Stack(alignment: Alignment.topCenter, children: [
           const CenterTitleSection(title: "SERVICES \n", description: 'A set of digital solution'),
-            SizedBox(
-              height: screenSize.height / 6,
-              width: screenSize.width,
-            )
-          ]),
+          const SizedBox(height: 75),
           /**
            * Container of services
            * and first block container
            */
-          Container(
-              padding: const EdgeInsets.all(10),
-              width: screenSize.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  CardService(icon: 'assets/icons/code.png', titleService: 'Website Design \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque'),
-                  /**
-                   * second block container
-                   */
-                  CardService(icon: 'assets/icons/phonelink.png', titleService: 'Mobile App Design \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque')])),
+          Row(
+            children: const [
+              Expanded(
+                child: CardService(icon: 'assets/icons/code.png', titleService: 'Website Design \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque')),
+              /**
+               * second block container
+               */
+              SizedBox(width: 32),
+              Expanded(
+                child: CardService(
+                  icon: 'assets/icons/phonelink.png', 
+                  titleService: 'Mobile App Design \n', 
+                  contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque')
+                  )
+                  ]
+          ),
           /**
            * third block container
            */
-          Container(
-              padding: const EdgeInsets.all(10),
-              width: screenSize.width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  CardService(icon: 'assets/icons/serveur.png', titleService: 'Website Development \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque'),
-                  /**
-                   * fourth block container
-                   */
-                  CardService(icon: 'assets/icons/mode.png', titleService: 'Mobile App Development \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque')
-                ],
-              ))
+          const SizedBox(height: 24),
+          Row(
+            children: const <Widget>[
+              Expanded(
+                child: CardService(icon: 'assets/icons/serveur.png', titleService: 'Website Development \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque'),
+              ),
+              SizedBox(width: 32),
+              Expanded(
+                child: CardService(icon: 'assets/icons/mode.png', titleService: 'Mobile App Development \n', contentService: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque')
+              ),
+            ],
+          ),
         ],
       ),
     );

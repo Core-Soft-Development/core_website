@@ -1,3 +1,4 @@
+import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class TestamonialClient extends StatelessWidget {
@@ -14,31 +15,40 @@ class TestamonialClient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        maxLines: 20,
-        textAlign: TextAlign.left,
-        text: TextSpan(
-            text: content,
-            style: const TextStyle(
-                fontStyle: FontStyle.italic,
-                color: Colors.black,
-                fontFamily: 'Montserrat',
-                fontSize: 20,
-                letterSpacing: 1,
-                wordSpacing: 1),
-            children: [
-              TextSpan(
-                  text: name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                  )),
-              TextSpan(
-                  text: compagny,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
-                  ))
-            ]));
+    var screenSize = MediaQuery.of(context).size;
+
+    return Container(
+      width: screenSize.width / 2,
+      padding: const EdgeInsets.only(top: 24, left: 10),
+      child: RichText(
+          textAlign: TextAlign.left,
+          text: TextSpan(
+              text: content,
+              style: const TextStyle(
+                  fontStyle: FontStyle.italic,
+                  color: ColorsTheme.contentTestamonial,
+                  fontFamily: 'Montserrat',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  wordSpacing: 1,
+                  height: 2),
+              children: [
+                TextSpan(
+                    text: name,
+                    style: const TextStyle(
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        height: 2.5)),
+                TextSpan(
+                    text: compagny,
+                    style: const TextStyle(
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        height: 2))
+              ])),
+    );
   }
 }

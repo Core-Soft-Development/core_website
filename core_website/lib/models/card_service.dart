@@ -12,57 +12,60 @@ class CardService extends StatelessWidget {
         var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      padding: const EdgeInsets.all(10),
-                    width: screenSize.width * 0.45,
-                    height: 200,
-      child: Card(
-        surfaceTintColor: Colors.white60,
-        shadowColor: Colors.grey,
-        elevation: 3,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            alignment: Alignment.center,
-                            height: 50,
-                            width: 50,
-                            constraints: BoxConstraints.loose(screenSize),
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(icon),
-                                    fit: BoxFit.fill),
-                                shape: BoxShape.rectangle),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(5),
-                            alignment: Alignment.center,
-                            height: 100,
-                            width: 500,
-                            child: RichText(
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.visible,
-                              text: TextSpan(
-                                  text: titleService,
-                                  style: const TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: ColorsTheme.primaryColor,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 20,
-                                      wordSpacing: 1,
-                                      height: 1.5),
-                                  children: [
-                                    TextSpan(
-                                        text: contentService,
-                                        style: const TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.normal,
-                                        ))
-                                  ],)))
-      ]),
+      padding: const EdgeInsets.all(30),
+      width: screenSize.width * 0.45,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x199E9E9E),
+            spreadRadius: 10,
+            blurRadius: 80,
+            offset: Offset(2, 3),
+          )
+        ],
+        borderRadius: BorderRadius.circular(5)
       ),
+      child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(20),
+                          alignment: Alignment.center,
+                          height: 50,
+                          width: 50,
+                          constraints: BoxConstraints.loose(screenSize),
+                          child: Image.asset(icon,
+                          color: ColorsTheme.iconColor),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          alignment: Alignment.center,
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.visible,
+                            text: TextSpan(
+                                text: titleService,
+                                style: const TextStyle(
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: ColorsTheme.hoverColor,
+                                    fontWeight: FontWeight.w600,
+                                    color: ColorsTheme.titleCard,
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 20,
+                                    wordSpacing: 1,
+                                    height: 2.5),
+                                children: [
+                                  TextSpan(
+                                      text: contentService,
+                                      style: const TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorsTheme.subText,
+                                        height: 2,
+                                      ))
+                                ],)))
+      ]),
     );
   }
 }

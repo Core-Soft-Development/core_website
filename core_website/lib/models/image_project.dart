@@ -6,16 +6,13 @@ class ImageProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-                      width: 465,
-                      height: screenSize.height / 3,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  image),
-                              )),
-                    );
+      padding: const EdgeInsets.only(right: 50, left: 50),
+      child: Image.asset(
+        image,
+        fit: BoxFit.contain,
+      ),
+    );
   }
 }

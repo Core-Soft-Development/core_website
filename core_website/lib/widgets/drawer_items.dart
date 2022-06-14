@@ -1,4 +1,3 @@
-import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class DrawerItems extends StatelessWidget {
