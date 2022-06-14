@@ -4,14 +4,14 @@ import 'package:core_website/screens/about_us.dart';
 import 'package:core_website/screens/blog.dart';
 import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
-import 'package:core_website/screens/home.dart';
+import 'package:core_website/screens/welcome.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
-import 'package:core_website/components/copyright.dart';
-import 'package:core_website/components/footer.dart';
-import 'package:core_website/components/menu_drawer.dart';
-import 'package:core_website/components/top_bar_contents.dart';
+import 'package:core_website/screens/copyright.dart';
+import 'package:core_website/screens/footer.dart';
+import 'package:core_website/screens/menu_drawer.dart';
+import 'package:core_website/screens/navbar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,17 +48,19 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: ResponsiveLayout.isSmallScreen(context)
+      appBar: ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
           ? AppBar(
               iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
               backgroundColor: ColorsTheme.appColor,
               elevation: 0,
               centerTitle: true,
-              title: Image.asset('logos/csd.png'),
+              title: Image.asset('logos/csd_core_soft_development.png',
+              color: ColorsTheme.textMenuDrawer,
+              height: 50,),
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 70),
-              child: TopBarContents(scrollIndex),
+              child: const Navbar(),
             ),
       drawer: const MenuDrawer(),
       extendBody: true,
@@ -67,23 +69,20 @@ class _HomePageState extends State<HomePage> {
         physics: const ClampingScrollPhysics(),
         child: ConstrainedBox(
           constraints: const BoxConstraints(
+            maxWidth: double.infinity,
             maxHeight: double.infinity,
           ),
           child: IntrinsicHeight(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  Home(),
-                  Services(),
-                  AboutUs(),
-                  Client(),
-                  Portfolio(),
-                  Blog(),
-                  Contact(),
-                  Footer(),
-                  Copyright(),
-                ]),
+            child: Column(children: const [
+              Home(),
+              Services(),
+              AboutUs(),
+              Client(),
+              Portfolio(),
+              Contact(),
+              Footer(),
+              Copyright(),
+            ]),
           ),
         ),
       ),
@@ -157,3 +156,27 @@ class _HomePageState extends State<HomePage> {
 
   //return height;
 }
+
+/* drawer: const MenuDrawer(),
+      extendBody: true,
+      body: NestedScrollView(
+        controller: _scrollController,
+        headerSliverBuilder: (context, bool innerBoxIsScrolled) {
+          return [ ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
+            ? SliverAppBar(
+              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+              backgroundColor: ColorsTheme.appColor,
+              elevation: 0,
+              centerTitle: true,
+              title: Image.asset('logos/csd_core_soft_development.png',
+              color: ColorsTheme.textMenuDrawer,
+              height: 50,),
+            )
+          : PreferredSize(
+              preferredSize: Size(screenSize.width, 70),
+              child: const Navbar(),
+            ),
+          ];
+        },
+        body: ),
+      ); */
