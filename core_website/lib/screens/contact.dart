@@ -44,7 +44,7 @@ class _ContactState extends State<Contact> {
     allMarkers.add(Marker(
       markerId: const MarkerId('secondMarker'),
       draggable: false,
-      position: _capital,
+      position: _center,
       ));
   }
 

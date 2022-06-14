@@ -2,6 +2,7 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/models/image_project.dart';
 import 'package:core_website/models/project.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Portfolio extends StatefulWidget {
