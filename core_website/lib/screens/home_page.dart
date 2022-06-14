@@ -6,9 +6,9 @@ import 'package:core_website/screens/welcome.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
-import 'package:core_website/widgets/copyright.dart';
-import 'package:core_website/widgets/footer.dart';
-import 'package:core_website/widgets/menu_drawer.dart';
+import 'package:core_website/screens/copyright.dart';
+import 'package:core_website/screens/footer.dart';
+import 'package:core_website/screens/menu_drawer.dart';
 import 'package:core_website/screens/navbar.dart';
 import 'package:flutter/material.dart';
 

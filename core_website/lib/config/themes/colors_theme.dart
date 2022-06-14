@@ -25,5 +25,6 @@ class ColorsTheme {
   static const Color buttonSend = Color(0xFFf15D4F);
   static const Color titleForm = Color(0xFF0F001A);
   static const Color textForm = Color(0xFFB4BEC8);
+  static const Color textFooter = Color(0XFFADADAD);
 
 }

@@ -1,4 +1,4 @@
-import 'package:core_website/widgets/area_form.dart';
+import 'package:core_website/models/area_form.dart';
 import 'package:core_website/widgets/form_text.dart';
 import 'package:flutter/material.dart';
 
