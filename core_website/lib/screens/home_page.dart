@@ -21,38 +21,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
-  double _scrollPosition = 0;
-  double _opacity = 0;
-
-  _scrollListener() {
-    setState(() {
-      _scrollPosition = _scrollController.position.pixels;
-    });
-  }
-
-  @override
-  void initState() {
-    _scrollController.addListener(_scrollListener);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    _opacity = _scrollPosition < screenSize.height * 0.1
-        ? _scrollPosition / (screenSize.height * 0.1)
-        : 0.2;
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
+      appBar: ResponsiveLayout.isMobile(context) || ResponsiveLayout.isTablet(context)
           ? AppBar(
-              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+              iconTheme: const IconThemeData(color: ColorsTheme.titleColor),
               backgroundColor: ColorsTheme.appColor,
-              elevation: 0,
+              elevation: 2,
               centerTitle: true,
               title: Image.asset('logos/csd_core_soft_development.png',
-              color: ColorsTheme.textMenuDrawer,
+              color: ColorsTheme.titleColor,
               height: 50,),
             )
           : PreferredSize(
@@ -81,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               Copyright(),
             ]),
           ),
-        ));
+        )));
   }
 }
 

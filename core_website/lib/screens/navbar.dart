@@ -32,12 +32,18 @@ class _NavbarState extends State<Navbar> {
           children: [
             Image.asset('logos/core_soft_development.png'),
             SizedBox(width: screenSize.width / 5),
-            const Expanded(child: MenuItems(title: 'Home', index: 0)),
-            const Expanded(child: MenuItems(title: 'Service', index: 1)),
-            const Expanded(child: MenuItems(title: 'About Us', index: 2)),
-            const Expanded(child: MenuItems(title: 'Client', index: 3)),
-            const Expanded(child: MenuItems(title: 'Portfolio', index: 4)),
-            const Expanded(child: MenuItems(title: 'Blog', index: 5)),
+            const MenuItems(title: 'Home', index: 0),
+            const SizedBox(width: 25,),
+            const MenuItems(title: 'Service', index: 1),
+            const SizedBox(width: 25,),
+            const MenuItems(title: 'About Us', index: 2),
+            const SizedBox(width: 25,),
+            const MenuItems(title: 'Client', index: 3),
+            const SizedBox(width: 25,),
+            const MenuItems(title: 'Portfolio', index: 4),
+            const SizedBox(width: 25,),
+            const MenuItems(title: 'Blog', index: 5),
+            const SizedBox(width: 25,),
             InkWell(
               onHover: (value) {
                 setState(() {
