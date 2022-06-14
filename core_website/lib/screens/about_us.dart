@@ -1,8 +1,10 @@
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/models/circle_picture.dart';
+import 'package:core_website/models/right_title_section.dart';
 import 'package:flutter/material.dart';
 
 class AboutUs extends StatefulWidget {
-  const AboutUs({ Key? key }) : super(key: key);
+  const AboutUs({Key? key}) : super(key: key);
 
   @override
   State<AboutUs> createState() => _AboutUsState();
@@ -11,75 +13,45 @@ class AboutUs extends StatefulWidget {
 class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-
     return Container(
       color: ColorsTheme.backgroundFirst,
-      padding: const EdgeInsets.all(50),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Container(
-          /**
+      padding: const EdgeInsets.all(40),
+      child: Row(children: [
+        /**
            * Image and background circle
            */
-          height: screenSize.height / 2,
-          width: 491,
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Color.fromARGB(150, 255, 137, 101),
-                Color.fromARGB(50, 255, 111, 67),
-              ]),
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('images/working.png'),
-                alignment: Alignment.center))
-        ),
-        const SizedBox(width: 10),
+        const Expanded(
+          child: CirclePicture(
+            image: 'images/working.png')),
         Expanded(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /**
-             * Text right
+            child:
+                Column(children: [
+          /**
+             * Title and Text right
              */
-            Stack(alignment: Alignment.centerRight, children: [
-              RichText(
-                overflow: TextOverflow.ellipsis,
-                maxLines: 10,
-                textAlign: TextAlign.justify,
-                text: const TextSpan(
-                    text: "ABOUT US \n",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: "Montserrat-Regular",
-                        color: ColorsTheme.primaryColor,
-                        wordSpacing: 1,
-                        height: 1.5),
-                    children: [
-                      TextSpan(
-                          text:
-                              'Share your idea, we will help you with our service \n',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              fontSize: 40,
-                              letterSpacing: 1,
-                              ),
-                              ),
-                      TextSpan(
-                          text:
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. ',
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.normal,
-                            letterSpacing: 1,
-                          ))
-                    ]),
-              ),
-            ]),
-          ],
-        ))
+          Stack(
+            //alignment: Alignment.centerRight, 
+            children: const [
+            RightTitleSection(
+                title: "ABOUT US \n",
+                description:
+                    'Share your idea, we will help you with our service \n'),
+          ]),
+          RichText(
+              overflow: TextOverflow.ellipsis,
+              maxLines: 10,
+              textAlign: TextAlign.justify,
+              text: const TextSpan(
+                  text:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. ',
+                  style: TextStyle(
+                      color: ColorsTheme.subText,
+                      fontFamily: 'Montserrat',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 1,
+                      height: 2)))
+        ]))
       ]),
     );
   }

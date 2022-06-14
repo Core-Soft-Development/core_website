@@ -1,21 +1,18 @@
-class ImageProject {
-  final int? id;
-  final String? image;
+import 'package:flutter/material.dart';
 
-  ImageProject({this.id, this.image});
+class ImageProject extends StatelessWidget {
+  final String image;
+  const ImageProject({Key? key, required this.image}) : super(key: key);
 
-  List<ImageProject> projects = [
-    ImageProject(
-      id: 1, 
-      image: 'assets/images/project/project1.png'),
-    ImageProject(
-      id: 2,
-      image: 'assets/images/project/project2.png'),
-    ImageProject(
-      id: 3,
-      image: 'assets/images/project/project3.png'),
-    ImageProject(
-      id: 4,
-      image: 'assets/images/project/project4.png'),
-  ];
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+      padding: const EdgeInsets.only(right: 50, left: 50),
+      child: Image.asset(
+        image,
+        fit: BoxFit.contain,
+      ),
+    );
+  }
 }

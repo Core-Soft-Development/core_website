@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: 'Montserrat'
+        fontFamily: 'Montserrat',
       ),
       home: const HomePage(),
     );
