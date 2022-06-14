@@ -23,5 +23,7 @@ class ColorsTheme {
   static const Color titleCard = Color(0xFF1A1919);
   static const Color contentTestamonial = Color(0xFF3E3E3E);
   static const Color buttonSend = Color(0xFFf15D4F);
+  static const Color titleForm = Color(0xFF0F001A);
+  static const Color textForm = Color(0xFFB4BEC8);
 
 }
