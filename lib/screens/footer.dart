@@ -24,16 +24,16 @@ class Footer extends StatelessWidget {
       child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 150),
           child: Row(children: [
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Container(
-                  alignment: Alignment.topLeft,
-                  height: screenSize.height / 15,
-                  child: Image.asset(
-                    'logos/core_soft_development.png',
-                    color: Colors.white,
-                  )),
-              const Expanded(
-                child: Text(
+            Expanded(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Container(
+                    alignment: Alignment.topLeft,
+                    height: screenSize.height / 15,
+                    child: Image.asset(
+                      'logos/core_soft_development.png',
+                      color: Colors.white,
+                    )),
+                const Text(
                   'Lorem ipsum dolor sit amet, consy ect etur adipisc de elit. Quisque act raqum nunc no dolor sit de amet.',
                   softWrap: true,
                   style: TextStyle(
@@ -42,17 +42,15 @@ class Footer extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontSize: 12,
                       height: 1),
-                ),
-              )
-            ]),
+                )
+              ]),
+            ),
             const SizedBox(width: 135),
-            Expanded(
-                child: textFooter(' Our service', 'How it works',
-                    'Plan & pricing', 'Our works')),
+            textFooter(' Our service', 'How it works',
+                'Plan & pricing', 'Our works'),
             const SizedBox(width: 135),
-            Expanded(
-                child: textFooter(
-                    ' Company', 'Blog', 'Contact us', 'Book a call')),
+            textFooter(
+                ' Company', 'Blog', 'Contact us', 'Book a call'),
             const SizedBox(width: 135),
             SizedBox(
               width: screenSize.width / 6,
@@ -75,8 +73,8 @@ class Footer extends StatelessWidget {
                           fontFamily: 'Monserrat',
                           fontWeight: FontWeight.w300,
                           fontSize: 16,
-                          height: 2)),
-                  const SizedBox(height: 22),
+                          height: 1)),
+                  const SizedBox(height: 20),
                   Row(
                     children: [
                       icon(faIcon[0]),
