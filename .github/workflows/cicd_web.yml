@@ -8,7 +8,7 @@ jobs :
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-         # flutter-version: '2.16.1'
+          flutter-version: '3.0.2'
       - name: Build web
        # verification des dépendances et du format puis analyse et test
         run: |
@@ -17,4 +17,3 @@ jobs :
           flutter analyze
           flutter test
           flutter build web
-# --set-exit-if-changed
