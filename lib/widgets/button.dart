@@ -40,7 +40,7 @@ TextButton buttonProject(String text) {
 }
 
 DecoratedBox buttonContact(BuildContext context, String text,
-    Widget Function() createPage, List isHovering, int index) {
+    Widget Function() createPage, List _isHovering, int index) {
   return DecoratedBox(
     decoration: BoxDecoration(
       gradient: const LinearGradient(
@@ -64,7 +64,7 @@ DecoratedBox buttonContact(BuildContext context, String text,
       child: Text(
         text,
         style: TextStyle(
-          color: isHovering[index] ? Colors.black54 : Colors.white,
+          color: _isHovering[index] ? Colors.black54 : Colors.white,
           fontWeight: FontWeight.w500,
           fontSize: 16,
         ),
