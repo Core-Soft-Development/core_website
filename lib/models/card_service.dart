@@ -29,7 +29,7 @@ class CardService extends StatelessWidget {
       child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.all(20),
+                          margin: const EdgeInsets.all(20),
                           alignment: Alignment.center,
                           height: 50,
                           width: 50,
