@@ -25,71 +25,82 @@ class Footer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 150),
           child: Row(children: [
             Expanded(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                 Container(
                     alignment: Alignment.topLeft,
                     height: screenSize.height / 15,
                     child: Image.asset(
-                      'logos/core_soft_development.png',
+                      'assets/logos/core_soft_development.png',
                       color: Colors.white,
                     )),
-                const Text(
-                  'Lorem ipsum dolor sit amet, consy ect etur adipisc de elit. Quisque act raqum nunc no dolor sit de amet.',
-                  softWrap: true,
-                  style: TextStyle(
-                      color: ColorsTheme.textFooter,
-                      fontFamily: 'Monserrat',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12,
-                      height: 1),
+                const Expanded(
+                  child: Text(
+                    'Lorem ipsum dolor sit amet, consy ect etur adipisc de elit. Quisque act raqum nunc no dolor sit de amet.',
+                    softWrap: true,
+                    style: TextStyle(
+                        color: ColorsTheme.textFooter,
+                        fontFamily: 'Monserrat',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        height: 1),
+                  ),
                 )
               ]),
             ),
-            const SizedBox(width: 135),
-            textFooter(' Our service', 'How it works',
-                'Plan & pricing', 'Our works'),
-            const SizedBox(width: 135),
-            textFooter(
-                ' Company', 'Blog', 'Contact us', 'Book a call'),
-            const SizedBox(width: 135),
+            const SizedBox(width: 130),
+            Expanded(
+              child: textFooter(' Our service', 'How it works',
+                  'Plan & pricing', 'Our works'),
+            ),
+            const SizedBox(width: 130),
+            Expanded(
+              child: textFooter(
+                  ' Company', 'Blog', 'Contact us', 'Book a call'),
+            ),
+            const SizedBox(width: 130),
             SizedBox(
               width: screenSize.width / 6,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Support',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Monserrat',
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          height: 2)),
-                  const SizedBox(height: 22),
-                  const Text(
-                      'Quisque actraqum nunc no dolor sit ametaugue dolor. Lorem ipsum dolor sit amet, consyect etur.',
-                      softWrap: true,
-                      style: TextStyle(
-                          color: ColorsTheme.textFooter,
-                          fontFamily: 'Monserrat',
-                          fontWeight: FontWeight.w300,
-                          fontSize: 16,
-                          height: 1)),
+                  const Expanded(
+                    child: Text('Support',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Monserrat',
+                            fontSize: 22,
+                            fontWeight: FontWeight.w700,
+                            height: 2)),
+                  ),
+                  const Expanded(
+                    child: Text(
+                        'Quisque actraqum nunc no dolor sit ametaugue dolor. Lorem ipsum dolor sit amet, consyect etur.',
+                        softWrap: true,
+                        style: TextStyle(
+                            color: ColorsTheme.textFooter,
+                            fontFamily: 'Monserrat',
+                            fontWeight: FontWeight.w300,
+                            fontSize: 16,
+                            height: 1)),
+                  ),
                   const SizedBox(height: 20),
                   Row(
                     children: [
-                      icon(faIcon[0]),
+                      Expanded(child: icon(faIcon[0])),
                       const SizedBox(
                         width: 15,
                       ),
-                      icon(faIcon[1]),
+                      Expanded(child: icon(faIcon[1])),
                       const SizedBox(
                         width: 15,
                       ),
-                      icon(faIcon[2]),
+                      Expanded(child: icon(faIcon[2])),
                       const SizedBox(
                         width: 15,
                       ),
-                      icon(faIcon[3]),
+                      Expanded(child: icon(faIcon[3])),
                     ],
                   ),
                 ],

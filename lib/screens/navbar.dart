@@ -30,7 +30,7 @@ class _NavbarState extends State<Navbar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('logos/core_soft_development.png'),
+            Image.asset('assets/logos/core_soft_development.png'),
             SizedBox(width: screenSize.width / 5),
             const Expanded(child: MenuItems(title: 'Home', index: 0)),
             const Expanded(child: MenuItems(title: 'Service', index: 1)),
