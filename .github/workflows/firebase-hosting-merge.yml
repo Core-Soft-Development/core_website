@@ -13,7 +13,7 @@ jobs:
           channel: stable
           flutter-version: '3.0.2'
       - name: Build web
-        # verification des dépendances et du format puis analyse et test
+        # dependency and format checking followed by analysis and testing
         run: |
           flutter pub get
           flutter format .
