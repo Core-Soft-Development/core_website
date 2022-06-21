@@ -1,4 +1,3 @@
-import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Blog extends StatefulWidget {
@@ -12,7 +11,6 @@ class _BlogState extends State<Blog> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      key: KeyWidgets.keyBlog,
     );
   }
 }

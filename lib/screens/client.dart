@@ -2,7 +2,6 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/picture_testamonial.dart';
 import 'package:core_website/models/right_title_section.dart';
 import 'package:core_website/models/testomanial_client.dart';
-import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Client extends StatefulWidget {
@@ -18,7 +17,6 @@ class _ClientState extends State<Client> {
     //var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      key: KeyWidgets.keyClient,
       color: ColorsTheme.backgroundSecond,
       padding: const EdgeInsets.only(right:40, left: 40),
       child: Column(

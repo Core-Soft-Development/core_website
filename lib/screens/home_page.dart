@@ -68,7 +68,6 @@ class _HomePageState extends State<HomePage> {
           ];
         },
         body: SingleChildScrollView(
-          //controller: _scrollController,
           physics: const ClampingScrollPhysics(),
           child: ConstrainedBox(
             constraints: const BoxConstraints(
@@ -93,27 +92,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-/* drawer: const MenuDrawer(),
-      extendBody: true,
-      body: NestedScrollView(
-        controller: _scrollController,
-        headerSliverBuilder: (context, bool innerBoxIsScrolled) {
-          return [ ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
-            ? SliverAppBar(
-              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-              backgroundColor: ColorsTheme.appColor,
-              elevation: 0,
-              centerTitle: true,
-              title: Image.asset('logos/csd_core_soft_development.png',
-              color: ColorsTheme.textMenuDrawer,
-              height: 50,),
-            )
-          : PreferredSize(
-              preferredSize: Size(screenSize.width, 70),
-              child: const Navbar(),
-            ),
-          ];
-        },
-        body: ),
-      ); */
