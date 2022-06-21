@@ -12,6 +12,8 @@ import 'package:core_website/screens/menu_drawer.dart';
 import 'package:core_website/screens/navbar.dart';
 import 'package:flutter/material.dart';
 
+void main() => runApp(const HomePage());
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -20,9 +22,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final ScrollController _scrollController = ScrollController();
+  late ScrollController _scrollController;
   //double _scrollPosition = 0;
   //double _opacity = 0;
+
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,41 +38,55 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      appBar: ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
-          ? AppBar(
-              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-              backgroundColor: ColorsTheme.appColor,
-              elevation: 0,
-              centerTitle: true,
-              title: Image.asset('assets/logos/csd_core_soft_development.png',
-              color: ColorsTheme.textMenuDrawer,
-              height: 50,),
-            )
-          : PreferredSize(
-              preferredSize: Size(screenSize.width, 70),
-              child: const Navbar(),
-            ),
-      drawer: const MenuDrawer(),
       extendBody: true,
-      body: SingleChildScrollView(
+      drawer: const MenuDrawer(),
+      body: NestedScrollView(
         controller: _scrollController,
-        physics: const ClampingScrollPhysics(),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: double.infinity,
-            maxHeight: double.infinity,
-          ),
-          child: IntrinsicHeight(
-            child: Column(children: const [
-              Home(),
-              Services(),
-              AboutUs(),
-              Client(),
-              Portfolio(),
-              Contact(),
-              Footer(),
-              Copyright(),
-            ]),
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+          return [
+            ResponsiveLayout.isSmallScreen(context) ||
+                    ResponsiveLayout.isMediumScreen(context)
+                ? SliverAppBar(
+                    iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+                    backgroundColor: ColorsTheme.appColor,
+                    elevation: 10,
+                    centerTitle: true,
+                    title: Image.asset(
+                      'assets/logos/csd_core_soft_development.png',
+                      color: ColorsTheme.textMenuDrawer,
+                      height: 50,
+                    ),
+                    automaticallyImplyLeading: false,
+                    floating: true,
+                    snap: true,
+                    expandedHeight: 50,
+                  )
+                : PreferredSize(
+                    preferredSize: Size(screenSize.width, 70),
+                    child: const Navbar(),
+                  ),
+          ];
+        },
+        body: SingleChildScrollView(
+          //controller: _scrollController,
+          physics: const ClampingScrollPhysics(),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: double.infinity,
+              maxHeight: double.infinity,
+            ),
+            child: IntrinsicHeight(
+              child: Column(children: const [
+                Home(),
+                Services(),
+                AboutUs(),
+                Client(),
+                Portfolio(),
+                Contact(),
+                Footer(),
+                Copyright(),
+              ]),
+            ),
           ),
         ),
       ),
