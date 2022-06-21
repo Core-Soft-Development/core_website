@@ -52,12 +52,12 @@ class _ClientState extends State<Client> {
                 /**
                 * Image and background circle
                 */
-                const PictureTestamonial(picture: 'images/profil.png'),
+                const PictureTestamonial(picture: 'assets/images/profil.png'),
               ]),
           Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const PictureTestamonial(picture: 'images/profil.png'),
+                    const PictureTestamonial(picture: 'assets/images/profil.png'),
                     Expanded(
                       child: Column(
                         children: const [

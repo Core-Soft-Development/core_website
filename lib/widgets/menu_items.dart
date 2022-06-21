@@ -31,6 +31,7 @@ class _MenuItemsState extends State<MenuItems> {
         },
         onTap: () {},
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               widget.title,

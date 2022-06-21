@@ -24,7 +24,7 @@ class _AboutUsState extends State<AboutUs> {
            */
         const Expanded(
           child: CirclePicture(
-            image: 'images/working.png')),
+            image: 'assets/images/working.png')),
         Expanded(
             child:
                 Column(children: [
