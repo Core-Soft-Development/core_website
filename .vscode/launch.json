@@ -6,35 +6,20 @@
     "configurations": [
         {
             "name": "core_website",
-            "cwd": "core_website",
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "core_website (profile mode)",
-            "cwd": "core_website",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "core_website (release mode)",
-            "cwd": "core_website",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
-        }
-    ]
-}
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "pwa-chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
         }
     ]
 }

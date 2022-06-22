@@ -1,10 +1,14 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/widgets/drawer_items.dart';
 import 'package:core_website/widgets/line_spacer.dart';
-import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MenuDrawer extends StatelessWidget {
-  const MenuDrawer({Key? key}) : super(key: key);
+  MenuDrawer({Key? key, required this.callback}) : super(key: key);
+
+  Function(int) callback;
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +25,19 @@ class MenuDrawer extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  const DrawerItems(title: 'Home'),
+                  DrawerItems(title: 'Home', index: 0, callback: callback,),
                   lineSpacer(),
-                  const DrawerItems(title: 'Service'),
+                  DrawerItems(title: 'Service', index: 1, callback: callback,),
                   lineSpacer(),
-                  const DrawerItems(title: 'About Us'),
+                  DrawerItems(title: 'About Us', index: 2, callback: callback,),
                   lineSpacer(),
-                  const DrawerItems(title: 'Client'),
+                  DrawerItems(title: 'Client', index: 3, callback: callback,),
                   lineSpacer(),
-                  const DrawerItems(title: 'Portfolio'),
+                  DrawerItems(title: 'Portfolio', index: 4, callback: callback,),
                   lineSpacer(),
-                  const DrawerItems(title: 'Blog'),
+                  DrawerItems(title: 'Blog', index: 5, callback: callback,),
                   lineSpacer(),
-                  const DrawerItems(title: 'Contact Us'),
+                  DrawerItems(title: 'Contact Us', index: 6, callback: callback,),
                   lineSpacer(),
                   const Expanded(
                       child: Align(

@@ -1,14 +1,14 @@
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/screens/contact.dart';
-import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MenuItems extends StatefulWidget {
-  const MenuItems({Key? key, required this.title, required this.index})
+  MenuItems({Key? key, required this.title, required this.index, required this.callback})
       : super(key: key);
 
   final String title;
   final int index;
+  Function(int) callback;
 
   @override
   State<MenuItems> createState() => _MenuItemsState();
@@ -33,7 +33,7 @@ class _MenuItemsState extends State<MenuItems> {
                 : _isHovering[widget.index] = false;
           });
         },
-        onTap: () {},
+        onTap: () => widget.callback(widget.index),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
