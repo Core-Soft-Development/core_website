@@ -44,8 +44,8 @@ class _HomePageState extends State<HomePage> {
         controller: _scrollController,
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
-            ResponsiveLayout.isSmallScreen(context) ||
-                    ResponsiveLayout.isMediumScreen(context)
+            ResponsiveLayout.isMobile(context) ||
+                    ResponsiveLayout.isTablet(context)
                 ? SliverAppBar(
                     iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
                     backgroundColor: ColorsTheme.appColor,
