@@ -1,10 +1,13 @@
+import 'package:core_website/config/box_widgets.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/screens/about_us.dart';
+import 'package:core_website/screens/blog.dart';
 import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/welcome.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:core_website/utils/ui/responsive_layout.dart';
 import 'package:core_website/screens/copyright.dart';
 import 'package:core_website/screens/footer.dart';
@@ -22,15 +25,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late ScrollController _scrollController;
-  //double _scrollPosition = 0;
-  //double _opacity = 0;
+  //final ScrollController _scrollController = ScrollController();
 
-  @override
-  void initState() {
-    _scrollController = ScrollController();
-    super.initState();
-  }
+  /// Page screen principal of siteweb
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +38,6 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       drawer: const MenuDrawer(),
       body: NestedScrollView(
-        controller: _scrollController,
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             ResponsiveLayout.isSmallScreen(context) ||
@@ -76,11 +72,12 @@ class _HomePageState extends State<HomePage> {
             ),
             child: IntrinsicHeight(
               child: Column(children: const [
-                Home(),
+                Welcome(),
                 Services(),
                 AboutUs(),
                 Client(),
                 Portfolio(),
+                Blog(),
                 Contact(),
                 Footer(),
                 Copyright(),
@@ -91,4 +88,84 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+/* Size? sizeBox;
+  Offset? position;
+  double? height;
+
+  void scrollIndex(int index) {
+    _scrollController.animateTo(calculateSizeAndPosition as double,
+        duration: const Duration(milliseconds: 200), curve: Curves.bounceIn);
+  }
+
+  @override
+  void initState() {
+    _scrollController;
+    calculateSizeAndPosition();
+    super.initState();
+  }
+
+  calculateSizeAndPosition() async {
+    double height = 0;
+
+     WidgetsBinding.instance.addPostFrameCallback((_) {
+      final RenderBox boxWelcome = KeyWidgets.keyWelcome.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxWelcome.localToGlobal(Offset.zero);
+        sizeBox = boxWelcome.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final RenderBox boxService = KeyWidgets.keyService.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxService.localToGlobal(Offset.zero);
+        sizeBox = boxService.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final RenderBox boxAbout = KeyWidgets.keyAbout.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxAbout.localToGlobal(Offset.zero);
+        sizeBox = boxAbout.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((index) {
+      setState(() {
+        position = BoxWidgets.boxClient.localToGlobal(Offset.zero);
+        sizeBox = BoxWidgets.boxClient.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+
+     WidgetsBinding.instance.addPostFrameCallback((_) {
+      final RenderBox boxPortfolio = KeyWidgets.keyPortfolio.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxPortfolio.localToGlobal(Offset.zero);
+        sizeBox = boxPortfolio.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final RenderBox boxBlog = KeyWidgets.keyBlog.currentContext!.findRenderObject() as RenderBox;
+      setState(() {
+        position = boxBlog.localToGlobal(Offset.zero);
+        sizeBox = boxBlog.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((index) {
+      setState(() {
+        position = BoxWidgets.boxContact.localToGlobal(Offset.zero);
+        sizeBox = BoxWidgets.boxContact.size;
+        height = sizeBox?.height ?? 0;
+      });
+    });
+    return height;
+  } */
+
 }

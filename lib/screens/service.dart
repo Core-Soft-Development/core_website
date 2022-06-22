@@ -1,6 +1,7 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/card_service.dart';
 import 'package:core_website/models/center_title_section.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Services extends StatefulWidget {
@@ -17,6 +18,7 @@ class _ServicesState extends State<Services> {
      * Title
      */
     return Container(
+      key: KeyWidgets.keyService,
       color: ColorsTheme.backgroundFirst,
       padding: const EdgeInsets.all(40),
       child: Column(

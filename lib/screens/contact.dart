@@ -2,6 +2,7 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/models/form_send.dart';
 import 'package:core_website/screens/welcome.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -56,6 +57,7 @@ class _ContactState extends State<Contact> {
         /**
        * Title
        */
+        key: KeyWidgets.keyContact,
         color: ColorsTheme.backgroundFirst,
         padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 150, ),
         child: Column(
@@ -108,7 +110,7 @@ class _ContactState extends State<Contact> {
                               FormSend(),
                               Container(
                                 padding: const EdgeInsets.only(top: 45, left: 7),
-                                child: buttonSend(context, "Send", () => const Home()))
+                                child: buttonSend(context, "Send", () => const Welcome()))
                             ]),
                       )
                     ],

@@ -1,4 +1,6 @@
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/screens/contact.dart';
+import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class MenuItems extends StatefulWidget {
@@ -10,6 +12,8 @@ class MenuItems extends StatefulWidget {
 
   @override
   State<MenuItems> createState() => _MenuItemsState();
+
+  static contactItem() {}
 }
 
 class _MenuItemsState extends State<MenuItems> {
@@ -62,4 +66,20 @@ class _MenuItemsState extends State<MenuItems> {
       ),
     );
   }
+
+  /* InkWell contactItem(BuildContext context) {
+    return InkWell(
+                onHover: (value) {
+                  setState(() {
+                    value ? _isHovering[widget.index] = true : _isHovering[widget.index] = false;
+                  });
+                },
+                onTap: () {},
+                child: buttonContact(
+                  context,
+                  'Contact Us',
+                  () => const Contact(),
+                  _isHovering, 6),
+              );
+  } */
 }

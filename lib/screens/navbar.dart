@@ -39,23 +39,20 @@ class _NavbarState extends State<Navbar> {
               const Expanded(child: MenuItems(title: 'Client', index: 3)),
               const Expanded(child: MenuItems(title: 'Portfolio', index: 4)),
               const Expanded(child: MenuItems(title: 'Blog', index: 5)),
-              InkWell(
-                onHover: (value) {
-                  setState(() {
-                    value ? _isHovering[6] = true : _isHovering[6] = false;
-                  });
-                },
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: buttonContact(
-                        context,
-                        'Contact Us',
-                        () => const Contact(),
-                        _isHovering, 6),
-                    ),
-                  ],
+              Expanded(
+                flex: 2,
+                child: InkWell(
+                  onHover: (value) {
+                    setState(() {
+                      value ? _isHovering[6] = true : _isHovering[6] = false;
+                    });
+                  },
+                  onTap: () {},
+                  child: buttonContact(
+                    context,
+                    'Contact Us',
+                    () => const Contact(),
+                    _isHovering, 6),
                 ),
               ),
             ],
