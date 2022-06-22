@@ -5,7 +5,7 @@ import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/welcome.dart';
 import 'package:core_website/screens/portfolio.dart';
 import 'package:core_website/screens/service.dart';
-import 'package:core_website/utils/ui/responsive_layout.dart';
+import 'package:core_website/utils/ui/responsive.dart';
 import 'package:core_website/screens/copyright.dart';
 import 'package:core_website/screens/footer.dart';
 import 'package:core_website/screens/menu_drawer.dart';
@@ -41,11 +41,10 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       drawer: const MenuDrawer(),
       body: NestedScrollView(
-        controller: _scrollController,
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
-            ResponsiveLayout.isMobile(context) ||
-                    ResponsiveLayout.isTablet(context)
+            Responsive.isMobile(context) ||
+                    Responsive.isTablet(context)
                 ? SliverAppBar(
                     iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
                     backgroundColor: ColorsTheme.appColor,
@@ -92,28 +91,55 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-}
 
-/* drawer: const MenuDrawer(),
-      extendBody: true,
-      body: NestedScrollView(
+   /* body: NestedScrollView(
         controller: _scrollController,
-        headerSliverBuilder: (context, bool innerBoxIsScrolled) {
-          return [ ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
-            ? SliverAppBar(
-              iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-              backgroundColor: ColorsTheme.appColor,
-              elevation: 0,
-              centerTitle: true,
-              title: Image.asset('logos/csd_core_soft_development.png',
-              color: ColorsTheme.textMenuDrawer,
-              height: 50,),
-            )
-          : PreferredSize(
-              preferredSize: Size(screenSize.width, 70),
-              child: const Navbar(),
-            ),
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+          return [
+            Responsive.isMobile(context) ||
+                    Responsive.isTablet(context)
+                ? SliverAppBar(
+                    iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
+                    backgroundColor: ColorsTheme.appColor,
+                    elevation: 10,
+                    centerTitle: true,
+                    title: Image.asset(
+                      'assets/logos/csd_core_soft_development.png',
+                      color: ColorsTheme.textMenuDrawer,
+                      height: 50,
+                    ),
+                    automaticallyImplyLeading: false,
+                    floating: true,
+                    snap: true,
+                    expandedHeight: 50,
+                  )
+                : PreferredSize(
+                    preferredSize: Size(screenSize.width, 70),
+                    child: const Navbar(),
+                  ),
           ];
         },
-        body: ),
-      ); */
+        body: SingleChildScrollView(
+          //controller: _scrollController,
+          physics: const ClampingScrollPhysics(),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: double.infinity,
+              maxHeight: double.infinity,
+            ),
+            child: IntrinsicHeight(
+              child: Column(children: const [
+                Home(),
+                Services(),
+                AboutUs(),
+                Client(),
+                Portfolio(),
+                Contact(),
+                Footer(),
+                Copyright(),
+              ]),
+            ),
+          ),
+        ),
+      ), */
+}
