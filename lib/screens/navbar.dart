@@ -22,44 +22,47 @@ class _NavbarState extends State<Navbar> {
  * implementation of the menu bar
  */
     return SliverToBoxAdapter(
-      child: Container(
-        constraints: BoxConstraints(maxHeight: screenSize.height),
-        height: screenSize.height / 10,
-        width: screenSize.width,
-        padding: const EdgeInsets.only(top: 15, right: 135, left: 135, bottom: 15),
-        decoration: boxGradient(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/logos/core_soft_development.png'),
-              SizedBox(width: screenSize.width / 5),
-              const Expanded(child: MenuItems(title: 'Home', index: 0)),
-              const Expanded(child: MenuItems(title: 'Service', index: 1)),
-              const Expanded(child: MenuItems(title: 'About Us', index: 2)),
-              const Expanded(child: MenuItems(title: 'Client', index: 3)),
-              const Expanded(child: MenuItems(title: 'Portfolio', index: 4)),
-              const Expanded(child: MenuItems(title: 'Blog', index: 5)),
-              InkWell(
-                onHover: (value) {
-                  setState(() {
-                    value ? _isHovering[6] = true : _isHovering[6] = false;
-                  });
-                },
-                onTap: () {},
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: buttonContact(
-                        context,
-                        'Contact Us',
-                        () => const Contact(),
-                        _isHovering, 6),
-                    ),
-                  ],
+      child: PreferredSize(
+        preferredSize: Size(screenSize.width, 70),
+        child: Container(
+          constraints: BoxConstraints(maxHeight: screenSize.height),
+          height: screenSize.height / 10,
+          width: screenSize.width,
+          padding: const EdgeInsets.only(top: 15, right: 135, left: 135, bottom: 15),
+          decoration: boxGradient(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/logos/core_soft_development.png'),
+                SizedBox(width: screenSize.width / 5),
+                const Expanded(child: MenuItems(title: 'Home', index: 0)),
+                const Expanded(child: MenuItems(title: 'Service', index: 1)),
+                const Expanded(child: MenuItems(title: 'About Us', index: 2)),
+                const Expanded(child: MenuItems(title: 'Client', index: 3)),
+                const Expanded(child: MenuItems(title: 'Portfolio', index: 4)),
+                const Expanded(child: MenuItems(title: 'Blog', index: 5)),
+                InkWell(
+                  onHover: (value) {
+                    setState(() {
+                      value ? _isHovering[6] = true : _isHovering[6] = false;
+                    });
+                  },
+                  onTap: () {},
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: buttonContact(
+                          context,
+                          'Contact Us',
+                          () => const Contact(),
+                          _isHovering, 6),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          )),
+              ],
+            )),
+      ),
     );
   }
 }

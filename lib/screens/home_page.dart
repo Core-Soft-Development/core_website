@@ -22,13 +22,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late ScrollController _scrollController;
+  final ScrollController _scrollController = ScrollController();
   //double _scrollPosition = 0;
   //double _opacity = 0;
 
   @override
   void initState() {
-    _scrollController = ScrollController();
+    _scrollController;
     super.initState();
   }
 
@@ -43,19 +43,18 @@ class _HomePageState extends State<HomePage> {
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
-            Responsive.isMobile(context) ||
-                    Responsive.isTablet(context)
+            Responsive.isMobile(context) || Responsive.isTablet(context)
                 ? SliverAppBar(
-                    iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-                    backgroundColor: ColorsTheme.appColor,
+                    iconTheme: const IconThemeData(color: ColorsTheme.hoverColor),
+                    backgroundColor: const Color(0XFFF06C4F),
                     elevation: 10,
                     centerTitle: true,
                     title: Image.asset(
                       'assets/logos/csd_core_soft_development.png',
-                      color: ColorsTheme.textMenuDrawer,
+                      color: ColorsTheme.backgroundFirst,
                       height: 50,
+                      fit: BoxFit.cover,
                     ),
-                    automaticallyImplyLeading: false,
                     floating: true,
                     snap: true,
                     expandedHeight: 50,
@@ -76,7 +75,7 @@ class _HomePageState extends State<HomePage> {
             ),
             child: IntrinsicHeight(
               child: Column(children: const [
-                Home(),
+                Welcome(),
                 Services(),
                 AboutUs(),
                 Client(),
@@ -92,7 +91,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-   /* body: NestedScrollView(
+  /* body: NestedScrollView(
         controller: _scrollController,
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [

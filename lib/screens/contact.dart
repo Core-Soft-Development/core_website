@@ -108,7 +108,7 @@ class _ContactState extends State<Contact> {
                               FormSend(),
                               Container(
                                 padding: const EdgeInsets.only(top: 45, left: 7),
-                                child: buttonSend(context, "Send", () => const Home()))
+                                child: buttonSend(context, "Send", () => const Welcome()))
                             ]),
                       )
                     ],
