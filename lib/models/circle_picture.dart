@@ -9,7 +9,7 @@ class CirclePicture extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-       height: screenSize.height / 2,
+      height: screenSize.height / 2,
             decoration: BoxDecoration(
                 gradient: const LinearGradient(colors: ColorsTheme.gradientBackground),
                 shape: BoxShape.circle,

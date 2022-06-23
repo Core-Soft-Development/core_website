@@ -16,60 +16,73 @@ class _ClientState extends State<Client> {
   Widget build(BuildContext context) {
     //var screenSize = MediaQuery.of(context).size;
 
-    return Container(
-      color: ColorsTheme.backgroundSecond,
-      padding: const EdgeInsets.only(right:40, left: 40),
-      child: Column(
-        children: [
-          Row(
+    return Flexible(
+      flex: 2,
+      fit: FlexFit.tight,
+      child: Container(
+        color: ColorsTheme.backgroundSecond,
+        padding: const EdgeInsets.all(40),
+        child: Column(
+          children: [
+            Row(
               children: [
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  /**
+                   * Title
+                   */
+                  Stack(
+                    alignment: Alignment.center,
+                    children: const [
+                      RightTitleSection(
+                          title: "TESTIMONIAL \n",
+                          description: 'What Our Clients Say \n'),
+                    ],
                     /**
-                 * Title
-                 */
-                const SizedBox(height: 100), // for top marge
-                    Stack(
-                      alignment: Alignment.center,
-                      children: const [
-                        RightTitleSection(title: "TESTIMONIAL \n", description: 'What Our Clients Say \n'),
-                      ],
-                      /**
-                       * Text
-                       */
-                    ),
-                    const TestamonialClient(
-                      content: "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                     * Text
+                     */
+                  ),
+                  const TestamonialClient(
+                      content:
+                          "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
                       name: "\n Oussema Missaoui",
                       compagny: '\n BI Consultant'),
+                ],
+              ),
+              /**
+                  * Image and background circle
+                  */
+              Column(
+                children: const [
+                  PictureTestamonial(picture: 'assets/images/profil.png'),
+                ],
+              ),
+            ]),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: const [
+                    PictureTestamonial(picture: 'assets/images/profil.png'),
                   ],
-                )
                 ),
-                /**
-                * Image and background circle
-                */
-                const PictureTestamonial(picture: 'assets/images/profil.png'),
-              ]),
-          Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const PictureTestamonial(picture: 'assets/images/profil.png'),
-                    Expanded(
-                      child: Column(
-                        children: const [
-                          SizedBox(height: 200,),
-                          TestamonialClient(
-                        content: "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                Column(
+                  children: const [
+                    SizedBox(
+                      height: 200,
+                    ),
+                    TestamonialClient(
+                        content:
+                            "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
                         name: "\n Oussema Missaoui",
                         compagny: '\n BI Consultant'),
-                        ],
-                      ),
-                    ),
                   ],
-                )
-        ],
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

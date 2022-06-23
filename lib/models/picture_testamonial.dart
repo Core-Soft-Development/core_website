@@ -11,14 +11,14 @@ class PictureTestamonial extends StatelessWidget {
 
     return Container(
         height: screenSize.height / 4,
-        width: 400,
+        width: screenSize.width /4,
         clipBehavior: Clip.none,
         decoration: const BoxDecoration(
             gradient: LinearGradient(colors: ColorsTheme.gradientBackground,
             begin: Alignment.topRight,
             end: Alignment.bottomLeft),
             shape: BoxShape.circle),
-        constraints: const BoxConstraints.expand(width: 500, height: 700),
+        constraints: const BoxConstraints(minWidth: 500, minHeight: 700),
         child: Container(
             margin: const EdgeInsets.only(bottom: 10),
             child: Stack(children: [
