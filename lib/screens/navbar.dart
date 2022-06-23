@@ -26,9 +26,9 @@ class _NavbarState extends State<Navbar> {
         preferredSize: Size(screenSize.width, 70),
         child: Container(
           constraints: BoxConstraints(maxHeight: screenSize.height),
-          height: screenSize.height / 10,
+          height: screenSize.height / 8,
           width: screenSize.width,
-          padding: const EdgeInsets.only(top: 15, right: 135, left: 135, bottom: 15),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 135),
           decoration: boxGradient(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -49,8 +49,9 @@ class _NavbarState extends State<Navbar> {
                   },
                   onTap: () {},
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
+                      Flexible(
                         child: buttonContact(
                           context,
                           'Contact Us',

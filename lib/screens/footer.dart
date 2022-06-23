@@ -1,5 +1,5 @@
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/widgets/icons.dart';
+import 'package:core_website/widgets/icon_social.dart';
 import 'package:core_website/widgets/text_footer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,12 +22,15 @@ class Footer extends StatelessWidget {
       height: screenSize.height / 3,
       color: Colors.black,
       child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 150),
-          child: Row(children: [
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 140),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                const SizedBox(height: 20),
                 Container(
                     alignment: Alignment.topLeft,
                     height: screenSize.height / 15,
@@ -39,6 +42,7 @@ class Footer extends StatelessWidget {
                   child: Text(
                     'Lorem ipsum dolor sit amet, consy ect etur adipisc de elit. Quisque act raqum nunc no dolor sit de amet.',
                     softWrap: true,
+                    overflow: TextOverflow.visible,
                     style: TextStyle(
                         color: ColorsTheme.textFooter,
                         fontFamily: 'Monserrat',
@@ -49,23 +53,19 @@ class Footer extends StatelessWidget {
                 )
               ]),
             ),
-            const SizedBox(width: 130),
-            Expanded(
-              child: textFooter(' Our service', 'How it works',
-                  'Plan & pricing', 'Our works'),
-            ),
-            const SizedBox(width: 130),
-            Expanded(
-              child: textFooter(
-                  ' Company', 'Blog', 'Contact us', 'Book a call'),
-            ),
-            const SizedBox(width: 130),
+            const Spacer(),
+            textFooter(' Our service', 'How it works',
+                'Plan & pricing', 'Our works'),
+            const Spacer(),
+            textFooter(
+                ' Company', 'Blog', 'Contact us', 'Book a call'),
+            const Spacer(),
             SizedBox(
               width: screenSize.width / 6,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Expanded(
+                children: const [
+                  Expanded(
                     child: Text('Support',
                         style: TextStyle(
                             color: Colors.white,
@@ -74,10 +74,11 @@ class Footer extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                             height: 2)),
                   ),
-                  const Expanded(
+                  Expanded(
                     child: Text(
                         'Quisque actraqum nunc no dolor sit ametaugue dolor. Lorem ipsum dolor sit amet, consyect etur.',
                         softWrap: true,
+                        overflow: TextOverflow.visible,
                         style: TextStyle(
                             color: ColorsTheme.textFooter,
                             fontFamily: 'Monserrat',
@@ -85,24 +86,8 @@ class Footer extends StatelessWidget {
                             fontSize: 16,
                             height: 1)),
                   ),
-                  const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Expanded(child: icon(faIcon[0])),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(child: icon(faIcon[1])),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(child: icon(faIcon[2])),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Expanded(child: icon(faIcon[3])),
-                    ],
-                  ),
+                  SizedBox(height: 20),
+                  Expanded(child: IconSocial(faIcon: faIcon)),
                 ],
               ),
             ),
@@ -110,3 +95,4 @@ class Footer extends StatelessWidget {
     );
   }
 }
+
