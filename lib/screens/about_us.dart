@@ -1,3 +1,4 @@
+import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/circle_picture.dart';
 import 'package:core_website/models/right_title_section.dart';
@@ -17,7 +18,7 @@ class _AboutUsState extends State<AboutUs> {
 
     return Container(
       color: ColorsTheme.backgroundFirst,
-      padding: const EdgeInsets.all(40),
+      padding: paddingGlobal(),
       child: Row(children: [
         /**
            * Image and background circle

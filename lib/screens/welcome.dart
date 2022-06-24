@@ -1,3 +1,5 @@
+import 'package:core_website/config/frame_size.dart';
+import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/config/themes/fond_decoration.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +16,9 @@ class _WelcomeState extends State<Welcome> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      padding: const EdgeInsets.all(40),
+      padding: paddingGlobal(),
       decoration: boxGradient(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -51,8 +52,8 @@ class _WelcomeState extends State<Welcome> {
             ],
           ),
           SizedBox(
-                  height: screenSize.height / 2,
-                  width: screenSize.width,
+                  height: FrameSize.screenHeight/ 2,
+                  width: FrameSize.screenWidth, // takes up the full width
                   child: Image.asset('assets/images/background.png'))
         ],
       ),

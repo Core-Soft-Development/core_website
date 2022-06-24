@@ -1,3 +1,5 @@
+import 'package:core_website/config/padding.dart';
+import 'package:core_website/config/spacer.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/card_service.dart';
 import 'package:core_website/models/center_title_section.dart';
@@ -18,7 +20,7 @@ class _ServicesState extends State<Services> {
      */
     return Container(
       color: ColorsTheme.backgroundFirst,
-      padding: const EdgeInsets.all(40),
+      padding: paddingGlobal(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -29,8 +31,8 @@ class _ServicesState extends State<Services> {
            * Container of services
            * and first block container
            */
-          Row(children: const [
-            Expanded(
+          Row(children: [
+            const Expanded(
                 child: CardService(
                     icon: 'assets/icons/code.png',
                     titleService: 'Website Design \n',
@@ -39,8 +41,8 @@ class _ServicesState extends State<Services> {
             /**
                * second block container
                */
-            SizedBox(width: 32),
-            Expanded(
+            spacerServices(),
+            const Expanded(
                 child: CardService(
                     icon: 'assets/icons/phonelink.png',
                     titleService: 'Mobile App Design \n',
@@ -52,16 +54,16 @@ class _ServicesState extends State<Services> {
            */
           const SizedBox(height: 24,),
           Row(
-            children: const <Widget>[
-              Expanded(
+            children: [
+              const Expanded(
                 child: CardService(
                     icon: 'assets/icons/serveur.png',
                     titleService: 'Website Development \n',
                     contentService:
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque et consectetur auctor gravida mauris tempus pellentesque'),
               ),
-              SizedBox(width: 32),
-              Expanded(
+              spacerServices(),
+              const Expanded(
                   child: CardService(
                       icon: 'assets/icons/mode.png',
                       titleService: 'Mobile App Development \n',

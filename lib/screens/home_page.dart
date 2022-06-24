@@ -24,8 +24,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
-  //double _scrollPosition = 0;
-  //double _opacity = 0;
 
   @override
   void initState() {
@@ -81,6 +79,7 @@ class _HomePageState extends State<HomePage> {
                 AboutUs(),
                 Client(),
                 Portfolio(),
+                //Blog(),
                 Contact(),
                 Footer(),
                 Copyright(),

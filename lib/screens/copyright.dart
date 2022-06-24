@@ -13,14 +13,14 @@ class Copyright extends StatelessWidget {
       height: FrameSize.screenHeight / 10,
         color: Colors.black,
       child: Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-         children: const [
-           Text('© Copyrights 2018',
-           style: TextStyle(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text('© Copyrights 2018',
+          style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Monserrat-Regular',
                   fontSize: 14))
-         ],
+        ],
       ),
     );
   }

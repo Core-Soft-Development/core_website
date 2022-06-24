@@ -1,3 +1,5 @@
+import 'package:core_website/config/padding.dart';
+import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class Blog extends StatefulWidget {
@@ -10,6 +12,9 @@ class Blog extends StatefulWidget {
 class _BlogState extends State<Blog> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: ColorsTheme.backgroundSecond,
+      padding: paddingGlobal(),
+    );
   }
 }

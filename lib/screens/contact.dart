@@ -57,7 +57,7 @@ class _ContactState extends State<Contact> {
        * Title
        */
         color: ColorsTheme.backgroundFirst,
-        padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 150, ),
+        padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 150),
         child: Column(
           children: [
           Stack(alignment: Alignment.topCenter, children: [
@@ -66,53 +66,54 @@ class _ContactState extends State<Contact> {
               description: 'Contact Us'),
             SizedBox(
               height: FrameSize.screenHeight / 5,
-              //width: FrameSize.screenWidth,
             )
           ]),
           Row(
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: FrameSize.screenWidth / 2.70,
-                        height: FrameSize.screenHeight / 2,
-                        child: ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(5)),
-                          child: GoogleMap(
-                              padding: const EdgeInsets.all(2),
-                              onMapCreated: _onMapCreated,
-                              initialCameraPosition: CameraPosition(
-                                target: _other,
-                                zoom: 10.5),
-                              markers: Set.from(allMarkers),
-                              ),
-                        ),
+              Flexible(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: FrameSize.screenWidth / 2.70,
+                      height: FrameSize.screenHeight / 2,
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.all(Radius.circular(5)),
+                        child: GoogleMap(
+                            padding: const EdgeInsets.all(2),
+                            onMapCreated: _onMapCreated,
+                            initialCameraPosition: CameraPosition(
+                              target: _other,
+                              zoom: 10.5),
+                            markers: Set.from(allMarkers),
+                            ),
                       ),
-                      const SizedBox(width: 40),
-                      Expanded(
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                '\n Get in Touch with us',
-                                style: TextStyle(
-                                    fontFamily: "Monserrat",
-                                    fontWeight: FontWeight.w600,
-                                    color: ColorsTheme.titleForm,
-                                    fontSize: 28,
-                                    wordSpacing: 1,
-                                    letterSpacing: 1, 
-                                    height: 1),
-                              ),
-                              FormSend(),
-                              Container(
-                                padding: const EdgeInsets.only(top: 45, left: 7),
-                                child: buttonSend(context, "Send", () => const Welcome()))
-                            ]),
-                      )
-                    ],
-                  )),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 40),
+              Flexible(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        '\n Get in Touch with us',
+                        style: TextStyle(
+                            fontFamily: "Monserrat",
+                            fontWeight: FontWeight.w600,
+                            color: ColorsTheme.titleForm,
+                            fontSize: 28,
+                            wordSpacing: 1,
+                            letterSpacing: 1, 
+                            height: 1),
+                      ),
+                      FormSend(),
+                      Container(
+                        padding: const EdgeInsets.only(top: 45, left: 7),
+                        child: buttonSend(context, "Send", () => const Welcome()))
+                    ]),
+              ),
             ],
           ),
         ]));
