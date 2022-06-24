@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -9,16 +10,15 @@ class CardService extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        var screenSize = MediaQuery.of(context).size;
 
     return Container(
       padding: const EdgeInsets.all(30),
-      width: screenSize.width * 0.45,
+      width: FrameSize.screenWidth * 0.45,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: const [
           BoxShadow(
-            color: Color(0x199E9E9E),
+            color: ColorsTheme.shadowCard,
             spreadRadius: 10,
             blurRadius: 80,
             offset: Offset(2, 3),
@@ -33,7 +33,7 @@ class CardService extends StatelessWidget {
                           alignment: Alignment.center,
                           height: 50,
                           width: 50,
-                          constraints: BoxConstraints.loose(screenSize),
+                          constraints: BoxConstraints.loose(FrameSize.screenSize),
                           child: Image.asset(icon,
                           color: ColorsTheme.iconColor),
                         ),

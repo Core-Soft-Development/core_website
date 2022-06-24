@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -7,9 +8,9 @@ class CirclePicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+
     return Container(
-      height: screenSize.height / 2,
+      height: FrameSize.screenHeight / 2,
             decoration: BoxDecoration(
                 gradient: const LinearGradient(colors: ColorsTheme.gradientBackground),
                 shape: BoxShape.circle,

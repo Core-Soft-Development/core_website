@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/picture_testamonial.dart';
 import 'package:core_website/models/right_title_section.dart';
@@ -68,11 +69,11 @@ class _ClientState extends State<Client> {
                   ],
                 ),
                 Column(
-                  children: const [
+                  children: [
                     SizedBox(
-                      height: 200,
+                      height: FrameSize.screenHeight / 4,
                     ),
-                    TestamonialClient(
+                    const TestamonialClient(
                         content:
                             "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
                         name: "\n Oussema Missaoui",

@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/fond_decoration.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/widgets/button.dart';
@@ -17,24 +18,22 @@ class _NavbarState extends State<Navbar> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 /**
  * implementation of the menu bar
  */
     return SliverToBoxAdapter(
       child: PreferredSize(
-        preferredSize: Size(screenSize.width, 70),
+        preferredSize: Size(FrameSize.screenWidth, 70),
         child: Container(
-          constraints: BoxConstraints(maxHeight: screenSize.height),
-          height: screenSize.height / 8,
-          width: screenSize.width,
+          constraints: BoxConstraints(maxHeight: FrameSize.screenHeight),
+          height: FrameSize.screenHeight / 8,
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 135),
           decoration: boxGradient(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset('assets/logos/core_soft_development.png'),
-                SizedBox(width: screenSize.width / 5),
+                SizedBox(width: FrameSize.screenWidth / 5),
                 const Expanded(child: MenuItems(title: 'Home', index: 0)),
                 const Expanded(child: MenuItems(title: 'Service', index: 1)),
                 const Expanded(child: MenuItems(title: 'About Us', index: 2)),

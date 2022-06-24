@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -7,11 +8,10 @@ class PictureTestamonial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-        height: screenSize.height / 4,
-        width: screenSize.width /4,
+        height: FrameSize.screenHeight / 4,
+        width: FrameSize.screenWidth /4,
         clipBehavior: Clip.none,
         decoration: const BoxDecoration(
             gradient: LinearGradient(colors: ColorsTheme.gradientBackground,
@@ -35,7 +35,7 @@ class PictureTestamonial extends StatelessWidget {
                     child: Image.asset(
                       picture,
                       matchTextDirection: true,
-                      height: screenSize.height / 6,
+                      height: FrameSize.screenHeight / 6,
                       fit: BoxFit.none,
                     )),
               ),

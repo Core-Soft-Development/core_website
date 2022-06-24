@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/widgets/icon_social.dart';
 import 'package:core_website/widgets/text_footer.dart';
@@ -16,10 +17,9 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      height: screenSize.height / 3,
+      height: FrameSize.screenHeight / 3,
       color: Colors.black,
       child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 140),
@@ -33,7 +33,7 @@ class Footer extends StatelessWidget {
                 const SizedBox(height: 20),
                 Container(
                     alignment: Alignment.topLeft,
-                    height: screenSize.height / 15,
+                    height: FrameSize.screenHeight / 15,
                     child: Image.asset(
                       'assets/logos/core_soft_development.png',
                       color: Colors.white,
@@ -61,7 +61,7 @@ class Footer extends StatelessWidget {
                 ' Company', 'Blog', 'Contact us', 'Book a call'),
             const Spacer(),
             SizedBox(
-              width: screenSize.width / 6,
+              width: FrameSize.screenWidth / 6,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [

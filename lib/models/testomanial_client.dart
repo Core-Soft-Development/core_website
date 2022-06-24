@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -15,10 +16,9 @@ class TestamonialClient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      width: screenSize.width / 2,
+      width: FrameSize.screenWidth / 2,
       padding: const EdgeInsets.only(top: 24, left: 10),
       child: RichText(
           textAlign: TextAlign.left,

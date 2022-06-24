@@ -1,11 +1,11 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
   Container areaForm (BuildContext context, String labelText, String hintText, String empty) {
-    var screenSize = MediaQuery.of(context).size;
     
     return Container(
-      width: screenSize.width / 1.30,
+      width: FrameSize.screenWidth / 1.30,
       padding: const EdgeInsets.only(top: 45, left: 7),
       child: TextFormField(
         maxLines: null,

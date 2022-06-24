@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:flutter/material.dart';
 
 class Copyright extends StatelessWidget {
@@ -7,10 +8,9 @@ class Copyright extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-      height: screenSize.height / 10,
+      height: FrameSize.screenHeight / 10,
         color: Colors.black,
       child: Row(
          mainAxisAlignment: MainAxisAlignment.center,

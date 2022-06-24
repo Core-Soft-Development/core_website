@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/models/form_send.dart';
@@ -50,7 +51,6 @@ class _ContactState extends State<Contact> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
         /**
@@ -62,11 +62,11 @@ class _ContactState extends State<Contact> {
           children: [
           Stack(alignment: Alignment.topCenter, children: [
             const CenterTitleSection(
-              title: "CONTACT \n", 
+              title: "CONTACT \n",
               description: 'Contact Us'),
             SizedBox(
-              height: screenSize.height / 6,
-              width: screenSize.width,
+              height: FrameSize.screenHeight / 5,
+              //width: FrameSize.screenWidth,
             )
           ]),
           Row(
@@ -75,8 +75,8 @@ class _ContactState extends State<Contact> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: screenSize.width / 2.70,
-                        height: screenSize.height / 2,
+                        width: FrameSize.screenWidth / 2.70,
+                        height: FrameSize.screenHeight / 2,
                         child: ClipRRect(
                           borderRadius: const BorderRadius.all(Radius.circular(5)),
                           child: GoogleMap(
@@ -95,7 +95,7 @@ class _ContactState extends State<Contact> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                ' Get in Touch with us',
+                                '\n Get in Touch with us',
                                 style: TextStyle(
                                     fontFamily: "Monserrat",
                                     fontWeight: FontWeight.w600,

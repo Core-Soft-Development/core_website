@@ -7,12 +7,9 @@ class ImageProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
-      padding: const EdgeInsets.only(right: 50, left: 50),
-      child: Image.asset(
-        image,
-        fit: BoxFit.contain,
-      ),
+    return Image.asset(
+      image,
+      fit: BoxFit.fill,
     );
   }
 }

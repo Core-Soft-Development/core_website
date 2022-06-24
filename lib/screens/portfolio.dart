@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/models/image_project.dart';
@@ -14,8 +15,6 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-
     return Container(
         /**
        * Title
@@ -27,38 +26,40 @@ class _PortfolioState extends State<Portfolio> {
             const CenterTitleSection(
                 title: "PORTFOLIO \n", description: 'Our Clients Projects'),
             SizedBox(
-              height: screenSize.height / 6,
-              width: screenSize.width,
+              height: FrameSize.screenHeight / 4,
+              width: FrameSize.screenWidth,
             )
           ]),
           Row(
             children: const [
               Expanded(
-                  child: ImageProject(
-                      image: 'assets/images/project/project1.png')),
+                child:
+                    ImageProject(image: 'assets/images/project/project1.png'),
+              ),
               Expanded(
-                  child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              ))
+                child: Project(
+                  title: "Project name \n",
+                  description:
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                ),
+              )
             ],
           ),
-          SizedBox(height: screenSize.height * 0.05),
+          const SpacerPortfolio(),
           Row(
             children: const [
               Expanded(
                   child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              )),
+                    title: "Project name \n",
+                    description:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                  )),
               Expanded(
                   child:
                       ImageProject(image: 'assets/images/project/project2.png'))
             ],
           ),
-          SizedBox(height: screenSize.height * 0.05),
+          const SpacerPortfolio(),
           Row(
             children: const [
               Expanded(
@@ -66,26 +67,37 @@ class _PortfolioState extends State<Portfolio> {
                       image: 'assets/images/project/project3.png')),
               Expanded(
                   child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              ))
+                    title: "Project name \n",
+                    description:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                  ))
             ],
           ),
-          SizedBox(height: screenSize.height * 0.05),
+          const SpacerPortfolio(),
           Row(
             children: const [
               Expanded(
                   child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              )),
+                    title: "Project name \n",
+                    description:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                  )),
               Expanded(
                   child:
                       ImageProject(image: 'assets/images/project/project4.png'))
             ],
           ),
         ]));
+  }
+}
+
+class SpacerPortfolio extends StatelessWidget {
+  const SpacerPortfolio({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(height: FrameSize.screenHeight * 0.05);
   }
 }

@@ -8,6 +8,7 @@ class RightTitleSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return RichText(
         maxLines: 10,
         textAlign: TextAlign.justify,
