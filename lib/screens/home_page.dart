@@ -66,7 +66,6 @@ class _HomePageState extends State<HomePage> {
             ];
           },
           body: SingleChildScrollView(
-            //controller: _scrollController,
             physics: const ClampingScrollPhysics(),
             child: ConstrainedBox(
               constraints: const BoxConstraints(
@@ -75,16 +74,19 @@ class _HomePageState extends State<HomePage> {
               ),
               child: ListView(
                 shrinkWrap: true,
-                children: const [
-                Welcome(),
-                Services(),
-                AboutUs(),
-                Client(),
-                Portfolio(),
+                children: [
+                Responsive(
+                  desktop: Welcome(height: FrameSize.screenHeight / 2),
+                  tablet: Welcome(height: FrameSize.screenHeight / 4, heightText: 4, size: 30,),
+                  mobile: Welcome(height: FrameSize.screenHeight / 6, heightText: 3, size: 25, heightText2: 2,)),
+                const Services(),
+                const AboutUs(),
+                const Client(),
+                const Portfolio(),
                 //Blog(),
-                Contact(),
-                Footer(),
-                Copyright(),
+                const Contact(),
+                const Footer(),
+                const Copyright(),
               ]),
             ),
           ),

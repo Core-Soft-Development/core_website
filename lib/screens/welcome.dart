@@ -5,7 +5,12 @@ import 'package:core_website/config/themes/fond_decoration.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatefulWidget {
-  const Welcome({Key? key}) : super(key: key);
+  const Welcome({Key? key, this.heightText = 5, this.heightText2 = 2, required this.height, this.size = 40}) : super(key: key);
+
+  final double heightText;
+  final double heightText2;
+  final double height;
+  final double size;
 
   @override
   State<Welcome> createState() => _WelcomeState();
@@ -28,15 +33,15 @@ class _WelcomeState extends State<Welcome> {
             children: [
               RichText(
                 textAlign: TextAlign.center,
-                text: const TextSpan(
+                text: TextSpan(
                     text: "Building Your Idea & Vision Into Reality \n",
                     style: TextStyle(
-                        fontSize: 40,
+                        fontSize: widget.size,
                         fontWeight: FontWeight.w600,
                         fontFamily: "Montserrat",
                         color: ColorsTheme.text,
                         wordSpacing: 1,
-                        height: 5),
+                        height: widget.heightText),
                     children: [
                       TextSpan(
                           text:
@@ -46,13 +51,13 @@ class _WelcomeState extends State<Welcome> {
                               fontSize: 16,
                               color: ColorsTheme.subText,
                               wordSpacing: 1,
-                              height: 2))
+                              height: widget.heightText2))
                     ]),
               ),
             ],
           ),
           SizedBox(
-                  height: FrameSize.screenHeight/ 2,
+                  height: widget.height,
                   width: FrameSize.screenWidth, // takes up the full width
                   child: Image.asset('assets/images/background.png'))
         ],
