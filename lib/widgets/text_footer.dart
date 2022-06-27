@@ -1,3 +1,4 @@
+import 'package:core_website/config/spacer.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +15,11 @@ Column textFooter(String title, String text, String text1, String text2) {
                               fontWeight: FontWeight.w700,
                               height: 2)),
                     ),
-                    const SizedBox(height: 20),
+                    spacerTextFooter(),
                     Expanded(child: footerTextButton(text)),
-                    const SizedBox(height: 20),
+                    spacerTextFooter(),
                     Expanded(child: footerTextButton(text1)),
-                    const SizedBox(height: 20),
+                    spacerTextFooter(),
                     Expanded(child: footerTextButton(text2)),
                   ],
                 );

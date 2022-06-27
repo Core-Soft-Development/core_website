@@ -1,9 +1,10 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:flutter/material.dart';
 
 class Responsive extends StatelessWidget {
   final Widget desktop;
   final Widget? tablet;
-  final Widget mobile;
+  final Widget? mobile;
 
   const Responsive(
       {Key? key,
@@ -13,28 +14,28 @@ class Responsive extends StatelessWidget {
       : super(key: key);
 
   static bool isMobile(BuildContext context) {
-    return MediaQuery.of(context).size.width < 640;
+    return FrameSize.screenWidth < 767;
   }
 
   static bool isTablet(BuildContext context) {
-    return MediaQuery.of(context).size.width >= 641 &&
-        MediaQuery.of(context).size.width < 1007;
+    return FrameSize.screenWidth >= 768 &&
+        FrameSize.screenWidth < 1023;
   }
 
   static bool isDesktop(BuildContext context) {
-    return MediaQuery.of(context).size.width > 1008;
+    return FrameSize.screenWidth > 1024;
   }
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    
-    if(size.width >= 1008) {
+    final Size size = FrameSize.screenSize;
+
+    if(size.width >= 1024) {
       return desktop;
-    } else if (size.width >= 641 && tablet != null) {
+    } else if (size.width >= 768 && tablet != null) {
       return tablet!;
     } else {
-      return mobile;
+      return mobile!;
     }
   }
 }

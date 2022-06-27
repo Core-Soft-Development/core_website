@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/widgets/drawer_items.dart';
 import 'package:core_website/config/line_spacer.dart';
@@ -12,8 +13,8 @@ class MenuDrawer extends StatelessWidget {
  * setting up the drawer menu
  */
     return Drawer(
+      width: FrameSize.screenWidth / 3,
       child: Container(
-          //color: ColorsTheme.menuDrawer,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: ColorsTheme.gradientColor)),
@@ -39,6 +40,7 @@ class MenuDrawer extends StatelessWidget {
                       child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Text('Copyright © 2022',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white, fontSize: 14)),
                   ))

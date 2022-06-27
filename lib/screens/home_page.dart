@@ -39,41 +39,43 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.transparent,
       extendBody: true,
       drawer: const MenuDrawer(),
-      body: NestedScrollView(
-        headerSliverBuilder: (context, innerBoxIsScrolled) {
-          return [
-            Responsive.isMobile(context) || Responsive.isTablet(context)
-                ? SliverAppBar(
-                    iconTheme: const IconThemeData(color: ColorsTheme.hoverColor),
-                    backgroundColor: const Color(0XFFF06C4F),
-                    elevation: 10,
-                    centerTitle: true,
-                    title: Image.asset(
-                      'assets/logos/csd_core_soft_development.png',
-                      color: ColorsTheme.backgroundFirst,
-                      height: 50,
-                      fit: BoxFit.cover,
+      body: SafeArea(
+        child: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) {
+            return [
+              Responsive.isMobile(context)
+                  ? SliverAppBar(
+                      iconTheme: const IconThemeData(color: ColorsTheme.hoverColor),
+                      backgroundColor: const Color(0XFFF06C4F),
+                      elevation: 10,
+                      centerTitle: true,
+                      title: Image.asset(
+                        'assets/logos/csd_core_soft_development.png',
+                        color: ColorsTheme.backgroundFirst,
+                        height: 50,
+                        fit: BoxFit.cover,
+                      ),
+                      floating: true,
+                      snap: true,
+                      expandedHeight: 50,
+                    )
+                  : PreferredSize(
+                      preferredSize: Size(FrameSize.screenWidth, 70),
+                      child: const Navbar(),
                     ),
-                    floating: true,
-                    snap: true,
-                    expandedHeight: 50,
-                  )
-                : PreferredSize(
-                    preferredSize: Size(FrameSize.screenWidth, 70),
-                    child: const Navbar(),
-                  ),
-          ];
-        },
-        body: SingleChildScrollView(
-          //controller: _scrollController,
-          physics: const ClampingScrollPhysics(),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: double.infinity,
-              maxHeight: double.infinity,
-            ),
-            child: IntrinsicHeight(
-              child: Column(children: const [
+            ];
+          },
+          body: SingleChildScrollView(
+            //controller: _scrollController,
+            physics: const ClampingScrollPhysics(),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxWidth: double.infinity,
+                maxHeight: double.infinity,
+              ),
+              child: ListView(
+                shrinkWrap: true,
+                children: const [
                 Welcome(),
                 Services(),
                 AboutUs(),
