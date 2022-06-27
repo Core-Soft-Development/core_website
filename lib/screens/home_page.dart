@@ -5,7 +5,7 @@ import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/welcome.dart';
 import 'package:core_website/screens/portfolio.dart';
-import 'package:core_website/screens/services.dart';
+import 'package:core_website/services/services.dart';
 import 'package:core_website/utils/ui/responsive.dart';
 import 'package:core_website/screens/copyright.dart';
 import 'package:core_website/screens/footer.dart';

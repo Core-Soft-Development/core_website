@@ -25,7 +25,7 @@ class _NavbarState extends State<Navbar> {
         child: Container(
           constraints: BoxConstraints(maxHeight: FrameSize.screenHeight),
           height: FrameSize.screenHeight / 8,
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 100),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 135),
           decoration: boxGradient(),
             child: Responsive(
               desktop: Menu( width: FrameSize.screenWidth / 5, image: 'assets/logos/core_soft_development.png',),
