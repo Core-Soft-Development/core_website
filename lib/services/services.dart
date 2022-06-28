@@ -49,7 +49,7 @@ class _ServicesState extends State<Services> {
             ),
             tablet: CardView(
                 aspectRatio:
-                    FrameSize.screenWidth / (FrameSize.screenHeight * 1.10)),
+                    FrameSize.screenWidth / (FrameSize.screenHeight * 1.2)),
             mobile: CardView(
                 axisCount: 1,
                 aspectRatio:
