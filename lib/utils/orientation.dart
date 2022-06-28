@@ -1,3 +1,4 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:flutter/material.dart';
 
 class OrientationSwitch extends StatelessWidget {
@@ -8,7 +9,7 @@ class OrientationSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Orientation orientation = MediaQuery.of(context).orientation;
+    Orientation orientation = FrameSize.mediaQueryData.orientation;
     return orientation == Orientation.portrait
     ? Column(children: children)
     : Row(children: children);

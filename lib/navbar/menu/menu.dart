@@ -30,7 +30,7 @@ class _MenuState extends State<Menu> {
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
           children: [
-            Image.asset(widget.image, alignment: Alignment.centerLeft,),
+            Image.asset(widget.image, alignment: Alignment.centerLeft),
             SizedBox(width: widget.width),
             const MenuItems(title: 'Home', index: 0),
             spacerMenu(),
