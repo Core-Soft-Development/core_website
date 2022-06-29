@@ -24,7 +24,7 @@ class CardContent extends StatelessWidget {
     return Column(
                     children: [
                       Container(
-                        margin: const EdgeInsets.all(5),
+                        margin: const EdgeInsets.all(20),
                         alignment: Alignment.center,
                         height: sizeIcon,
                         width: sizeIcon,
@@ -33,7 +33,7 @@ class CardContent extends StatelessWidget {
                         color: ColorsTheme.iconColor),
                       ),
                       Container(
-                        padding: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(5),
                         alignment: Alignment.center,
                         child: RichText(
                           textAlign: TextAlign.center,
@@ -57,7 +57,7 @@ class CardContent extends StatelessWidget {
                                       fontSize: sizeText2,
                                       fontWeight: FontWeight.w400,
                                       color: ColorsTheme.subText,
-                                      height: 2,
+                                      height: heightText2,
                                     ))
                               ],)))
     ]);

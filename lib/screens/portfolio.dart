@@ -3,7 +3,7 @@ import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/spacer.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
-import 'package:core_website/models/image_project.dart';
+import 'package:core_website/widgets/image_project.dart';
 import 'package:core_website/models/project.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,5 @@
 import 'package:core_website/config/spacer.dart';
-import 'package:core_website/navbar/menu/menu_items.dart';
+import 'package:core_website/widgets/menu_items.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';

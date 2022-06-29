@@ -1,6 +1,6 @@
 import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/drawer/drawer_items.dart';
+import 'package:core_website/widgets/drawer_items.dart';
 import 'package:core_website/config/line_spacer.dart';
 import 'package:flutter/material.dart';
 

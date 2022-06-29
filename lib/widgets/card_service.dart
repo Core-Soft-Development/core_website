@@ -1,7 +1,7 @@
 import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/utils/ui/responsive.dart';
-import 'package:core_website/services/card/card_content.dart';
+import 'package:core_website/widgets/card_content.dart';
 import 'package:flutter/material.dart';
 
 class CardService extends StatelessWidget {
@@ -14,7 +14,7 @@ class CardService extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.only(top: 30),
       width: FrameSize.screenWidth * 0.45,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -30,8 +30,8 @@ class CardService extends StatelessWidget {
       ),
       child: Responsive(
         desktop: CardContent(icon: icon, titleService: titleService, contentService: contentService),
-        tablet: CardContent(icon: icon, titleService: titleService, contentService: contentService, heightText: 1.5, sizeText: 18, heightText2: 1,),
-        mobile: CardContent(icon: icon, titleService: titleService, contentService: contentService, heightText: 1, sizeText: 14, heightText2: 0.5, sizeText2: 12, sizeIcon: 25,))
+        tablet: CardContent(icon: icon, titleService: titleService, contentService: contentService, heightText: 1.5, sizeText: 18, heightText2: 1.5,),
+        mobile: CardContent(icon: icon, titleService: titleService, contentService: contentService, heightText: 1, sizeText: 14, heightText2: 1, sizeText2: 12, sizeIcon: 25,))
       ,
     );
   }

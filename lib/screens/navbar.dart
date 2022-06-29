@@ -1,6 +1,6 @@
 import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/fond_decoration.dart';
-import 'package:core_website/navbar/menu/menu.dart';
+import 'package:core_website/models/menu.dart';
 import 'package:core_website/utils/ui/responsive.dart';
 import 'package:flutter/material.dart';
 

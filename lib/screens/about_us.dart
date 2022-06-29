@@ -1,6 +1,6 @@
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/models/circle_picture.dart';
+import 'package:core_website/widgets/circle_picture.dart';
 import 'package:core_website/models/right_title_section.dart';
 import 'package:core_website/models/text_about.dart';
 import 'package:core_website/utils/ui/responsive.dart';
@@ -42,13 +42,13 @@ class _AboutUsState extends State<AboutUs> {
                 description:
                     'Share your idea, we will help you with our service \n',
                 sizeTitle: 16,
-                sizeText: 38,),
+                sizeText: 30,),
           mobile: RightTitleSection(
                 title: "ABOUT US \n",
                 description:
                     'Share your idea, we will help you with our service \n',
                 sizeTitle: 14,
-                sizeText: 25,
+                sizeText: 20,
                 heightText: 1.5,)),
         Responsive(desktop: TextAbout(),
         tablet: TextAbout(size: 16, height: 1.5,),

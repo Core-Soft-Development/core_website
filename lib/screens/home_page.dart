@@ -5,12 +5,12 @@ import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/welcome.dart';
 import 'package:core_website/screens/portfolio.dart';
-import 'package:core_website/services/services.dart';
+import 'package:core_website/screens/services.dart';
 import 'package:core_website/utils/ui/responsive.dart';
 import 'package:core_website/screens/copyright.dart';
 import 'package:core_website/screens/footer.dart';
-import 'package:core_website/drawer/menu_drawer.dart';
-import 'package:core_website/navbar/navbar.dart';
+import 'package:core_website/models/menu_drawer.dart';
+import 'package:core_website/screens/navbar.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const HomePage());
