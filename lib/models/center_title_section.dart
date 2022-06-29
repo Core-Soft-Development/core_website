@@ -4,11 +4,8 @@ import 'package:flutter/material.dart';
 class CenterTitleSection extends StatelessWidget {
   const CenterTitleSection({Key? key, required this.title, required this.description, this.sizeTitle = 18, this.height = 2, this.sizeText = 40}) : super(key: key);
 
-  final String title;
-  final String description;
-  final double sizeTitle;
-  final double height;
-  final double sizeText;
+  final String title, description;
+  final double sizeTitle, height, sizeText;
 
   @override
   Widget build(BuildContext context) {

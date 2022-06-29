@@ -3,8 +3,9 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class CirclePicture extends StatelessWidget {
-  final String image;
   const CirclePicture({Key? key, required this.image}) : super(key: key);
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {

@@ -6,8 +6,7 @@ class TextAbout extends StatelessWidget {
     Key? key, this.size = 18, this.height = 2,
   }) : super(key: key);
 
-  final double size;
-  final double height;
+  final double size, height;
 
   @override
   Widget build(BuildContext context) {

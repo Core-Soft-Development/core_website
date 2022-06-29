@@ -5,10 +5,9 @@ import 'package:core_website/widgets/card_content.dart';
 import 'package:flutter/material.dart';
 
 class CardService extends StatelessWidget {
-  final String icon;
-  final String titleService;
-  final String contentService;
   const CardService({Key? key, required this.icon, required this.titleService, required this.contentService}) : super(key: key);
+
+  final String icon, titleService, contentService;
 
   @override
   Widget build(BuildContext context) {

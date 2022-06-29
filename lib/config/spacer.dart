@@ -1,7 +1,17 @@
 import 'package:core_website/config/frame_size.dart';
+import 'package:core_website/utils/ui/responsive.dart';
 import 'package:flutter/material.dart';
 
-SizedBox spacerPortfolio() => SizedBox(height: FrameSize.screenHeight * 0.05);
+class SpacerPortfolio extends StatelessWidget {
+  const SpacerPortfolio({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(height: Responsive.isDesktop(context) ? FrameSize.screenHeight * 0.05 : 2);
+  }
+}
 
 SizedBox spacerFooter() => const SizedBox(height: 20);
 

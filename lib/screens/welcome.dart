@@ -7,10 +7,7 @@ import 'package:flutter/material.dart';
 class Welcome extends StatefulWidget {
   const Welcome({Key? key, this.heightText = 5, this.heightText2 = 2, required this.height, this.size = 40}) : super(key: key);
 
-  final double heightText;
-  final double heightText2;
-  final double height;
-  final double size;
+  final double heightText, heightText2, height, size;
 
   @override
   State<Welcome> createState() => _WelcomeState();

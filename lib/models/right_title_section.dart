@@ -4,12 +4,8 @@ import 'package:flutter/material.dart';
 class RightTitleSection extends StatelessWidget {
   const RightTitleSection({Key? key, required this.title, required this.description, this.sizeTitle = 18, this.height = 2, this.sizeText = 40, this.heightText = 1.5}) : super(key: key);
 
-  final String title;
-  final String description;
-  final double sizeTitle;
-  final double height;
-  final double sizeText;
-  final double heightText;
+  final String title, description;
+  final double sizeTitle, height, sizeText, heightText;
 
   @override
   Widget build(BuildContext context) {

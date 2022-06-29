@@ -10,14 +10,8 @@ class TestamonialClient extends StatelessWidget {
       required this.compagny, this.textSize = 20, this.textHeight = 2, this.sizeName = 24, this.heightName = 2.5})
       : super(key: key);
 
-  final String content;
-  final String name;
-  final String compagny;
-  final double textSize;
-  final double textHeight;
-  final double sizeName;
-  final double heightName;
-
+  final String content, name, compagny;
+  final double textSize, textHeight, sizeName, heightName;
 
   @override
   Widget build(BuildContext context) {

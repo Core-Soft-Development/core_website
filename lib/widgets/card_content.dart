@@ -10,14 +10,8 @@ class CardContent extends StatelessWidget {
     required this.contentService, this.heightText = 2.5, this.sizeText = 20,  this.sizeIcon = 50, this.heightText2 = 2, this.sizeText2 = 16,
   }) : super(key: key);
 
-  final String icon;
-  final String titleService;
-  final String contentService;
-  final double heightText;
-  final double heightText2;
-  final double sizeText;
-  final double sizeText2;
-  final double sizeIcon;
+  final String icon, titleService, contentService;
+  final double heightText, heightText2, sizeText, sizeText2, sizeIcon;
 
   @override
   Widget build(BuildContext context) {

@@ -6,9 +6,7 @@ class PictureTestamonial extends StatelessWidget {
   const PictureTestamonial({Key? key, required this.picture, required this.bottom, this.right = 0, this.minHeight = 700,  this.fit = BoxFit.none}) : super(key: key);
 
   final String picture;
-  final double minHeight;
-  final double bottom;
-  final double right;
+  final double minHeight, bottom, right;
   final BoxFit fit;
 
   @override

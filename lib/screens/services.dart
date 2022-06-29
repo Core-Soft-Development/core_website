@@ -1,4 +1,3 @@
-import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
