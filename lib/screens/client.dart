@@ -84,7 +84,6 @@ class _ClientState extends State<Client> {
               ),
             ),
           ]),
-          const SizedBox(height: 20,),
           Row(
             children: [
               Flexible(
@@ -93,7 +92,7 @@ class _ClientState extends State<Client> {
                     Responsive(
                       desktop: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100,),
                       tablet: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100, right: 1, minHeight: 490, fit: BoxFit.fill,),
-                      mobile: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100, minHeight: 350,fit: BoxFit.cover,)),
+                      mobile: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100, minHeight: 400,fit: BoxFit.cover,)),
                   ],
                 ),
               ),
