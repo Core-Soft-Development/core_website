@@ -44,43 +44,86 @@ class _ClientState extends State<Client> {
                       sizeText: 20,
                       heightText: 1.5,),
                       ),
-                  TestamonialClient(
+                  Responsive(
+                    desktop: TestamonialClient(
                         content:
                             "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
                         name: "\n Oussema Missaoui",
                         compagny: '\n BI Consultant'),
+                    tablet: TestamonialClient(
+                        content:
+                            "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                        name: "\n Oussema Missaoui",
+                        compagny: '\n BI Consultant',
+                        textHeight: 1.5,
+                        textSize: 18,
+                        sizeName: 22,
+                        heightName: 2),
+                    mobile: TestamonialClient(
+                        content:
+                            "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                        name: "\n Oussema Missaoui",
+                        compagny: '\n BI Consultant',
+                        textHeight: 1,
+                        textSize: 14,
+                        sizeName: 20,
+                        heightName: 1.5)),
                 ],
               ),
             ),
             SizedBox(width: FrameSize.screenWidth / 6),
             Flexible(
               child: Column(
-                children: const [
-                  PictureTestamonial(picture: 'assets/images/profil.png'),
+                children: 
+                const [
+                  Responsive(
+                  desktop: PictureTestamonial(picture: 'assets/images/profil.png', bottom: 90),
+                  tablet: PictureTestamonial(picture: 'assets/images/profil.png', bottom: 90, right: 1, minHeight: 490, fit: BoxFit.fill,),
+                  mobile: PictureTestamonial(picture: 'assets/images/profil.png', bottom: 105, minHeight: 350, fit: BoxFit.cover,)),
                 ],
               ),
             ),
           ]),
+          const SizedBox(height: 20,),
           Row(
             children: [
               Flexible(
                 child: Column(
                   children: const [
-                    PictureTestamonial(picture: 'assets/images/profil2.png'),
+                    Responsive(
+                      desktop: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100,),
+                      tablet: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100, right: 1, minHeight: 490, fit: BoxFit.fill,),
+                      mobile: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100, minHeight: 350,fit: BoxFit.cover,)),
                   ],
                 ),
               ),
               SizedBox(width: FrameSize.screenWidth / 10),
               Column(
-                children: [
-                  SizedBox(
-                    height: FrameSize.screenHeight / 6,
-                  ),
-                  const TestamonialClient(
+                children: const [
+                  Responsive(
+                    desktop: TestamonialClient(
                       content:
                           "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
                       name: "\n Mulan Chi",
                       compagny: '\n Avocate'),
+                    tablet: TestamonialClient(
+                      content:
+                          "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                      name: "\n Mulan Chi",
+                      compagny: '\n Avocate',
+                      textHeight: 1.5,
+                        textSize: 18,
+                        sizeName: 22,
+                        heightName: 2),
+                    mobile: TestamonialClient(
+                      content:
+                          "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                      name: "\n Mulan Chi",
+                      compagny: '\n Avocate',
+                      textHeight: 1,
+                        textSize: 14,
+                        sizeName: 20,
+                        heightName: 1.5)),
                 ],
               ),
             ],

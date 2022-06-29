@@ -3,8 +3,13 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class PictureTestamonial extends StatelessWidget {
+  const PictureTestamonial({Key? key, required this.picture, required this.bottom, this.right = 0, this.minHeight = 700,  this.fit = BoxFit.none}) : super(key: key);
+
   final String picture;
-  const PictureTestamonial({Key? key, required this.picture}) : super(key: key);
+  final double minHeight;
+  final double bottom;
+  final double right;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +23,15 @@ class PictureTestamonial extends StatelessWidget {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft),
             shape: BoxShape.circle),
-        constraints: const BoxConstraints(minWidth: 500, minHeight: 700),
+        constraints: BoxConstraints(minWidth: 500, minHeight: minHeight),
         child: Container(
             margin: const EdgeInsets.only(bottom: 10),
             child: Stack(children: [
               Positioned(
-                bottom: 90,
-                right: 0,
+                bottom: bottom,
+                right: right,
                 left: 0,
-                top: 20,
+                top: 5,
                 child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(250),
@@ -36,7 +41,7 @@ class PictureTestamonial extends StatelessWidget {
                       picture,
                       matchTextDirection: true,
                       height: FrameSize.screenHeight / 6,
-                      fit: BoxFit.none,
+                      fit: fit,
                     )),
               ),
             ])));

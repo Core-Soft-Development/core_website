@@ -3,16 +3,21 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class TestamonialClient extends StatelessWidget {
-  final String content;
-  final String name;
-  final String compagny;
-
   const TestamonialClient(
       {Key? key,
       required this.content,
       required this.name,
-      required this.compagny})
+      required this.compagny, this.textSize = 20, this.textHeight = 2, this.sizeName = 24, this.heightName = 2.5})
       : super(key: key);
+
+  final String content;
+  final String name;
+  final String compagny;
+  final double textSize;
+  final double textHeight;
+  final double sizeName;
+  final double heightName;
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,30 +29,30 @@ class TestamonialClient extends StatelessWidget {
           textAlign: TextAlign.left,
           text: TextSpan(
               text: content,
-              style: const TextStyle(
+              style: TextStyle(
                   fontStyle: FontStyle.italic,
                   color: ColorsTheme.contentTestamonial,
                   fontFamily: 'Montserrat',
-                  fontSize: 20,
+                  fontSize: textSize,
                   fontWeight: FontWeight.w600,
                   letterSpacing: 1,
                   wordSpacing: 1,
-                  height: 2),
+                  height: textHeight),
               children: [
                 TextSpan(
                     text: name,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.w700,
-                        fontSize: 24,
-                        height: 2.5)),
+                        fontSize: sizeName,
+                        height: heightName)),
                 TextSpan(
                     text: compagny,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.w700,
-                        fontSize: 20,
-                        height: 2))
+                        fontSize: textSize,
+                        height: textHeight))
               ])),
     );
   }
