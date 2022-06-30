@@ -13,9 +13,16 @@ class SpacerPortfolio extends StatelessWidget {
   }
 }
 
-SizedBox spacerFooter() => const SizedBox(height: 20);
+class SpacerTextFooter extends StatelessWidget {
+  const SpacerTextFooter({Key? key}) : super(key: key);
 
-SizedBox spacerTextFooter() => const SizedBox(height: 10);
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(height: Responsive.isDesktop(context) ? 10 : 0.5);
+  }
+}
+
+SizedBox spacerFooter() => const SizedBox(height: 20);
 
 SizedBox spacerServices() => const SizedBox(width: 32);
 

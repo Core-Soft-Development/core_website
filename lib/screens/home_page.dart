@@ -85,7 +85,10 @@ class _HomePageState extends State<HomePage> {
                 const Portfolio(),
                 //Blog(),
                 const Contact(),
-                const Footer(),
+                const Responsive(
+                  desktop: Footer(),
+                  tablet: Footer(horizontal: 100,),
+                  mobile: Footer(horizontal: 40,)),
                 const Copyright(),
               ]),
             ),
