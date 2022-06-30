@@ -66,7 +66,7 @@ class _ClientState extends State<Client> {
                         compagny: '\n BI Consultant',
                         textHeight: 1,
                         textSize: 14,
-                        sizeName: 20,
+                        sizeName: 18,
                         heightName: 1.5)),
                 ],
               ),

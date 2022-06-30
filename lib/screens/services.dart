@@ -21,32 +21,31 @@ class _ServicesState extends State<Services> {
     return Container(
       color: ColorsTheme.backgroundFirst,
       padding: paddingGlobal(),
-      child: Column(
-        children: const [
-          Responsive(
-              desktop: CenterTitleSection(
-                  title: "SERVICES \n",
-                  description: 'A set of digital solution'),
-              tablet: CenterTitleSection(
-                title: "SERVICES \n",
-                description: 'A set of digital solution',
-                sizeTitle: 16,
-                sizeText: 30,
-              ),
-              mobile: CenterTitleSection(
-                title: "SERVICES \n",
-                description: 'A set of digital solution',
-                sizeTitle: 14,
-                height: 1.5,
-                sizeText: 20,
-              )),
-          Responsive(
-              desktop: SizedBox(height: 75), mobile: SizedBox(height: 35)),
-          Responsive(
-            desktop: CardView(),
-            tablet: CardView(),
-            mobile: CardView()),
-          ]),
-      );
+      child: Column(children: [
+        const Responsive(
+            desktop: CenterTitleSection(
+                title: "SERVICES \n", description: 'A set of digital solution'),
+            tablet: CenterTitleSection(
+              title: "SERVICES \n",
+              description: 'A set of digital solution',
+              sizeTitle: 16,
+              sizeText: 30,
+            ),
+            mobile: CenterTitleSection(
+              title: "SERVICES \n",
+              description: 'A set of digital solution',
+              sizeTitle: 14,
+              height: 1.5,
+              sizeText: 20,
+            )),
+        SizedBox(
+            height:
+                Responsive.isDesktop(context) || Responsive.isTablet(context)
+                    ? 75
+                    : 35),
+        const Responsive(
+            desktop: CardView(), tablet: CardView(), mobile: CardView()),
+      ]),
+    );
   }
 }
