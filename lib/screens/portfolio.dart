@@ -6,6 +6,7 @@ import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/utils/ui/responsive.dart';
 import 'package:core_website/widgets/image_project.dart';
 import 'package:core_website/models/project.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Portfolio extends StatefulWidget {
@@ -23,10 +24,11 @@ class _PortfolioState extends State<Portfolio> {
     int flexText =
         Responsive.isDesktop(context) || Responsive.isTablet(context) ? 1 : 4;
 
-    return Container(
-        /**
+    /**
        * Title
        */
+    return Container(
+        key: KeyWidgets.keyPortfolio,
         color: ColorsTheme.backgroundFirst,
         padding: paddingGlobal(),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

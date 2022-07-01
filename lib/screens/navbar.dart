@@ -4,8 +4,11 @@ import 'package:core_website/models/menu.dart';
 import 'package:core_website/utils/ui/responsive.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Navbar extends StatefulWidget {
-  const Navbar({Key? key}) : super(key: key);
+  Navbar(this.callback, {Key? key}) : super(key: key);
+
+  Function(int) callback;
 
   @override
   State<Navbar> createState() => _NavbarState();

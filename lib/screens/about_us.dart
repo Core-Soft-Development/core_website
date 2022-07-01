@@ -19,6 +19,7 @@ class _AboutUsState extends State<AboutUs> {
   Widget build(BuildContext context) {
 
     return Container(
+      key: KeyWidgets.keyAbout,
       color: ColorsTheme.backgroundFirst,
       padding: paddingGlobal(),
       child: Row(children: [

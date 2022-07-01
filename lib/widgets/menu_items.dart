@@ -1,15 +1,19 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MenuItems extends StatefulWidget {
-  const MenuItems({Key? key, required this.title, required this.index})
+  MenuItems({Key? key, required this.title, required this.index, required this.callback})
       : super(key: key);
 
   final String title;
   final int index;
+  Function(int) callback;
 
   @override
   State<MenuItems> createState() => _MenuItemsState();
+
+  static contactItem() {}
 }
 
 class _MenuItemsState extends State<MenuItems> {
@@ -28,7 +32,7 @@ class _MenuItemsState extends State<MenuItems> {
                 : _isHovering[widget.index] = false;
           });
         },
-        onTap: () {},
+        onTap: () => widget.callback(widget.index),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -62,4 +66,20 @@ class _MenuItemsState extends State<MenuItems> {
       ),
     );
   }
+
+  /* InkWell contactItem(BuildContext context) {
+    return InkWell(
+                onHover: (value) {
+                  setState(() {
+                    value ? _isHovering[widget.index] = true : _isHovering[widget.index] = false;
+                  });
+                },
+                onTap: () {},
+                child: buttonContact(
+                  context,
+                  'Contact Us',
+                  () => const Contact(),
+                  _isHovering, 6),
+              );
+  } */
 }

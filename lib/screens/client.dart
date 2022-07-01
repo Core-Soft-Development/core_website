@@ -19,6 +19,7 @@ class _ClientState extends State<Client> {
   Widget build(BuildContext context) {
 
     return Container(
+      key: KeyWidgets.keyClient,
       color: ColorsTheme.backgroundSecond,
       padding: paddingGlobal(),
       child: Column(

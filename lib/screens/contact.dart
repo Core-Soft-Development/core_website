@@ -18,7 +18,7 @@ class Contact extends StatefulWidget {
 class _ContactState extends State<Contact> {
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(48.866667, 2.333333);
+  final LatLng _center = const LatLng(48.936181, 2.357443);
   final LatLng _office = const LatLng(49.0323168, 2.4733628);
   final LatLng _other = const LatLng(48.980312, 2.423662);
 
@@ -53,6 +53,7 @@ class _ContactState extends State<Contact> {
         /**
        * Title
        */
+        key: KeyWidgets.keyContact,
         color: ColorsTheme.backgroundFirst,
         padding: EdgeInsets.symmetric(vertical: Responsive.isDesktop(context) ? 100 : 10, horizontal: Responsive.isDesktop(context) ? 150 : 50),
         child: Column(children: [
