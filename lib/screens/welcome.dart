@@ -1,15 +1,16 @@
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/config/themes/fond_decoration.dart';
+import 'package:core_website/utils/key_widgets.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Welcome extends StatefulWidget {
+  const Welcome({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Welcome> createState() => _WelcomeState();
 }
 
-class _HomeState extends State<Home> {
+class _WelcomeState extends State<Welcome> {
   /// setting up the homepage
 
   @override
@@ -17,6 +18,7 @@ class _HomeState extends State<Home> {
     var screenSize = MediaQuery.of(context).size;
 
     return Container(
+      key: KeyWidgets.keyWelcome,
       padding: const EdgeInsets.all(50),
       decoration: boxGradient(),
       child: Column(
