@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:flutter/material.dart';
 
 class Blog extends StatefulWidget {
   const Blog({ Key? key }) : super(key: key);

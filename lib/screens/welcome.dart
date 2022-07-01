@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/config/themes/fond_decoration.dart';
-import 'package:core_website/utils/key_widgets.dart';
-import 'package:flutter/material.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key, this.heightText = 5, this.heightText2 = 2, required this.height, this.size = 40}) : super(key: key);

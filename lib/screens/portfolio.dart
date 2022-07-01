@@ -1,13 +1,13 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/spacer.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
+import 'package:core_website/models/project.dart';
 import 'package:core_website/utils/ui/responsive.dart';
 import 'package:core_website/widgets/image_project.dart';
-import 'package:core_website/models/project.dart';
-import 'package:core_website/utils/key_widgets.dart';
-import 'package:flutter/material.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({Key? key}) : super(key: key);
@@ -28,7 +28,6 @@ class _PortfolioState extends State<Portfolio> {
        * Title
        */
     return Container(
-        key: KeyWidgets.keyPortfolio,
         color: ColorsTheme.backgroundFirst,
         padding: paddingGlobal(),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

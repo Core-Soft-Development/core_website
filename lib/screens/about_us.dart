@@ -1,10 +1,11 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/widgets/circle_picture.dart';
 import 'package:core_website/models/right_title_section.dart';
 import 'package:core_website/models/text_about.dart';
 import 'package:core_website/utils/ui/responsive.dart';
-import 'package:flutter/material.dart';
+import 'package:core_website/widgets/circle_picture.dart';
 
 class AboutUs extends StatefulWidget {
   const AboutUs({Key? key}) : super(key: key);
@@ -19,7 +20,6 @@ class _AboutUsState extends State<AboutUs> {
   Widget build(BuildContext context) {
 
     return Container(
-      key: KeyWidgets.keyAbout,
       color: ColorsTheme.backgroundFirst,
       padding: paddingGlobal(),
       child: Row(children: [
@@ -60,4 +60,3 @@ class _AboutUsState extends State<AboutUs> {
     );
   }
 }
-

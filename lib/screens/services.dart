@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/models/card_view.dart';
+import 'package:core_website/models/center_title_section.dart';
 import 'package:core_website/utils/ui/responsive.dart';
-import 'package:flutter/material.dart';
 
 class Services extends StatefulWidget {
   const Services({Key? key}) : super(key: key);

@@ -1,16 +1,18 @@
-import 'package:core_website/config/spacer.dart';
-import 'package:core_website/widgets/menu_items.dart';
-import 'package:core_website/screens/contact.dart';
-import 'package:core_website/widgets/button.dart';
 import 'package:flutter/material.dart';
 
+import 'package:core_website/config/spacer.dart';
+import 'package:core_website/screens/contact.dart';
+import 'package:core_website/widgets/button.dart';
+import 'package:core_website/widgets/menu_items.dart';
+
 class Menu extends StatefulWidget {
-  const Menu({
+  const Menu(this.scrollCallback, {
     Key? key, required this.width, required this.image,
   }) : super(key: key);
 
   final double width;
   final String image;
+  final Function(int) scrollCallback;
 
   @override
   State<Menu> createState() => _MenuState();
@@ -32,17 +34,17 @@ class _MenuState extends State<Menu> {
           children: [
             Image.asset(widget.image, alignment: Alignment.centerLeft),
             SizedBox(width: widget.width),
-            const MenuItems(title: 'Home', index: 0),
+            MenuItems(title: 'Home', index: 0, callback: widget.scrollCallback,),
             spacerMenu(),
-            const MenuItems(title: 'Service', index: 1),
+            MenuItems(title: 'Service', index: 1, callback: widget.scrollCallback,),
             spacerMenu(),
-            const MenuItems(title: 'About Us', index: 2),
+            MenuItems(title: 'About Us', index: 2, callback: widget.scrollCallback,),
             spacerMenu(),
-            const MenuItems(title: 'Client', index: 3),
+            MenuItems(title: 'Client', index: 3, callback: widget.scrollCallback,),
             spacerMenu(),
-            const MenuItems(title: 'Portfolio', index: 4),
+            MenuItems(title: 'Portfolio', index: 4, callback: widget.scrollCallback,),
             spacerMenu(),
-            const MenuItems(title: 'Blog', index: 5),
+            MenuItems(title: 'Blog', index: 5, callback: widget.scrollCallback,),
             spacerMenu(),
             InkWell(
               onHover: (value) {

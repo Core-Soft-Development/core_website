@@ -1,5 +1,6 @@
-import 'package:core_website/config/frame_size.dart';
 import 'package:flutter/material.dart';
+
+import 'package:core_website/config/frame_size.dart';
 
 class Copyright extends StatelessWidget {
   const Copyright({

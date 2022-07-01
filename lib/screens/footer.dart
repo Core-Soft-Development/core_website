@@ -1,11 +1,11 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/spacer.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/utils/ui/responsive.dart';
 import 'package:core_website/widgets/icon_social.dart';
 import 'package:core_website/widgets/text_footer.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Footer extends StatelessWidget {
   const Footer({Key? key, this.horizontal = 140,

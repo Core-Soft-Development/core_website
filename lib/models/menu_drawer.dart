@@ -1,11 +1,14 @@
-import 'package:core_website/config/frame_size.dart';
-import 'package:core_website/config/themes/colors_theme.dart';
-import 'package:core_website/widgets/drawer_items.dart';
-import 'package:core_website/config/line_spacer.dart';
 import 'package:flutter/material.dart';
 
+import 'package:core_website/config/frame_size.dart';
+import 'package:core_website/config/line_spacer.dart';
+import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/widgets/drawer_items.dart';
+
 class MenuDrawer extends StatelessWidget {
-  const MenuDrawer({Key? key}) : super(key: key);
+  const MenuDrawer(this.scrollCallback, {Key? key}) : super(key: key);
+
+  final Function(int) scrollCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +25,19 @@ class MenuDrawer extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  const DrawerItems(title: 'Home'),
+                  DrawerItems(title: 'Home', index: 0, callback: scrollCallback),
                   lineSpacer(),
-                  const DrawerItems(title: 'Service'),
+                  DrawerItems(title: 'Service', index: 1, callback: scrollCallback),
                   lineSpacer(),
-                  const DrawerItems(title: 'About Us'),
+                  DrawerItems(title: 'About Us', index: 2, callback: scrollCallback),
                   lineSpacer(),
-                  const DrawerItems(title: 'Client'),
+                  DrawerItems(title: 'Client', index: 3, callback: scrollCallback),
                   lineSpacer(),
-                  const DrawerItems(title: 'Portfolio'),
+                  DrawerItems(title: 'Portfolio', index: 4, callback: scrollCallback),
                   lineSpacer(),
-                  const DrawerItems(title: 'Blog'),
+                  DrawerItems(title: 'Blog', index: 5, callback: scrollCallback),
                   lineSpacer(),
-                  const DrawerItems(title: 'Contact Us'),
+                  DrawerItems(title: 'Contact Us', index: 6, callback: scrollCallback),
                   lineSpacer(),
                   const Expanded(
                       child: Align(

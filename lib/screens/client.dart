@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/padding.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
@@ -5,7 +7,6 @@ import 'package:core_website/models/picture_testamonial.dart';
 import 'package:core_website/models/right_title_section.dart';
 import 'package:core_website/models/testomanial_client.dart';
 import 'package:core_website/utils/ui/responsive.dart';
-import 'package:flutter/material.dart';
 
 class Client extends StatefulWidget {
   const Client({Key? key}) : super(key: key);
@@ -17,9 +18,7 @@ class Client extends StatefulWidget {
 class _ClientState extends State<Client> {
   @override
   Widget build(BuildContext context) {
-
     return Container(
-      key: KeyWidgets.keyClient,
       color: ColorsTheme.backgroundSecond,
       padding: paddingGlobal(),
       child: Column(
