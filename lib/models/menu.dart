@@ -1,3 +1,4 @@
+import 'package:core_website/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:core_website/config/spacer.dart';
@@ -50,7 +51,7 @@ class _MenuState extends State<Menu> {
                   value ? _isHovering[5] = true : _isHovering[5] = false;
                 });
               },
-              onTap: () {},
+              onTap: () =>  widget.scrollCallback(5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
