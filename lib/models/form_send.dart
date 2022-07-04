@@ -1,5 +1,5 @@
 import 'package:core_website/models/area_form.dart';
-import 'package:core_website/widgets/form_text.dart';
+import 'package:core_website/models/form_text.dart';
 import 'package:flutter/material.dart';
 
 class FormSend extends StatelessWidget {
@@ -11,10 +11,10 @@ class FormSend extends StatelessWidget {
     return Form(
       key: _formKey,
       child: Column(
-        children: [
-          formText(context, 'Full Name','Full name', 'Pease enter your full name'),
-          formText(context, 'Email Address', 'Email Address', 'Please enter your email'),
-          areaForm(context, 'Your Message', 'Your message', 'Please enter your message'),
+        children: const [
+          FormText(labelText: 'Full Name', hintText: 'Full name', empty: 'Pease enter your full name',),
+          FormText(labelText:'Email Address', hintText: 'Email Address', empty: 'Please enter your email'),
+          AreaForm(labelText: 'Your Message', hintText: 'Your Message', empty: 'Please enter your message',)
         ],
       ),
     );

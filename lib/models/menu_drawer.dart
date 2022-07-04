@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'package:core_website/config/frame_size.dart';
+import 'package:core_website/config/line_spacer.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/widgets/drawer_items.dart';
-import 'package:core_website/widgets/line_spacer.dart';
 
-// ignore: must_be_immutable
 class MenuDrawer extends StatelessWidget {
-  MenuDrawer({Key? key, required this.callback}) : super(key: key);
+  const MenuDrawer(this.scrollCallback, {Key? key}) : super(key: key);
 
-  Function(int) callback;
+  final Function(int) scrollCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class MenuDrawer extends StatelessWidget {
  * setting up the drawer menu
  */
     return Drawer(
+      width: FrameSize.screenWidth / 3,
       child: Container(
-          //color: ColorsTheme.menuDrawer,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: ColorsTheme.gradientColor)),
@@ -25,24 +25,23 @@ class MenuDrawer extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  DrawerItems(title: 'Home', index: 0, callback: callback,),
+                  DrawerItems(title: 'Home', index: 0, callback: scrollCallback),
                   lineSpacer(),
-                  DrawerItems(title: 'Service', index: 1, callback: callback,),
+                  DrawerItems(title: 'Service', index: 1, callback: scrollCallback),
                   lineSpacer(),
-                  DrawerItems(title: 'About Us', index: 2, callback: callback,),
+                  DrawerItems(title: 'About Us', index: 2, callback: scrollCallback),
                   lineSpacer(),
-                  DrawerItems(title: 'Client', index: 3, callback: callback,),
+                  DrawerItems(title: 'Client', index: 3, callback: scrollCallback),
                   lineSpacer(),
-                  DrawerItems(title: 'Portfolio', index: 4, callback: callback,),
+                  DrawerItems(title: 'Portfolio', index: 4, callback: scrollCallback),
                   lineSpacer(),
-                  DrawerItems(title: 'Blog', index: 5, callback: callback,),
-                  lineSpacer(),
-                  DrawerItems(title: 'Contact Us', index: 6, callback: callback,),
+                  DrawerItems(title: 'Contact Us', index: 5, callback: scrollCallback),
                   lineSpacer(),
                   const Expanded(
                       child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Text('Copyright © 2022',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white, fontSize: 14)),
                   ))

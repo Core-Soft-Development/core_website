@@ -1,9 +1,13 @@
+import 'package:flutter/material.dart';
+
+import 'package:core_website/config/frame_size.dart';
+import 'package:core_website/config/padding.dart';
+import 'package:core_website/config/spacer.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:core_website/models/center_title_section.dart';
-import 'package:core_website/models/image_project.dart';
 import 'package:core_website/models/project.dart';
-import 'package:core_website/utils/key_widgets.dart';
-import 'package:flutter/material.dart';
+import 'package:core_website/utils/ui/responsive.dart';
+import 'package:core_website/widgets/image_project.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({Key? key}) : super(key: key);
@@ -15,77 +19,167 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    int flexImage =
+        Responsive.isDesktop(context) || Responsive.isTablet(context) ? 1 : 2;
+    int flexText =
+        Responsive.isDesktop(context) || Responsive.isTablet(context) ? 1 : 4;
 
     /**
        * Title
        */
     return Container(
-        key: KeyWidgets.keyPortfolio,
         color: ColorsTheme.backgroundFirst,
-        padding: const EdgeInsets.all(40),
+        padding: paddingGlobal(),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Stack(alignment: Alignment.topCenter, children: [
-            const CenterTitleSection(
-                title: "PORTFOLIO \n", description: 'Our Clients Projects'),
+            const Responsive(
+                desktop: CenterTitleSection(
+                    title: "PORTFOLIO \n", description: 'Our Clients Projects'),
+                tablet: CenterTitleSection(
+                  title: "PORTFOLIO \n",
+                  description: 'Our Clients Projects',
+                  sizeTitle: 16,
+                  sizeText: 30,
+                ),
+                mobile: CenterTitleSection(
+                  title: "PORTFOLIO \n",
+                  description: 'Our Clients Projects',
+                  sizeTitle: 14,
+                  height: 1.5,
+                  sizeText: 20,
+                )),
             SizedBox(
-              height: screenSize.height / 6,
-              width: screenSize.width,
+              height: Responsive.isDesktop(context)
+                  ? FrameSize.screenHeight / 4
+                  : FrameSize.screenHeight / 8,
+              width: FrameSize.screenWidth, // centre title
             )
           ]),
           Row(
-            children: const [
+            children: [
               Expanded(
-                  child: ImageProject(
+                  flex: flexImage,
+                  child: const ImageProject(
                       image: 'assets/images/project/project1.png')),
               Expanded(
-                  child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              ))
+                  flex: flexText,
+                  child: const Responsive(
+                      desktop: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                      ),
+                      tablet: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 30,
+                        height: 1,
+                      ),
+                      mobile: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 20,
+                        height: 1,
+                        textSize: 14,
+                      )))
             ],
           ),
-          SizedBox(height: screenSize.height * 0.05),
+          const SpacerPortfolio(),
           Row(
-            children: const [
+            children: [
               Expanded(
-                  child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              )),
+                  flex: flexText,
+                  child: const Responsive(
+                      desktop: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                      ),
+                      tablet: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 30,
+                        height: 1,
+                      ),
+                      mobile: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 20,
+                        height: 1,
+                        textSize: 14,
+                      ))),
               Expanded(
-                  child:
-                      ImageProject(image: 'assets/images/project/project2.png'))
+                  flex: flexImage,
+                  child: const ImageProject(
+                      image: 'assets/images/project/project2.png'))
             ],
           ),
-          SizedBox(height: screenSize.height * 0.05),
+          const SpacerPortfolio(),
           Row(
-            children: const [
+            children: [
               Expanded(
-                  child: ImageProject(
+                  flex: flexImage,
+                  child: const ImageProject(
                       image: 'assets/images/project/project3.png')),
               Expanded(
-                  child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              ))
+                  flex: flexText,
+                  child: const Responsive(
+                      desktop: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                      ),
+                      tablet: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 30,
+                        height: 1,
+                      ),
+                      mobile: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 20,
+                        height: 1,
+                        textSize: 14,
+                      )))
             ],
           ),
-          SizedBox(height: screenSize.height * 0.05),
+          const SpacerPortfolio(),
           Row(
-            children: const [
+            children: [
               Expanded(
-                  child: Project(
-                title: "Project name \n",
-                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
-              )),
+                  flex: flexText,
+                  child: const Responsive(
+                      desktop: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                      ),
+                      tablet: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 30,
+                        height: 1,
+                      ),
+                      mobile: Project(
+                        title: "Project name \n",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet. Eros porta et consectetur auctor gravida mauris tempus pellentesque. Nulla ornare potenti in eu in commodo magna amet.\n",
+                        size: 20,
+                        height: 1,
+                        textSize: 14,
+                      ))),
               Expanded(
-                  child:
-                      ImageProject(image: 'assets/images/project/project4.png'))
+                  flex: flexImage,
+                  child: const ImageProject(
+                      image: 'assets/images/project/project4.png'))
             ],
           ),
         ]));

@@ -21,10 +21,9 @@ class _MenuItemsState extends State<MenuItems> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    //var screenSize = MediaQuery.of(context).size;
 
     return SizedBox(
-      height: screenSize.height,
       child: InkWell(
         onHover: (value) {
           setState(() {
@@ -39,6 +38,7 @@ class _MenuItemsState extends State<MenuItems> {
           children: [
             Text(
               widget.title,
+              textAlign: TextAlign.center,
               style: TextStyle(
                   color: _isHovering[widget.index]
                       ? ColorsTheme.textMenuHover

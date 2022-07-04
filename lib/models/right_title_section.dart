@@ -2,32 +2,33 @@ import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class RightTitleSection extends StatelessWidget {
-  final String title;
-  final String description;
-  const RightTitleSection({Key? key, required this.title, required this.description}) : super(key: key);
+  const RightTitleSection({Key? key, required this.title, required this.description, this.sizeTitle = 18, this.height = 2, this.sizeText = 40, this.heightText = 1.5}) : super(key: key);
+
+  final String title, description;
+  final double sizeTitle, height, sizeText, heightText;
 
   @override
   Widget build(BuildContext context) {
+
     return RichText(
-        maxLines: 10,
-        textAlign: TextAlign.justify,
+        //textAlign: TextAlign.justify,
         text: TextSpan(
             text: title,
-            style: const TextStyle(
-                fontSize: 18,
+            style: TextStyle(
+                fontSize: sizeTitle,
                 fontWeight: FontWeight.w600,
                 fontFamily: "Montserrat",
                 color: ColorsTheme.titleColor,
                 wordSpacing: 1,
-                height: 2),
+                height: height),
             children: [
               TextSpan(
                 text: description,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: ColorsTheme.text,
-                  fontSize: 40,
-                  height: 1.5
+                  fontSize: sizeText,
+                  height: heightText
                 ),
               ),
             ]));

@@ -22,16 +22,17 @@ TextButton buttonSend(
   );
 }
 
-TextButton buttonProject(String text) {
+TextButton buttonProject(String text, double size) {
+
   return TextButton(
       onPressed: () {},
       style: ButtonStyle(
-        textStyle: MaterialStateProperty.all(const TextStyle(
+        textStyle: MaterialStateProperty.all(TextStyle(
           decoration: TextDecoration.underline,
           decorationColor: ColorsTheme.titleColor,
           color: ColorsTheme.titleColor,
           fontFamily: "Monserrat",
-          fontSize: 20,
+          fontSize: size,
           fontWeight: FontWeight.w700,
           height: 1
         )),

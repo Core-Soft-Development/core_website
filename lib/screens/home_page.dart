@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
+import 'package:core_website/models/menu_drawer.dart';
 import 'package:core_website/screens/about_us.dart';
-import 'package:core_website/screens/blog.dart';
 import 'package:core_website/screens/client.dart';
 import 'package:core_website/screens/contact.dart';
 import 'package:core_website/screens/copyright.dart';
 import 'package:core_website/screens/footer.dart';
-import 'package:core_website/screens/menu_drawer.dart';
 import 'package:core_website/screens/navbar.dart';
 import 'package:core_website/screens/portfolio.dart';
-import 'package:core_website/screens/service.dart';
+import 'package:core_website/screens/services.dart';
 import 'package:core_website/screens/welcome.dart';
-import 'package:core_website/utils/ui/responsive_layout.dart';
+import 'package:core_website/utils/ui/responsive.dart';
 
 void main() => runApp(const HomePage());
 
@@ -46,49 +46,62 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    FrameSize.init(context: context);
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       extendBody: true,
-      // drawer: MenuDrawer(callback: calculateSizeAndPosition,),
-      body: NestedScrollView(
-        headerSliverBuilder: (context, innerBoxIsScrolled) {
-          return [
-            ResponsiveLayout.isSmallScreen(context) || ResponsiveLayout.isMediumScreen(context)
-                ? SliverAppBar(
-                    iconTheme: const IconThemeData(color: Color(0xFFFF8A65)),
-                    backgroundColor: ColorsTheme.appColor,
-                    elevation: 10,
-                    centerTitle: true,
-                    title: Image.asset(
-                      'assets/logos/csd_core_soft_development.png',
-                      color: ColorsTheme.textMenuDrawer,
-                      height: 50,
+      drawer: MenuDrawer(calculateSizeAndPosition),
+      body: SafeArea(
+        child: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) {
+            return [
+              Responsive.isMobile(context)
+                  ? SliverAppBar(
+                      iconTheme: const IconThemeData(color: ColorsTheme.hoverColor),
+                      backgroundColor: const Color(0XFFF06C4F),
+                      elevation: 10,
+                      centerTitle: true,
+                      title: Image.asset(
+                        'assets/logos/csd_core_soft_development.png',
+                        color: ColorsTheme.backgroundFirst,
+                        height: 50,
+                        fit: BoxFit.cover,
+                      ),
+                      floating: true,
+                      snap: true,
+                      expandedHeight: 50,
+                    )
+                  : PreferredSize(
+                      preferredSize: Size(FrameSize.screenWidth, 70),
+                      child: Navbar(calculateSizeAndPosition),
                     ),
-                    automaticallyImplyLeading: false,
-                    floating: true,
-                    snap: true,
-                    expandedHeight: 50,
-                  )
-                : PreferredSize(
-                    preferredSize: Size(MediaQuery.of(context).size.width, 70),
-                    child: Navbar(calculateSizeAndPosition),
-                  ),
-          ];
-        },
+            ];
+          },
         body: ListView(
           scrollDirection: Axis.vertical,
           controller: _scrollController,
           children: [
-            getChildWithAutoScrollTag(const Welcome(), _scrollController, 0),
+            getChildWithAutoScrollTag(
+              Responsive(
+              desktop: Welcome(height: FrameSize.screenHeight / 2),
+              tablet: Welcome(height: FrameSize.screenHeight / 4, heightText: 4, size: 30,),
+              mobile: Welcome(height: FrameSize.screenHeight / 6, heightText: 3, size: 25, heightText2: 2,),
+              )
+            , _scrollController, 0),
             getChildWithAutoScrollTag(const Services(), _scrollController, 1),
             getChildWithAutoScrollTag(const AboutUs(), _scrollController, 2),
             getChildWithAutoScrollTag(const Client(), _scrollController, 3),
             getChildWithAutoScrollTag(const Portfolio(), _scrollController, 4),
-            getChildWithAutoScrollTag(const Blog(), _scrollController, 5),
-            getChildWithAutoScrollTag(const Contact(), _scrollController, 6),
-            getChildWithAutoScrollTag(const Footer(), _scrollController, 7),
-            getChildWithAutoScrollTag(const Copyright(), _scrollController, 8),
+            getChildWithAutoScrollTag(const Contact(), _scrollController, 5),
+            getChildWithAutoScrollTag(const Responsive(
+              desktop: Footer(),
+              tablet: Footer(horizontal: 100,),
+              mobile: Footer(horizontal: 40,),
+            ), _scrollController, 6),
+            getChildWithAutoScrollTag(const Copyright(), _scrollController, 7),
           ],
+        ),
         ),
       ),
     );

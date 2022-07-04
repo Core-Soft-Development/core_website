@@ -1,5 +1,6 @@
-import 'package:core_website/screens/home_page.dart';
 import 'package:flutter/material.dart';
+
+import 'package:core_website/screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());

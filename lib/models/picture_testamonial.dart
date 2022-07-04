@@ -1,32 +1,35 @@
+import 'package:core_website/config/frame_size.dart';
 import 'package:core_website/config/themes/colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class PictureTestamonial extends StatelessWidget {
+  const PictureTestamonial({Key? key, required this.picture, required this.bottom, this.right = 0, this.minHeight = 700,  this.fit = BoxFit.none}) : super(key: key);
+
   final String picture;
-  const PictureTestamonial({Key? key, required this.picture}) : super(key: key);
+  final double minHeight, bottom, right;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
 
     return Container(
-        height: screenSize.height / 4,
-        width: 400,
+        height: FrameSize.screenHeight / 4,
+        width: FrameSize.screenWidth /4,
         clipBehavior: Clip.none,
         decoration: const BoxDecoration(
             gradient: LinearGradient(colors: ColorsTheme.gradientBackground,
             begin: Alignment.topRight,
             end: Alignment.bottomLeft),
             shape: BoxShape.circle),
-        constraints: const BoxConstraints.expand(width: 500, height: 700),
+        constraints: BoxConstraints(minWidth: 500, minHeight: minHeight),
         child: Container(
             margin: const EdgeInsets.only(bottom: 10),
             child: Stack(children: [
               Positioned(
-                bottom: 90,
-                right: 0,
+                bottom: bottom,
+                right: right,
                 left: 0,
-                top: 20,
+                top: 5,
                 child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(250),
@@ -35,8 +38,8 @@ class PictureTestamonial extends StatelessWidget {
                     child: Image.asset(
                       picture,
                       matchTextDirection: true,
-                      height: screenSize.height / 6,
-                      fit: BoxFit.none,
+                      height: FrameSize.screenHeight / 6,
+                      fit: fit,
                     )),
               ),
             ])));
