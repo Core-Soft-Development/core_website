@@ -20,7 +20,7 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
 
-  final List _isHovering = [false, false, false, false, false, false, false];
+  final List _isHovering = [false, false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +44,10 @@ class _MenuState extends State<Menu> {
             spacerMenu(),
             MenuItems(title: 'Portfolio', index: 4, callback: widget.scrollCallback,),
             spacerMenu(),
-            MenuItems(title: 'Blog', index: 5, callback: widget.scrollCallback,),
-            spacerMenu(),
             InkWell(
               onHover: (value) {
                 setState(() {
-                  value ? _isHovering[6] = true : _isHovering[6] = false;
+                  value ? _isHovering[5] = true : _isHovering[5] = false;
                 });
               },
               onTap: () {},
@@ -61,7 +59,7 @@ class _MenuState extends State<Menu> {
                       context,
                       'Contact Us',
                       () => const Contact(),
-                      _isHovering, 6),
+                      _isHovering, 5),
                 ),
               ],
             ),

@@ -13,6 +13,5 @@ final sections = [
     Section(GlobalKey(), 'AboutUs'),
     Section(GlobalKey(), 'Client'),
     Section(GlobalKey(), 'Portfolio'),
-    Section(GlobalKey(), 'Blog'),
     Section(GlobalKey(), 'Contact'),
   ];
