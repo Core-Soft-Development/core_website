@@ -64,9 +64,9 @@ class Footer extends StatelessWidget {
                 children: const [
                   Expanded(
                     child: Responsive(
-                      desktop: TextFooter(title: ' Company', text: 'Blog', text1: 'Contact us', text2: 'Book a call'),
-                      tablet: TextFooter(title: ' Company', text: 'Blog', text1: 'Contact us', text2: 'Book a call', size: 18, font: FontWeight.w600),
-                      mobile: TextFooter(title: ' Company', text: 'Blog', text1: 'Contact us', text2: 'Book a call', size: 10, font: FontWeight.bold,))
+                      desktop: TextFooter(title: ' Company', text: 'Portfolio', text1: 'Contact us', text2: 'Book a call'),
+                      tablet: TextFooter(title: ' Company', text: 'Portfolio', text1: 'Contact us', text2: 'Book a call', size: 18, font: FontWeight.w600),
+                      mobile: TextFooter(title: ' Company', text: 'Portfolio', text1: 'Contact us', text2: 'Book a call', size: 10, font: FontWeight.bold,))
                   ),
                 ],
               ),

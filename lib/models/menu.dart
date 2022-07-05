@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:core_website/config/spacer.dart';
-import 'package:core_website/screens/contact.dart';
 import 'package:core_website/widgets/button.dart';
 import 'package:core_website/widgets/menu_items.dart';
 
@@ -20,7 +19,7 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
 
-  final List _isHovering = [false, false, false, false, false, false, false];
+  final List _isHovering = [false, false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -44,15 +43,13 @@ class _MenuState extends State<Menu> {
             spacerMenu(),
             MenuItems(title: 'Portfolio', index: 4, callback: widget.scrollCallback,),
             spacerMenu(),
-            MenuItems(title: 'Blog', index: 5, callback: widget.scrollCallback,),
-            spacerMenu(),
             InkWell(
               onHover: (value) {
                 setState(() {
-                  value ? _isHovering[6] = true : _isHovering[6] = false;
+                  value ? _isHovering[5] = true : _isHovering[5] = false;
                 });
               },
-              onTap: () {},
+              onTap: () =>  widget.scrollCallback(5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -60,8 +57,8 @@ class _MenuState extends State<Menu> {
                     child: buttonContact(
                       context,
                       'Contact Us',
-                      () => const Contact(),
-                      _isHovering, 6),
+                      /* () => const Contact(), */
+                      _isHovering, 5),
                 ),
               ],
             ),

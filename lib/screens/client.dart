@@ -27,59 +27,72 @@ class _ClientState extends State<Client> {
             Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const[
-                Responsive(
-                  desktop: RightTitleSection(
-                      title: "TESTIMONIAL \n",
-                      description: 'What Our Clients Say \n'),
-                  tablet: RightTitleSection(
+                children: const [
+                  Responsive(
+                    desktop: RightTitleSection(
+                        title: "TESTIMONIAL \n",
+                        description: 'What Our Clients Say \n'),
+                    tablet: RightTitleSection(
                       title: "TESTIMONIAL \n",
                       description: 'What Our Clients Say \n',
                       sizeTitle: 16,
-                      sizeText: 30,),
-                  mobile: RightTitleSection(
+                      sizeText: 30,
+                    ),
+                    mobile: RightTitleSection(
                       title: "TESTIMONIAL \n",
                       description: 'What Our Clients Say \n',
                       sizeTitle: 14,
                       sizeText: 20,
-                      heightText: 1.5,),
-                      ),
+                      heightText: 1.5,
+                    ),
+                  ),
                   Responsive(
-                    desktop: TestamonialClient(
-                        content:
-                            "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
-                        name: "\n Oussema Missaoui",
-                        compagny: '\n BI Consultant'),
-                    tablet: TestamonialClient(
-                        content:
-                            "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
-                        name: "\n Oussema Missaoui",
-                        compagny: '\n BI Consultant',
-                        textHeight: 1.5,
-                        textSize: 18,
-                        sizeName: 22,
-                        heightName: 2),
-                    mobile: TestamonialClient(
-                        content:
-                            "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
-                        name: "\n Oussema Missaoui",
-                        compagny: '\n BI Consultant',
-                        textHeight: 1,
-                        textSize: 14,
-                        sizeName: 18,
-                        heightName: 1.5)),
+                      desktop: TestamonialClient(
+                          content:
+                              "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                          name: "\n Oussema Missaoui",
+                          compagny: '\n BI Consultant'),
+                      tablet: TestamonialClient(
+                          content:
+                              "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                          name: "\n Oussema Missaoui",
+                          compagny: '\n BI Consultant',
+                          textHeight: 1.5,
+                          textSize: 18,
+                          sizeName: 22,
+                          heightName: 2),
+                      mobile: TestamonialClient(
+                          content:
+                              "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                          name: "\n Oussema Missaoui",
+                          compagny: '\n BI Consultant',
+                          textHeight: 1,
+                          textSize: 14,
+                          sizeName: 18,
+                          heightName: 1.5)),
                 ],
               ),
             ),
             SizedBox(width: FrameSize.screenWidth / 6),
             Flexible(
               child: Column(
-                children: 
-                const [
+                children: const [
                   Responsive(
-                  desktop: PictureTestamonial(picture: 'assets/images/profil.png', bottom: 90),
-                  tablet: PictureTestamonial(picture: 'assets/images/profil.png', bottom: 90, right: 1, minHeight: 490, fit: BoxFit.fill,),
-                  mobile: PictureTestamonial(picture: 'assets/images/profil.png', bottom: 105, minHeight: 350, fit: BoxFit.cover,)),
+                      desktop: PictureTestamonial(
+                          picture: 'assets/images/profil.png', bottom: 90),
+                      tablet: PictureTestamonial(
+                        picture: 'assets/images/profil.png',
+                        bottom: 90,
+                        right: 1,
+                        minHeight: 490,
+                        fit: BoxFit.fill,
+                      ),
+                      mobile: PictureTestamonial(
+                        picture: 'assets/images/profil.png',
+                        bottom: 90,
+                        minHeight: 400,
+                        fit: BoxFit.cover,
+                      )),
                 ],
               ),
             ),
@@ -90,9 +103,23 @@ class _ClientState extends State<Client> {
                 child: Column(
                   children: const [
                     Responsive(
-                      desktop: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100,),
-                      tablet: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100, right: 1, minHeight: 490, fit: BoxFit.fill,),
-                      mobile: PictureTestamonial(picture: 'assets/images/profil2.png', bottom: 100, minHeight: 400,fit: BoxFit.cover,)),
+                        desktop: PictureTestamonial(
+                          picture: 'assets/images/profil2.png',
+                          bottom: 100,
+                        ),
+                        tablet: PictureTestamonial(
+                          picture: 'assets/images/profil2.png',
+                          bottom: 100,
+                          right: 1,
+                          minHeight: 490,
+                          fit: BoxFit.fill,
+                        ),
+                        mobile: PictureTestamonial(
+                          picture: 'assets/images/profil2.png',
+                          bottom: 100,
+                          minHeight: 400,
+                          fit: BoxFit.cover,
+                        )),
                   ],
                 ),
               ),
@@ -100,29 +127,29 @@ class _ClientState extends State<Client> {
               Column(
                 children: const [
                   Responsive(
-                    desktop: TestamonialClient(
-                      content:
-                          "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
-                      name: "\n Mulan Chi",
-                      compagny: '\n Avocate'),
-                    tablet: TestamonialClient(
-                      content:
-                          "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
-                      name: "\n Mulan Chi",
-                      compagny: '\n Avocate',
-                      textHeight: 1.5,
-                        textSize: 18,
-                        sizeName: 22,
-                        heightName: 2),
-                    mobile: TestamonialClient(
-                      content:
-                          "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
-                      name: "\n Mulan Chi",
-                      compagny: '\n Avocate',
-                      textHeight: 1,
-                        textSize: 14,
-                        sizeName: 20,
-                        heightName: 1.5)),
+                      desktop: TestamonialClient(
+                          content:
+                              "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                          name: "\n Mulan Chi",
+                          compagny: '\n Avocate'),
+                      tablet: TestamonialClient(
+                          content:
+                              "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                          name: "\n Mulan Chi",
+                          compagny: '\n Avocate',
+                          textHeight: 1.5,
+                          textSize: 18,
+                          sizeName: 22,
+                          heightName: 2),
+                      mobile: TestamonialClient(
+                          content:
+                              "\"CSD brought me what I think is the foundation of a job stimulating and user-friendly: strong integration within a team dynamic and challenging in all aspects of my job... \nThis allows me to exploit all my talent and progress quickly in my career\" \n ",
+                          name: "\n Mulan Chi",
+                          compagny: '\n Avocate',
+                          textHeight: 1,
+                          textSize: 14,
+                          sizeName: 20,
+                          heightName: 1.5)),
                 ],
               ),
             ],

@@ -40,9 +40,8 @@ TextButton buttonProject(String text, double size) {
       child: Text(text));
 }
 
-DecoratedBox buttonContact(BuildContext context, String text,
-    Widget Function() createPage, List isHovering, int index) {
-  return DecoratedBox(
+Container buttonContact(BuildContext context, String text, List isHovering, int index) {
+  return Container(
     decoration: BoxDecoration(
       gradient: const LinearGradient(
         colors: ColorsTheme.gradientColor,
@@ -51,17 +50,7 @@ DecoratedBox buttonContact(BuildContext context, String text,
         ),
         borderRadius: BorderRadius.circular(8),
     ),
-    child: TextButton(
-      style: ButtonStyle(
-          shadowColor: MaterialStateProperty.all(Colors.transparent),
-          elevation: MaterialStateProperty.all(2),
-          padding: MaterialStateProperty.all(
-              const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20)),
-              ),
-      onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => createPage()));
-      },
+    padding: const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20),
       child: Text(
         text,
         style: TextStyle(
@@ -70,6 +59,6 @@ DecoratedBox buttonContact(BuildContext context, String text,
           fontSize: 16,
         ),
       ),
-    ),
+    //),
   );
 }

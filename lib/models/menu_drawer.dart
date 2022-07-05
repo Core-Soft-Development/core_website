@@ -35,9 +35,7 @@ class MenuDrawer extends StatelessWidget {
                   lineSpacer(),
                   DrawerItems(title: 'Portfolio', index: 4, callback: scrollCallback),
                   lineSpacer(),
-                  DrawerItems(title: 'Blog', index: 5, callback: scrollCallback),
-                  lineSpacer(),
-                  DrawerItems(title: 'Contact Us', index: 6, callback: scrollCallback),
+                  DrawerItems(title: 'Contact Us', index: 5, callback: scrollCallback),
                   lineSpacer(),
                   const Expanded(
                       child: Align(

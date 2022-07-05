@@ -21,7 +21,6 @@ class _MenuItemsState extends State<MenuItems> {
 
   @override
   Widget build(BuildContext context) {
-    //var screenSize = MediaQuery.of(context).size;
 
     return SizedBox(
       child: InkWell(
@@ -66,20 +65,4 @@ class _MenuItemsState extends State<MenuItems> {
       ),
     );
   }
-
-  /* InkWell contactItem(BuildContext context) {
-    return InkWell(
-                onHover: (value) {
-                  setState(() {
-                    value ? _isHovering[widget.index] = true : _isHovering[widget.index] = false;
-                  });
-                },
-                onTap: () {},
-                child: buttonContact(
-                  context,
-                  'Contact Us',
-                  () => const Contact(),
-                  _isHovering, 6),
-              );
-  } */
 }
