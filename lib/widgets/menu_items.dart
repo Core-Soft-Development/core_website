@@ -21,7 +21,6 @@ class _MenuItemsState extends State<MenuItems> {
 
   @override
   Widget build(BuildContext context) {
-    //var screenSize = MediaQuery.of(context).size;
 
     return SizedBox(
       child: InkWell(

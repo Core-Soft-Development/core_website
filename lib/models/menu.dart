@@ -1,8 +1,6 @@
-import 'package:core_website/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:core_website/config/spacer.dart';
-import 'package:core_website/screens/contact.dart';
 import 'package:core_website/widgets/button.dart';
 import 'package:core_website/widgets/menu_items.dart';
 
@@ -59,7 +57,7 @@ class _MenuState extends State<Menu> {
                     child: buttonContact(
                       context,
                       'Contact Us',
-                      () => const Contact(),
+                      /* () => const Contact(), */
                       _isHovering, 5),
                 ),
               ],
